@@ -80,7 +80,8 @@ Server tests (`server/*.test.ts`) cover the auth logout cookie clear, the report
 
 ## **관련 문서 최신화**[중요]
 - 메인 폴더와 각 폴더에 있는 AGENTS.md 는 코드가 수정, 변경, 추가, 신규가 생겼을 때 최신화 또는 신규 AGENTS.md 를 만든다.
-- AGENTS.md 와 마찬가지로 CLAUDE.md 를 최신화 한다. CLAUDE.md 는 250줄 이하로 효율적인 문맥으로 관리한다. CLAUDE.md 는 사용자가 아닌 오직 클로드 코드 만을 위한 파일이다. 클로드 코드 가 참고하기 편하게 작성한다. 
+- AGENTS.md 와 마찬가지로 CLAUDE.md 를 최신화 한다. CLAUDE.md 는 250줄 이하로 효율적인 문맥으로 관리한다. 
+- CLAUDE.md 는 사용자가 아닌 오직 클로드 코드 만을 위한 파일이다. 클로드 코드 가 참고하기 편하게 작성한다. 
 - 사용자가 세션을 종료하겠다고 하면 해당 세션에서 필요하다 판단되는 것은 memory 에 기억한다.
 
 ## Deployment (GitHub Pages, static)
