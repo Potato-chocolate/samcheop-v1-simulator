@@ -1,0 +1,4682 @@
+[
+  {
+    "path": "/home/ubuntu/onboarding_sources/v1_samcheop/v1(ьВ╝ь▓йы╢ДьЛЭ)/26ыЕД ыздь╢Ьы╢ДьДЭьЛЬэК╕_26.03(ьаЬьЮСьдС).xlsx",
+    "name": "26ыЕД ыздь╢Ьы╢ДьДЭьЛЬэК╕_26.03(ьаЬьЮСьдС).xlsx",
+    "sheets": [
+      {
+        "title": "목표",
+        "max_row": 46,
+        "max_column": 34,
+        "nonempty_count": 185,
+        "formula_count": 48,
+        "merged_ranges": [
+          "E13:G13",
+          "F29:G29",
+          "K24:L24",
+          "F25:G25",
+          "E31:G31",
+          "AD33:AH33",
+          "H17:J17",
+          "E15:G15",
+          "K26:L26",
+          "AD44:AH44",
+          "H19:J19",
+          "AD34:AH34",
+          "AD28:AH28",
+          "K17:M17",
+          "E7:G7",
+          "Y40:AC40",
+          "AD36:AH36",
+          "F23:G23",
+          "E18:G18",
+          "K34:M34"
+        ],
+        "samples": [
+          [
+            {
+              "cell": "D2",
+              "value": "목표매출산정서",
+              "formula": null
+            },
+            {
+              "cell": "K2",
+              "value": "목표",
+              "formula": null
+            },
+            {
+              "cell": "N2",
+              "value": "원",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "L3",
+              "value": 32344100,
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "K4",
+              "value": "1인운영",
+              "formula": null
+            },
+            {
+              "cell": "N4",
+              "value": "원",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "T5",
+              "value": 15000000,
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "K6",
+              "value": "배달매출",
+              "formula": null
+            },
+            {
+              "cell": "L6",
+              "value": 30956538.11,
+              "formula": "='목표매출 산정자료'!F10"
+            },
+            {
+              "cell": "N6",
+              "value": "원",
+              "formula": null
+            },
+            {
+              "cell": "W6",
+              "value": 5625000,
+              "formula": "=T5*37.5%"
+            }
+          ],
+          [
+            {
+              "cell": "C7",
+              "value": "부서명",
+              "formula": null
+            },
+            {
+              "cell": "E7",
+              "value": "목표",
+              "formula": null
+            },
+            {
+              "cell": "K7",
+              "value": "홀매출",
+              "formula": null
+            },
+            {
+              "cell": "L7",
+              "value": 32344.100000000002,
+              "formula": "='목표매출 산정자료'!F23"
+            },
+            {
+              "cell": "N7",
+              "value": "원",
+              "formula": null
+            },
+            {
+              "cell": "W7",
+              "value": 9375000,
+              "formula": "=T5*62.5%"
+            }
+          ],
+          [
+            {
+              "cell": "C8",
+              "value": "외식개설팀",
+              "formula": null
+            },
+            {
+              "cell": "E8",
+              "value": "매출금액 별 예상 마진금액 계산",
+              "formula": null
+            },
+            {
+              "cell": "K8",
+              "value": "포장매출",
+              "formula": null
+            },
+            {
+              "cell": "L8",
+              "value": 1355217.79,
+              "formula": "='목표매출 산정자료'!F19"
+            },
+            {
+              "cell": "N8",
+              "value": "원",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C11",
+              "value": "목표 매출\n및\n예상운영방향",
+              "formula": null
+            },
+            {
+              "cell": "E11",
+              "value": "직원구성",
+              "formula": null
+            },
+            {
+              "cell": "H11",
+              "value": "정직원",
+              "formula": null
+            },
+            {
+              "cell": "I11",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "J11",
+              "value": "명",
+              "formula": null
+            },
+            {
+              "cell": "K11",
+              "value": "파트타이머",
+              "formula": null
+            },
+            {
+              "cell": "L11",
+              "value": 2.5,
+              "formula": null
+            },
+            {
+              "cell": "M11",
+              "value": "명",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "E12",
+              "value": "총 인건비",
+              "formula": null
+            },
+            {
+              "cell": "H12",
+              "value": 2169526.6125,
+              "formula": "='목표매출 산정자료'!F34"
+            },
+            {
+              "cell": "M12",
+              "value": "원",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "E13",
+              "value": "매장월세 및 대출상환금",
+              "formula": null
+            },
+            {
+              "cell": "H13",
+              "value": 930000,
+              "formula": null
+            },
+            {
+              "cell": "J13",
+              "value": "만원/월세",
+              "formula": null
+            },
+            {
+              "cell": "K13",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "M13",
+              "value": "상환/월",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "E14",
+              "value": "월 로열티(정액제)",
+              "formula": null
+            },
+            {
+              "cell": "H14",
+              "value": 110000,
+              "formula": null
+            },
+            {
+              "cell": "M14",
+              "value": "만원",
+              "formula": null
+            },
+            {
+              "cell": "Y14",
+              "value": "B상가에서 배달할 경우 비용",
+              "formula": null
+            },
+            {
+              "cell": "AD14",
+              "value": "A상가에서 배달할 경우 비용",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "E15",
+              "value": "평수",
+              "formula": null
+            },
+            {
+              "cell": "H15",
+              "value": 8,
+              "formula": null
+            },
+            {
+              "cell": "Y15",
+              "value": "주요 상권 거리가 1km이내",
+              "formula": null
+            },
+            {
+              "cell": "AD15",
+              "value": "주요 상권 거리가 2km 이내",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C17",
+              "value": "예상 마진율",
+              "formula": null
+            },
+            {
+              "cell": "E17",
+              "value": "구분",
+              "formula": null
+            },
+            {
+              "cell": "H17",
+              "value": "마진금액",
+              "formula": null
+            },
+            {
+              "cell": "K17",
+              "value": "마진율",
+              "formula": null
+            },
+            {
+              "cell": "Y17",
+              "value": "기본요금",
+              "formula": null
+            },
+            {
+              "cell": "Z17",
+              "value": 4000,
+              "formula": null
+            },
+            {
+              "cell": "AA17",
+              "value": "원",
+              "formula": null
+            },
+            {
+              "cell": "AD17",
+              "value": "기본요금",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "E18",
+              "value": "점주 1인 운영 시\n(매출 2,000만원 까지 적용가능)",
+              "formula": null
+            },
+            {
+              "cell": "H18",
+              "value": 8201566.604473498,
+              "formula": "=L3-K13-H21-H25-H29-H28-H22-H23-H26-H27"
+            },
+            {
+              "cell": "K18",
+              "value": 0.2535722621582761,
+              "formula": "=H18/$L$3"
+            }
+          ],
+          [
+            {
+              "cell": "E19",
+              "value": "점주 + 직원 운영 시",
+              "formula": null
+            },
+            {
+              "cell": "H19",
+              "value": 6032039.991973498,
+              "formula": "=L3-K13-H21-H25-H29-H28-H24-H22-H23-H26-H27"
+            },
+            {
+              "cell": "K19",
+              "value": 0.18649583670510225,
+              "formula": "=H19/$L$3"
+            },
+            {
+              "cell": "Y19",
+              "value": "추가요금",
+              "formula": null
+            },
+            {
+              "cell": "Z19",
+              "value": 500,
+              "formula": null
+            },
+            {
+              "cell": "AA19",
+              "value": "원",
+              "formula": null
+            },
+            {
+              "cell": "AB19",
+              "value": "(100m당 100원)",
+              "formula": null
+            },
+            {
+              "cell": "AD19",
+              "value": "추가요금",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "Y20",
+              "value": "배달료",
+              "formula": null
+            },
+            {
+              "cell": "Z20",
+              "value": "#REF!",
+              "formula": "=Z17*#REF!"
+            },
+            {
+              "cell": "AA20",
+              "value": "원",
+              "formula": null
+            },
+            {
+              "cell": "AD20",
+              "value": "배달료",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C21",
+              "value": "주요 지출 금액",
+              "formula": null
+            },
+            {
+              "cell": "E21",
+              "value": "고정비",
+              "formula": null
+            },
+            {
+              "cell": "F21",
+              "value": "월세",
+              "formula": null
+            },
+            {
+              "cell": "H21",
+              "value": 500000,
+              "formula": "='목표매출 산정자료'!F51"
+            },
+            {
+              "cell": "J21",
+              "value": "원",
+              "formula": null
+            },
+            {
+              "cell": "K21",
+              "value": 1.5458769914760342,
+              "formula": "=(H21/L3)*100"
+            },
+            {
+              "cell": "M21",
+              "value": "%",
+              "formula": null
+            },
+            {
+              "cell": "Y21",
+              "value": "부가세",
+              "formula": null
+            },
+            {
+              "cell": "Z21",
+              "value": "#REF!",
+              "formula": "=Z20*10%"
+            },
+            {
+              "cell": "AA21",
+              "value": 0.1,
+              "formula": null
+            },
+            {
+              "cell": "AD21",
+              "value": "부가세",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "F22",
+              "value": "공과금",
+              "formula": null
+            },
+            {
+              "cell": "H22",
+              "value": 705000,
+              "formula": "='목표매출 산정자료'!F52"
+            },
+            {
+              "cell": "K22",
+              "value": 2.179686557981208,
+              "formula": "=(H22/L3)*100"
+            },
+            {
+              "cell": "M22",
+              "value": "%",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "F23",
+              "value": "로열티",
+              "formula": null
+            },
+            {
+              "cell": "H23",
+              "value": 110000,
+              "formula": null
+            },
+            {
+              "cell": "J23",
+              "value": "원",
+              "formula": null
+            },
+            {
+              "cell": "K23",
+              "value": 0.3400929381247276,
+              "formula": "=(H23/L3)*100"
+            },
+            {
+              "cell": "M23",
+              "value": "%",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "F24",
+              "value": "인건비",
+              "formula": null
+            },
+            {
+              "cell": "H24",
+              "value": 2169526.6125,
+              "formula": "=SUM('목표매출 산정자료'!F31:F33)"
+            },
+            {
+              "cell": "J24",
+              "value": "원",
+              "formula": null
+            },
+            {
+              "cell": "K24",
+              "value": 6.707642545317384,
+              "formula": "=(H24/L3)*100"
+            },
+            {
+              "cell": "M24",
+              "value": "%",
+              "formula": null
+            },
+            {
+              "cell": "Y24",
+              "value": "차액",
+              "formula": null
+            },
+            {
+              "cell": "AD24",
+              "value": "#REF!",
+              "formula": "=#REF!-#REF!"
+            }
+          ],
+          [
+            {
+              "cell": "E25",
+              "value": "변동비",
+              "formula": null
+            },
+            {
+              "cell": "F25",
+              "value": "배달수수료",
+              "formula": null
+            },
+            {
+              "cell": "H25",
+              "value": 9153215.959076501,
+              "formula": "=SUM('목표매출 산정자료'!F39:'목표매출 산정자료'!F47)"
+            },
+            {
+              "cell": "J25",
+              "value": "원",
+              "formula": null
+            },
+            {
+              "cell": "K25",
+              "value": 28.29949189829521,
+              "formula": "=(H25/L3)*100"
+            },
+            {
+              "cell": "M25",
+              "value": "%",
+              "formula": null
+            },
+            {
+              "cell": "Y25",
+              "value": "1년 배달차액",
+              "formula": null
+            },
+            {
+              "cell": "AD25",
+              "value": "#REF!",
+              "formula": "=AD24*12"
+            }
+          ],
+          [
+            {
+              "cell": "M26",
+              "value": "%",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "M27",
+              "value": "%",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "F28",
+              "value": "퀵비용",
+              "formula": null
+            },
+            {
+              "cell": "H28",
+              "value": 736677.43645,
+              "formula": "=SUM('목표매출 산정자료'!F37:'목표매출 산정자료'!F38)"
+            },
+            {
+              "cell": "J28",
+              "value": "원",
+              "formula": null
+            },
+            {
+              "cell": "K28",
+              "value": 2.277625398295207,
+              "formula": "=(H28/L3)*100"
+            },
+            {
+              "cell": "M28",
+              "value": "%",
+              "formula": null
+            },
+            {
+              "cell": "Y28",
+              "value": "2년 배달차액",
+              "formula": null
+            },
+            {
+              "cell": "AD28",
+              "value": "#REF!",
+              "formula": "=AD24*24"
+            }
+          ],
+          [
+            {
+              "cell": "F29",
+              "value": "식자재+포장재",
+              "formula": null
+            },
+            {
+              "cell": "H29",
+              "value": 12937640,
+              "formula": "=SUM('목표매출 산정자료'!F77)"
+            },
+            {
+              "cell": "J29",
+              "value": "원",
+              "formula": null
+            },
+            {
+              "cell": "K29",
+              "value": 40,
+              "formula": "=(H29/L3)*100"
+            },
+            {
+              "cell": "M29",
+              "value": "%",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C31",
+              "value": "홀매출\n마진금액 구성",
+              "formula": null
+            },
+            {
+              "cell": "E31",
+              "value": "구분",
+              "formula": null
+            },
+            {
+              "cell": "H31",
+              "value": "마진금액",
+              "formula": null
+            },
+            {
+              "cell": "K31",
+              "value": "비고",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "E32",
+              "value": "목표 일매출",
+              "formula": null
+            },
+            {
+              "cell": "H32",
+              "value": 1240.5956164383563,
+              "formula": "=L7/((365/12)-(365/7/12))"
+            },
+            {
+              "cell": "K32",
+              "value": "하루",
+              "formula": null
+            },
+            {
+              "cell": "L32",
+              "value": 0.0563907098381071,
+              "formula": "=H32/22000"
+            },
+            {
+              "cell": "M32",
+              "value": "건",
+              "formula": null
+            },
+            {
+              "cell": "Y32",
+              "value": "A상가 임차금액",
+              "formula": null
+            },
+            {
+              "cell": "AD32",
+              "value": 500000,
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "E33",
+              "value": "예상 최초계약기간 총매출",
+              "formula": null
+            },
+            {
+              "cell": "H33",
+              "value": 776258.4000000001,
+              "formula": "=H32*((365/12)-(365/12/7))*2*12"
+            },
+            {
+              "cell": "K33",
+              "value": 1,
+              "formula": "=H33/H33"
+            },
+            {
+              "cell": "Y33",
+              "value": "1년 임차금액",
+              "formula": null
+            },
+            {
+              "cell": "AD33",
+              "value": 6000000,
+              "formula": "=AD32*12"
+            }
+          ],
+          [
+            {
+              "cell": "E34",
+              "value": "예상 원가금액",
+              "formula": null
+            },
+            {
+              "cell": "H34",
+              "value": 310503.36000000004,
+              "formula": "=H33*((K29)/100)"
+            },
+            {
+              "cell": "K34",
+              "value": 0.39999999999999997,
+              "formula": "=H34/H33"
+            },
+            {
+              "cell": "Y34",
+              "value": "2년 임차금액",
+              "formula": null
+            },
+            {
+              "cell": "AD34",
+              "value": 12000000,
+              "formula": "=AD32*24"
+            }
+          ],
+          [
+            {
+              "cell": "E35",
+              "value": "예상 남는 마진금액",
+              "formula": null
+            },
+            {
+              "cell": "H35",
+              "value": 465755.0400000001,
+              "formula": "=H33-H34"
+            },
+            {
+              "cell": "K35",
+              "value": 0.6,
+              "formula": "=H35/H33"
+            }
+          ],
+          [
+            {
+              "cell": "E36",
+              "value": "프로모션 1 (간판지원)",
+              "formula": null
+            },
+            {
+              "cell": "H36",
+              "value": 1000000,
+              "formula": null
+            },
+            {
+              "cell": "K36",
+              "value": "기간 내 계약 시 한정 혜택",
+              "formula": null
+            },
+            {
+              "cell": "Y36",
+              "value": "B상가 임차금액",
+              "formula": null
+            },
+            {
+              "cell": "AD36",
+              "value": 800000,
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "E37",
+              "value": "프로모션 2 (의탁자지원)",
+              "formula": null
+            },
+            {
+              "cell": "H37",
+              "value": 3000000,
+              "formula": null
+            },
+            {
+              "cell": "K37",
+              "value": "기간 내 계약 시 한정 혜택",
+              "formula": null
+            },
+            {
+              "cell": "Y37",
+              "value": "1년 임차금액",
+              "formula": null
+            },
+            {
+              "cell": "AD37",
+              "value": 9600000,
+              "formula": "=AD36*12"
+            }
+          ],
+          [
+            {
+              "cell": "E38",
+              "value": "홀 운영 시 추가 비용",
+              "formula": null
+            },
+            {
+              "cell": "H38",
+              "value": 6800000,
+              "formula": null
+            },
+            {
+              "cell": "K38",
+              "value": "키오스크 180만원, 인테리어비 500만원",
+              "formula": null
+            },
+            {
+              "cell": "Y38",
+              "value": "2년 임차금액",
+              "formula": null
+            },
+            {
+              "cell": "AD38",
+              "value": 19200000,
+              "formula": "=AD36*24"
+            }
+          ],
+          [
+            {
+              "cell": "E39",
+              "value": "최종 마진 예상비용(2년 장사 시)",
+              "formula": null
+            },
+            {
+              "cell": "H39",
+              "value": -2334244.96,
+              "formula": "=H33-H34+H36+H37-H38"
+            },
+            {
+              "cell": "K39",
+              "value": "월",
+              "formula": null
+            },
+            {
+              "cell": "L39",
+              "value": -97260.20666666667,
+              "formula": "=H39/24"
+            },
+            {
+              "cell": "M39",
+              "value": "만원",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C40",
+              "value": "▶ 안내사항",
+              "formula": null
+            },
+            {
+              "cell": "Y40",
+              "value": "A상가 대비 B상가 임차금액 효율",
+              "formula": null
+            },
+            {
+              "cell": "AD40",
+              "value": "#REF!",
+              "formula": "=AD38-AD34-AD28"
+            }
+          ],
+          [
+            {
+              "cell": "C41",
+              "value": "※ 정직원 급여는 '250만원 + 사업주부담 4대보험', 파트타이머 급여는 '주 5일/일 3시간/최저시급 10,030원/주휴수당 적용 기준으로 4대보험'까지 적용되었습니다.",
+              "formula": null
+            },
+            {
+              "cell": "Y41",
+              "value": "B상가 대비 A상가 임차금액 효율",
+              "formula": null
+            },
+            {
+              "cell": "AD41",
+              "value": "#REF!",
+              "formula": "=AD34-AD38+AD28"
+            }
+          ],
+          [
+            {
+              "cell": "C42",
+              "value": "※ 관리비는 방역업체, 보안업체, 화재보험(20평기준), 정수기, 기장료, 전화세, 인터넷, 푸드테크(월2만원), 로열티(월10만원) 입니다. (vat별도)",
+              "formula": null
+            },
+            {
+              "cell": "Y42",
+              "value": "A상가 월별 효율 금액",
+              "formula": null
+            },
+            {
+              "cell": "AD42",
+              "value": "#REF!",
+              "formula": "=AD40/24"
+            }
+          ],
+          [
+            {
+              "cell": "C43",
+              "value": "※ 본 자료는 세전 영업이익 기준이며, 퇴직금 및 소득세 등은 개인별 운영 상황에 따라 다를 수 있습니다.",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C44",
+              "value": "※ 위 자료는 예비점주의 매출을 보장하는 자료가 아니며, 목표매출 또는 목표마진율 달성을 위해 필요한 매출의 크기를 알아보는 예시자료입니다.",
+              "formula": null
+            },
+            {
+              "cell": "Y44",
+              "value": "B상가 월별 효율 금액",
+              "formula": null
+            },
+            {
+              "cell": "AD44",
+              "value": "#REF!",
+              "formula": "=AD41/24"
+            }
+          ]
+        ]
+      },
+      {
+        "title": "목표매출 산정자료",
+        "max_row": 77,
+        "max_column": 12,
+        "nonempty_count": 246,
+        "formula_count": 89,
+        "merged_ranges": [
+          "G21:H21",
+          "C6:D6",
+          "B60:D60",
+          "C62:D62",
+          "C15:D15",
+          "G64:H65",
+          "G71:H71",
+          "G23:H23",
+          "C64:D64",
+          "B34:D34",
+          "C54:D54",
+          "C63:D63",
+          "C41:D41",
+          "G57:H57",
+          "C50:D50",
+          "G66:H66",
+          "C56:D56",
+          "C43:D43",
+          "B31:B33",
+          "G34:H34"
+        ],
+        "samples": [
+          [
+            {
+              "cell": "B1",
+              "value": "※ 아래표는 목표매출을 기준으로 퍼센티지가 작성된 예시입니다.\n※ 아래표는 점주의 상담용으로 제작되었으며, 매출을 보장하는 자료는 아닙니다. ",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "B2",
+              "value": "분류",
+              "formula": null
+            },
+            {
+              "cell": "C2",
+              "value": "상세내역",
+              "formula": null
+            },
+            {
+              "cell": "E2",
+              "value": "퍼센티지",
+              "formula": null
+            },
+            {
+              "cell": "F2",
+              "value": "합계",
+              "formula": null
+            },
+            {
+              "cell": "G2",
+              "value": "비고",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "B3",
+              "value": "배달매출",
+              "formula": null
+            },
+            {
+              "cell": "C3",
+              "value": "배달의민족",
+              "formula": null
+            },
+            {
+              "cell": "E3",
+              "value": 0.063,
+              "formula": null
+            },
+            {
+              "cell": "F3",
+              "value": 2037678.3,
+              "formula": "=목표!L$3*E3"
+            },
+            {
+              "cell": "G3",
+              "value": "가게배달 이용",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C4",
+              "value": "배민원",
+              "formula": null
+            },
+            {
+              "cell": "E4",
+              "value": 0.4112,
+              "formula": null
+            },
+            {
+              "cell": "F4",
+              "value": 13299893.92,
+              "formula": "=목표!L$3*E4"
+            }
+          ],
+          [
+            {
+              "cell": "C5",
+              "value": "요기요",
+              "formula": null
+            },
+            {
+              "cell": "E5",
+              "value": 0.075,
+              "formula": null
+            },
+            {
+              "cell": "F5",
+              "value": 2425807.5,
+              "formula": "=목표!L$3*E5"
+            }
+          ],
+          [
+            {
+              "cell": "C6",
+              "value": "쿠팡이츠",
+              "formula": null
+            },
+            {
+              "cell": "E6",
+              "value": 0.3516,
+              "formula": null
+            },
+            {
+              "cell": "F6",
+              "value": 11372185.56,
+              "formula": "=목표!L$3*E6"
+            }
+          ],
+          [
+            {
+              "cell": "C7",
+              "value": "지역배달",
+              "formula": null
+            },
+            {
+              "cell": "E7",
+              "value": 0.032,
+              "formula": null
+            },
+            {
+              "cell": "F7",
+              "value": 1035011.2000000001,
+              "formula": "=목표!L$3*E7"
+            }
+          ],
+          [
+            {
+              "cell": "C8",
+              "value": "자사앱",
+              "formula": null
+            },
+            {
+              "cell": "E8",
+              "value": 0.0243,
+              "formula": null
+            },
+            {
+              "cell": "F8",
+              "value": 785961.63,
+              "formula": "=목표!L$3*E8"
+            }
+          ],
+          [
+            {
+              "cell": "E9",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "F9",
+              "value": 0,
+              "formula": "=목표!L$3*E9"
+            }
+          ],
+          [
+            {
+              "cell": "B10",
+              "value": "배달 매출합계",
+              "formula": null
+            },
+            {
+              "cell": "E10",
+              "value": 0.9571000000000001,
+              "formula": "=SUM(E3:E9)"
+            },
+            {
+              "cell": "F10",
+              "value": 30956538.11,
+              "formula": "=SUM(F3:F9)"
+            }
+          ],
+          [
+            {
+              "cell": "B11",
+              "value": "분류",
+              "formula": null
+            },
+            {
+              "cell": "C11",
+              "value": "상세내역",
+              "formula": null
+            },
+            {
+              "cell": "E11",
+              "value": "퍼센티지",
+              "formula": null
+            },
+            {
+              "cell": "F11",
+              "value": "합계",
+              "formula": null
+            },
+            {
+              "cell": "G11",
+              "value": "비고",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "B12",
+              "value": "포장매출",
+              "formula": null
+            },
+            {
+              "cell": "C12",
+              "value": "배달의민족",
+              "formula": null
+            },
+            {
+              "cell": "E12",
+              "value": 0.0123,
+              "formula": null
+            },
+            {
+              "cell": "F12",
+              "value": 397832.43,
+              "formula": "=목표!L$3*E12"
+            }
+          ],
+          [
+            {
+              "cell": "C13",
+              "value": "쿠팡이츠",
+              "formula": null
+            },
+            {
+              "cell": "E13",
+              "value": 0.0025,
+              "formula": null
+            },
+            {
+              "cell": "F13",
+              "value": 80860.25,
+              "formula": "=목표!L$3*E13"
+            }
+          ],
+          [
+            {
+              "cell": "C14",
+              "value": "요기요",
+              "formula": null
+            },
+            {
+              "cell": "E14",
+              "value": 0.0074,
+              "formula": null
+            },
+            {
+              "cell": "F14",
+              "value": 239346.34,
+              "formula": "=목표!L$3*E14"
+            }
+          ],
+          [
+            {
+              "cell": "C15",
+              "value": "지역배달",
+              "formula": null
+            },
+            {
+              "cell": "E15",
+              "value": 0.0115,
+              "formula": null
+            },
+            {
+              "cell": "F15",
+              "value": 371957.14999999997,
+              "formula": "=목표!L$3*E15"
+            }
+          ],
+          [
+            {
+              "cell": "C16",
+              "value": "홀 포장",
+              "formula": null
+            },
+            {
+              "cell": "E16",
+              "value": 0.0082,
+              "formula": null
+            },
+            {
+              "cell": "F16",
+              "value": 265221.62,
+              "formula": "=목표!L$3*E16"
+            }
+          ],
+          [
+            {
+              "cell": "F17",
+              "value": 0,
+              "formula": "=목표!L$3*E17"
+            }
+          ],
+          [
+            {
+              "cell": "F18",
+              "value": 0,
+              "formula": "=목표!L$3*E18"
+            }
+          ],
+          [
+            {
+              "cell": "B19",
+              "value": "포장 매출합계",
+              "formula": null
+            },
+            {
+              "cell": "E19",
+              "value": 0.0419,
+              "formula": "=F19/$F$24"
+            },
+            {
+              "cell": "F19",
+              "value": 1355217.79,
+              "formula": "=SUM(F12:F18)"
+            }
+          ],
+          [
+            {
+              "cell": "B20",
+              "value": "분류",
+              "formula": null
+            },
+            {
+              "cell": "C20",
+              "value": "상세내역",
+              "formula": null
+            },
+            {
+              "cell": "E20",
+              "value": "퍼센티지",
+              "formula": null
+            },
+            {
+              "cell": "F20",
+              "value": "합계",
+              "formula": null
+            },
+            {
+              "cell": "G20",
+              "value": "비고",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "B21",
+              "value": "홀 매출",
+              "formula": null
+            },
+            {
+              "cell": "C21",
+              "value": "카드매출",
+              "formula": null
+            },
+            {
+              "cell": "E21",
+              "value": 0.0005,
+              "formula": null
+            },
+            {
+              "cell": "F21",
+              "value": 16172.050000000001,
+              "formula": "=목표!L$3*E21"
+            }
+          ],
+          [
+            {
+              "cell": "C22",
+              "value": "현금매출",
+              "formula": null
+            },
+            {
+              "cell": "E22",
+              "value": 0.0005,
+              "formula": null
+            },
+            {
+              "cell": "F22",
+              "value": 16172.050000000001,
+              "formula": "=목표!L$3*E22"
+            }
+          ],
+          [
+            {
+              "cell": "B23",
+              "value": "홀 매출합계",
+              "formula": null
+            },
+            {
+              "cell": "E23",
+              "value": 0.001,
+              "formula": "=F23/$F$24"
+            },
+            {
+              "cell": "F23",
+              "value": 32344.100000000002,
+              "formula": "=SUM(F21:F22)"
+            }
+          ],
+          [
+            {
+              "cell": "B24",
+              "value": "전체 매출합계",
+              "formula": null
+            },
+            {
+              "cell": "E24",
+              "value": 1,
+              "formula": "=E10+E19+E23"
+            },
+            {
+              "cell": "F24",
+              "value": 32344100,
+              "formula": "=F23+F19+F10"
+            }
+          ],
+          [
+            {
+              "cell": "B25",
+              "value": "기타 지표",
+              "formula": null
+            },
+            {
+              "cell": "C25",
+              "value": "입력",
+              "formula": null
+            },
+            {
+              "cell": "E25",
+              "value": 0,
+              "formula": "=F25/$F$24"
+            }
+          ],
+          [
+            {
+              "cell": "C26",
+              "value": "입력",
+              "formula": null
+            },
+            {
+              "cell": "E26",
+              "value": 0,
+              "formula": "=F26/$F$24"
+            }
+          ],
+          [
+            {
+              "cell": "C27",
+              "value": "입력",
+              "formula": null
+            },
+            {
+              "cell": "E27",
+              "value": 0,
+              "formula": "=F27/$F$24"
+            },
+            {
+              "cell": "F27",
+              "value": 0,
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C28",
+              "value": "할인총합",
+              "formula": null
+            },
+            {
+              "cell": "E28",
+              "value": 0,
+              "formula": "=F28/$F$24"
+            },
+            {
+              "cell": "F28",
+              "value": 0,
+              "formula": "=SUM(F25:F27)"
+            }
+          ],
+          [
+            {
+              "cell": "B30",
+              "value": "인건비",
+              "formula": null
+            },
+            {
+              "cell": "C30",
+              "value": "상세내역",
+              "formula": null
+            },
+            {
+              "cell": "E30",
+              "value": "퍼센티지",
+              "formula": null
+            },
+            {
+              "cell": "F30",
+              "value": "합계",
+              "formula": null
+            },
+            {
+              "cell": "G30",
+              "value": "비고",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "B31",
+              "value": "인건비",
+              "formula": null
+            },
+            {
+              "cell": "C31",
+              "value": "정직원",
+              "formula": null
+            },
+            {
+              "cell": "E31",
+              "value": 0,
+              "formula": "=F31/$F$24"
+            },
+            {
+              "cell": "F31",
+              "value": 0,
+              "formula": "=목표!I11*2500000"
+            },
+            {
+              "cell": "G31",
+              "value": "주 5일, 일 9시간",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C32",
+              "value": "파트타이머",
+              "formula": null
+            },
+            {
+              "cell": "E32",
+              "value": 0.060702647468935604,
+              "formula": "=F32/$F$24"
+            },
+            {
+              "cell": "F32",
+              "value": 1963372.5,
+              "formula": "=목표!L11*(3*5*4.35*10030*1.2)"
+            },
+            {
+              "cell": "G32",
+              "value": "((일 3시간 X 주 5회)+주휴수당)*최저",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C33",
+              "value": "4대보험비",
+              "formula": null
+            },
+            {
+              "cell": "E33",
+              "value": 0.0063737779842382375,
+              "formula": "=F33/$F$24"
+            },
+            {
+              "cell": "F33",
+              "value": 206154.1125,
+              "formula": "=(F31+F32)*0.105"
+            },
+            {
+              "cell": "G33",
+              "value": "월급 * 10.5%(사업주부담)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "B34",
+              "value": "인건비 합계",
+              "formula": null
+            },
+            {
+              "cell": "E34",
+              "value": 0.06707642545317384,
+              "formula": "=F34/$F$24"
+            },
+            {
+              "cell": "F34",
+              "value": 2169526.6125,
+              "formula": "=SUM(F31:F33)"
+            }
+          ],
+          [
+            {
+              "cell": "B36",
+              "value": "변동비용",
+              "formula": null
+            },
+            {
+              "cell": "C36",
+              "value": "상세내역",
+              "formula": null
+            },
+            {
+              "cell": "E36",
+              "value": "퍼센티지",
+              "formula": null
+            },
+            {
+              "cell": "F36",
+              "value": "합계",
+              "formula": null
+            },
+            {
+              "cell": "G36",
+              "value": "비고",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "B37",
+              "value": "기타비용",
+              "formula": null
+            },
+            {
+              "cell": "C37",
+              "value": "퀵비",
+              "formula": null
+            },
+            {
+              "cell": "E37",
+              "value": 0.0196845,
+              "formula": "=F37/$F$24"
+            },
+            {
+              "cell": "F37",
+              "value": 636677.43645,
+              "formula": "=(SUM(F3,F7,F8)*16.5%)"
+            },
+            {
+              "cell": "G37",
+              "value": "본점 기준(15%+부가세)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C38",
+              "value": "퀵관리비",
+              "formula": null
+            },
+            {
+              "cell": "E38",
+              "value": 0.0030917539829520687,
+              "formula": "=F38/$F$24"
+            },
+            {
+              "cell": "F38",
+              "value": 100000,
+              "formula": null
+            },
+            {
+              "cell": "G38",
+              "value": "퀵가맹비(월)",
+              "formula": null
+            },
+            {
+              "cell": "J38",
+              "value": "평균 객단가",
+              "formula": null
+            },
+            {
+              "cell": "K38",
+              "value": 20000,
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C39",
+              "value": "배민수수료",
+              "formula": null
+            },
+            {
+              "cell": "E39",
+              "value": 0.020651399999999997,
+              "formula": "=F39/$F$24"
+            },
+            {
+              "cell": "F39",
+              "value": 667950.9467399999,
+              "formula": "=F3 * ( ((0.068 + 0.03) * 1.1) + (($K$39 * 1.1) / $K$38) )"
+            },
+            {
+              "cell": "G39",
+              "value": 0.078,
+              "formula": null
+            },
+            {
+              "cell": "J39",
+              "value": "지역별 기본대행료",
+              "formula": null
+            },
+            {
+              "cell": "K39",
+              "value": 4000,
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C40",
+              "value": "배민one",
+              "formula": null
+            },
+            {
+              "cell": "E40",
+              "value": 0.12574496,
+              "formula": "=F40/$F$24"
+            },
+            {
+              "cell": "F40",
+              "value": 4067107.560736,
+              "formula": "=F4 * ( ((0.078 + 0.03) * 1.1) + ((3400 * 1.1) / $K$38) )"
+            },
+            {
+              "cell": "G40",
+              "value": 0.068,
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C41",
+              "value": "요기요수수료",
+              "formula": null
+            },
+            {
+              "cell": "E41",
+              "value": 0.025987500000000004,
+              "formula": "=F41/$F$24"
+            },
+            {
+              "cell": "F41",
+              "value": 840542.2987500001,
+              "formula": "=F5 * ( ((0.085 + 0.03) * 1.1) + (($K$39 * 1.1) / $K$38) )"
+            },
+            {
+              "cell": "G41",
+              "value": 0.085,
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C42",
+              "value": "쿠팡이츠수수료",
+              "formula": null
+            },
+            {
+              "cell": "E42",
+              "value": 0.10751928000000002,
+              "formula": "=F42/$F$24"
+            },
+            {
+              "cell": "F42",
+              "value": 3477614.3442480005,
+              "formula": "=F6 * ( ((0.078 + 0.03) * 1.1) + ((3400 * 1.1) / $K$38) )"
+            },
+            {
+              "cell": "G42",
+              "value": 0.078,
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C43",
+              "value": "지역배달수수료",
+              "formula": null
+            },
+            {
+              "cell": "E43",
+              "value": 0,
+              "formula": "=F43/$F$24"
+            }
+          ],
+          [
+            {
+              "cell": "B44",
+              "value": "운영잡비",
+              "formula": null
+            },
+            {
+              "cell": "C44",
+              "value": "일회성지출",
+              "formula": null
+            },
+            {
+              "cell": "E44",
+              "value": 0.0015458769914760344,
+              "formula": "=F44/$F$24"
+            },
+            {
+              "cell": "F44",
+              "value": 50000,
+              "formula": null
+            },
+            {
+              "cell": "G44",
+              "value": "급히 사용하시는 매장현금or카드",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C45",
+              "value": "의약품지출",
+              "formula": null
+            },
+            {
+              "cell": "E45",
+              "value": 0.0015458769914760344,
+              "formula": "=F45/$F$24"
+            },
+            {
+              "cell": "F45",
+              "value": 50000,
+              "formula": null
+            },
+            {
+              "cell": "G45",
+              "value": "다치셨을때 응급처치용 의료품 등",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C46",
+              "value": "항목입력",
+              "formula": null
+            },
+            {
+              "cell": "E46",
+              "value": 0,
+              "formula": "=F46/$F$24"
+            }
+          ],
+          [
+            {
+              "cell": "B47",
+              "value": "매장카드수수료",
+              "formula": null
+            },
+            {
+              "cell": "E47",
+              "value": 2.5000000000000002e-08,
+              "formula": "=F47/$F$24"
+            },
+            {
+              "cell": "F47",
+              "value": 0.8086025000000001,
+              "formula": "=F21*0.005%"
+            },
+            {
+              "cell": "G47",
+              "value": "전체 매출 카드수수료(배달결제수수료X)\n3억이하 0.5%",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "B48",
+              "value": "변동비용 합계",
+              "formula": null
+            },
+            {
+              "cell": "E48",
+              "value": 0.3057711729659042,
+              "formula": "=F48/$F$24"
+            },
+            {
+              "cell": "F48",
+              "value": 9889893.395526502,
+              "formula": "=SUM(F37:F47)"
+            }
+          ],
+          [
+            {
+              "cell": "B50",
+              "value": "관리비용",
+              "formula": null
+            },
+            {
+              "cell": "C50",
+              "value": "상세내역",
+              "formula": null
+            },
+            {
+              "cell": "E50",
+              "value": "퍼센티지",
+              "formula": null
+            },
+            {
+              "cell": "F50",
+              "value": "합계",
+              "formula": null
+            },
+            {
+              "cell": "G50",
+              "value": "비고",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "B51",
+              "value": "임대료",
+              "formula": null
+            },
+            {
+              "cell": "C51",
+              "value": "임대료",
+              "formula": null
+            },
+            {
+              "cell": "E51",
+              "value": 0.015458769914760343,
+              "formula": "=F51/$F$24"
+            },
+            {
+              "cell": "F51",
+              "value": 500000,
+              "formula": null
+            },
+            {
+              "cell": "G51",
+              "value": 550000,
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "B52",
+              "value": "공과금",
+              "formula": null
+            },
+            {
+              "cell": "C52",
+              "value": "전기세/수도/가스",
+              "formula": null
+            },
+            {
+              "cell": "E52",
+              "value": 0.021796865579812082,
+              "formula": "=F52/$F$24"
+            },
+            {
+              "cell": "F52",
+              "value": 705000,
+              "formula": null
+            },
+            {
+              "cell": "J52",
+              "value": "전기50",
+              "formula": null
+            },
+            {
+              "cell": "K52",
+              "value": "가스16",
+              "formula": null
+            },
+            {
+              "cell": "L52",
+              "value": "수도3",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "B53",
+              "value": "기타",
+              "formula": null
+            },
+            {
+              "cell": "C53",
+              "value": "세스코/보안/보험 등",
+              "formula": null
+            },
+            {
+              "cell": "E53",
+              "value": 0,
+              "formula": "=F53/$F$24"
+            },
+            {
+              "cell": "G53",
+              "value": "정수기,인터넷,보안 포함",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C54",
+              "value": "기장료/소모품",
+              "formula": null
+            },
+            {
+              "cell": "E54",
+              "value": 0.012367015931808275,
+              "formula": "=F54/$F$24"
+            },
+            {
+              "cell": "F54",
+              "value": 400000,
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C55",
+              "value": "푸드테크",
+              "formula": null
+            },
+            {
+              "cell": "E55",
+              "value": 0.0006801858762494551,
+              "formula": "=F55/$F$24"
+            },
+            {
+              "cell": "F55",
+              "value": 22000,
+              "formula": null
+            },
+            {
+              "cell": "G55",
+              "value": "필수사항",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "E56",
+              "value": 0,
+              "formula": "=F56/$F$24"
+            }
+          ],
+          [
+            {
+              "cell": "E57",
+              "value": 0,
+              "formula": "=F57/$F$24"
+            }
+          ],
+          [
+            {
+              "cell": "E58",
+              "value": 0,
+              "formula": "=F58/$F$24"
+            }
+          ],
+          [
+            {
+              "cell": "E59",
+              "value": 0,
+              "formula": "=F59/$F$24"
+            }
+          ],
+          [
+            {
+              "cell": "B60",
+              "value": "관리비용 합계",
+              "formula": null
+            },
+            {
+              "cell": "E60",
+              "value": 0.05030283730263015,
+              "formula": "=F60/$F$24"
+            },
+            {
+              "cell": "F60",
+              "value": 1627000,
+              "formula": "=SUM(F51:F59)"
+            }
+          ],
+          [
+            {
+              "cell": "B62",
+              "value": "식자재물류비용",
+              "formula": null
+            },
+            {
+              "cell": "C62",
+              "value": "상세내역",
+              "formula": null
+            },
+            {
+              "cell": "E62",
+              "value": "퍼센티지",
+              "formula": null
+            },
+            {
+              "cell": "F62",
+              "value": "합계",
+              "formula": null
+            },
+            {
+              "cell": "G62",
+              "value": "비고",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "B63",
+              "value": "물류",
+              "formula": null
+            },
+            {
+              "cell": "C63",
+              "value": "식자재",
+              "formula": null
+            },
+            {
+              "cell": "E63",
+              "value": 0.36,
+              "formula": "=F63/$F$24"
+            },
+            {
+              "cell": "F63",
+              "value": 11643876,
+              "formula": "=F24*0.36"
+            },
+            {
+              "cell": "G63",
+              "value": "(매출-(퀵비/2))*44%",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C64",
+              "value": "포장용품",
+              "formula": null
+            },
+            {
+              "cell": "E64",
+              "value": 0.04,
+              "formula": "=F64/$F$24"
+            },
+            {
+              "cell": "F64",
+              "value": 1293764,
+              "formula": "=F24*0.04"
+            },
+            {
+              "cell": "G64",
+              "value": "식자재에 통합계산(+리뷰이벤트까지)",
+              "formula": null
+            }
+          ]
+        ]
+      },
+      {
+        "title": "Sheet1",
+        "max_row": 13,
+        "max_column": 17,
+        "nonempty_count": 16,
+        "formula_count": 0,
+        "merged_ranges": [],
+        "samples": [
+          [
+            {
+              "cell": "O6",
+              "value": "발산",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "O7",
+              "value": "인건비(직원인지/알바인지)",
+              "formula": null
+            },
+            {
+              "cell": "P7",
+              "value": "200~220",
+              "formula": null
+            },
+            {
+              "cell": "Q7",
+              "value": "1명",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "O8",
+              "value": "임대료   ",
+              "formula": null
+            },
+            {
+              "cell": "P8",
+              "value": "93만원",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "O9",
+              "value": "전기세/수도/가스   ",
+              "formula": null
+            },
+            {
+              "cell": "P9",
+              "value": "전기 3~40, 여름 6~70, 수도 8~9, 가스 70",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "O10",
+              "value": "세스코/보안/보험 등   ",
+              "formula": null
+            },
+            {
+              "cell": "P10",
+              "value": "보험 30,000원 / ",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "O11",
+              "value": "기장료/소모품   ",
+              "formula": null
+            },
+            {
+              "cell": "P11",
+              "value": "88,000원",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "O12",
+              "value": "푸드테크   ",
+              "formula": null
+            },
+            {
+              "cell": "P12",
+              "value": "22,000원",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "O13",
+              "value": "인터넷",
+              "formula": null
+            },
+            {
+              "cell": "P13",
+              "value": "3만원",
+              "formula": null
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/home/ubuntu/onboarding_sources/v1_samcheop/v1(ьВ╝ь▓йы╢ДьЛЭ)/ьВ╝ь▓йы╢ДьЛЭ ъ░Аыз╣ъ░АьЭ┤ыУЬ ьЮРыгМ.xlsx",
+    "name": "ьВ╝ь▓йы╢ДьЛЭ ъ░Аыз╣ъ░АьЭ┤ыУЬ ьЮРыгМ.xlsx",
+    "sheets": [
+      {
+        "title": "수도권 매장",
+        "max_row": 74,
+        "max_column": 7,
+        "nonempty_count": 432,
+        "formula_count": 0,
+        "merged_ranges": [],
+        "samples": [
+          [
+            {
+              "cell": "B1",
+              "value": "삼첩분식 계약 매장 정보",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A3",
+              "value": "지역",
+              "formula": null
+            },
+            {
+              "cell": "B3",
+              "value": "매장명",
+              "formula": null
+            },
+            {
+              "cell": "D3",
+              "value": "최초 계약일",
+              "formula": null
+            },
+            {
+              "cell": "E3",
+              "value": "25년 운영일 수 ",
+              "formula": null
+            },
+            {
+              "cell": "F3",
+              "value": "25년 매출",
+              "formula": null
+            },
+            {
+              "cell": "G3",
+              "value": "주소",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A4",
+              "value": "서울",
+              "formula": null
+            },
+            {
+              "cell": "B4",
+              "value": "발산점",
+              "formula": null
+            },
+            {
+              "cell": "D4",
+              "value": "2023-10-12 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E4",
+              "value": 349,
+              "formula": null
+            },
+            {
+              "cell": "F4",
+              "value": 415155900,
+              "formula": null
+            },
+            {
+              "cell": "G4",
+              "value": "서울특별시 강서구 강서로 322, 좌측 1층 104호(내발산동)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A5",
+              "value": "서울",
+              "formula": null
+            },
+            {
+              "cell": "B5",
+              "value": "대치점",
+              "formula": null
+            },
+            {
+              "cell": "D5",
+              "value": "2023-10-21 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E5",
+              "value": 343,
+              "formula": null
+            },
+            {
+              "cell": "F5",
+              "value": 144303500,
+              "formula": null
+            },
+            {
+              "cell": "G5",
+              "value": "서울특별시 강남구 남부순환로 2917, 청실종합상가 지하 1층 8호 (대치동)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A6",
+              "value": "서울",
+              "formula": null
+            },
+            {
+              "cell": "B6",
+              "value": "숭실대점",
+              "formula": null
+            },
+            {
+              "cell": "D6",
+              "value": "2024-12-03 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E6",
+              "value": 302,
+              "formula": null
+            },
+            {
+              "cell": "F6",
+              "value": 279162700,
+              "formula": null
+            },
+            {
+              "cell": "G6",
+              "value": "서울특별시 동작구 상도로37길 26, 1층(상도1동)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A7",
+              "value": "서울",
+              "formula": null
+            },
+            {
+              "cell": "B7",
+              "value": "건대점",
+              "formula": null
+            },
+            {
+              "cell": "D7",
+              "value": "2022-10-20 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E7",
+              "value": 312,
+              "formula": null
+            },
+            {
+              "cell": "F7",
+              "value": 273325400,
+              "formula": null
+            },
+            {
+              "cell": "G7",
+              "value": "서울특별시 광진구 자양로23길 38, 1층 101호",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A8",
+              "value": "서울",
+              "formula": null
+            },
+            {
+              "cell": "B8",
+              "value": "수유점",
+              "formula": null
+            },
+            {
+              "cell": "D8",
+              "value": "2023-06-07 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E8",
+              "value": 354,
+              "formula": null
+            },
+            {
+              "cell": "F8",
+              "value": 222288500,
+              "formula": null
+            },
+            {
+              "cell": "G8",
+              "value": "서울특별시 강북구 도봉로97길 76",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A9",
+              "value": "서울",
+              "formula": null
+            },
+            {
+              "cell": "B9",
+              "value": "면목점",
+              "formula": null
+            },
+            {
+              "cell": "D9",
+              "value": "2022-12-08 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E9",
+              "value": 175,
+              "formula": null
+            },
+            {
+              "cell": "F9",
+              "value": 73395100,
+              "formula": null
+            },
+            {
+              "cell": "G9",
+              "value": "서울특별시 중랑구 면목로51길 13 , 1층",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A10",
+              "value": "서울",
+              "formula": null
+            },
+            {
+              "cell": "B10",
+              "value": "공덕점_홀",
+              "formula": null
+            },
+            {
+              "cell": "D10",
+              "value": "2024-03-07 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E10",
+              "value": 355,
+              "formula": null
+            },
+            {
+              "cell": "F10",
+              "value": 425900300,
+              "formula": null
+            },
+            {
+              "cell": "G10",
+              "value": "서울특별시 마포구 마포대로 63-8, 지하1층 70호",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A11",
+              "value": "서울",
+              "formula": null
+            },
+            {
+              "cell": "B11",
+              "value": "홍대점",
+              "formula": null
+            },
+            {
+              "cell": "D11",
+              "value": "2025-12-11 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E11",
+              "value": 20,
+              "formula": null
+            },
+            {
+              "cell": "F11",
+              "value": 20075560,
+              "formula": null
+            },
+            {
+              "cell": "G11",
+              "value": "서울특별시 마포구 월드컵북로5나길 18, 111-1호 (서교동, 서교동 대우미래사랑)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A12",
+              "value": "서울",
+              "formula": null
+            },
+            {
+              "cell": "B12",
+              "value": "은평점",
+              "formula": null
+            },
+            {
+              "cell": "D12",
+              "value": "2021-12-06 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E12",
+              "value": 332,
+              "formula": null
+            },
+            {
+              "cell": "F12",
+              "value": 371818970,
+              "formula": null
+            },
+            {
+              "cell": "G12",
+              "value": "서울특별시 은평구 응암로11길 3 (응암동) ,1층 7호",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A13",
+              "value": "서울",
+              "formula": null
+            },
+            {
+              "cell": "B13",
+              "value": "구로점",
+              "formula": null
+            },
+            {
+              "cell": "D13",
+              "value": "2022-04-25 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E13",
+              "value": 273,
+              "formula": null
+            },
+            {
+              "cell": "F13",
+              "value": 287259400,
+              "formula": null
+            },
+            {
+              "cell": "G13",
+              "value": "서울특별시 구로구 가마산로 284, 1층 105호",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A14",
+              "value": "서울",
+              "formula": null
+            },
+            {
+              "cell": "B14",
+              "value": "불광점",
+              "formula": null
+            },
+            {
+              "cell": "D14",
+              "value": "2025-03-06 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E14",
+              "value": 277,
+              "formula": null
+            },
+            {
+              "cell": "F14",
+              "value": 165654560,
+              "formula": null
+            },
+            {
+              "cell": "G14",
+              "value": "서울특별시 은평구 불광로 122-15, 1층 101호(불광동, 주영빌트)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A15",
+              "value": "서울",
+              "formula": null
+            },
+            {
+              "cell": "B15",
+              "value": "사당점",
+              "formula": null
+            },
+            {
+              "cell": "D15",
+              "value": "2026-06-01 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E15",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "F15",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "G15",
+              "value": "서울특별시 동작구 사당로27길 92, 지하 1층(사당동)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A16",
+              "value": "서울",
+              "formula": null
+            },
+            {
+              "cell": "B16",
+              "value": "청량리점",
+              "formula": null
+            },
+            {
+              "cell": "D16",
+              "value": "2022-06-16 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E16",
+              "value": 360,
+              "formula": null
+            },
+            {
+              "cell": "F16",
+              "value": 184144245,
+              "formula": null
+            },
+            {
+              "cell": "G16",
+              "value": "서울특별시 동대문구 전농로 192, 상가동 2층 201호",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A17",
+              "value": "서울",
+              "formula": null
+            },
+            {
+              "cell": "B17",
+              "value": "목동점",
+              "formula": null
+            },
+            {
+              "cell": "D17",
+              "value": "2026-02-03 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E17",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "F17",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "G17",
+              "value": "서울특별시 양천구 목동중앙본로7길 37, 1층 3호(목동)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A18",
+              "value": "서울",
+              "formula": null
+            },
+            {
+              "cell": "B18",
+              "value": "석관점",
+              "formula": null
+            },
+            {
+              "cell": "D18",
+              "value": "2021-05-04 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E18",
+              "value": 333,
+              "formula": null
+            },
+            {
+              "cell": "F18",
+              "value": 205927200,
+              "formula": null
+            },
+            {
+              "cell": "G18",
+              "value": "서울특별시 성북구 화랑로22가길 41, 1층",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A19",
+              "value": "서울",
+              "formula": null
+            },
+            {
+              "cell": "B19",
+              "value": "왕십리점",
+              "formula": null
+            },
+            {
+              "cell": "D19",
+              "value": "2026-01-14 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E19",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "F19",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "G19",
+              "value": "서울특별시 성동구 무학봉21길 11, 1층(하왕십리동)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A20",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B20",
+              "value": "장기점",
+              "formula": null
+            },
+            {
+              "cell": "D20",
+              "value": "2022-01-19 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E20",
+              "value": 317,
+              "formula": null
+            },
+            {
+              "cell": "F20",
+              "value": 173053500,
+              "formula": null
+            },
+            {
+              "cell": "G20",
+              "value": "경기도 김포시 김포한강1로78번길 32-7, 1층 2호",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A21",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B21",
+              "value": "영통점",
+              "formula": null
+            },
+            {
+              "cell": "D21",
+              "value": "2020-11-24 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E21",
+              "value": 306,
+              "formula": null
+            },
+            {
+              "cell": "F21",
+              "value": 162638600,
+              "formula": null
+            },
+            {
+              "cell": "G21",
+              "value": "경기도 수원시 영통구 매영로310번길 36, 상가동 103호",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A22",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B22",
+              "value": "야탑점",
+              "formula": null
+            },
+            {
+              "cell": "D22",
+              "value": "2021-03-22 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E22",
+              "value": 301,
+              "formula": null
+            },
+            {
+              "cell": "F22",
+              "value": 105134400,
+              "formula": null
+            },
+            {
+              "cell": "G22",
+              "value": "경기도 성남시 분당구 야탑로65번길 8, 2층 206~209호",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A23",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B23",
+              "value": "안성점",
+              "formula": null
+            },
+            {
+              "cell": "D23",
+              "value": "2021-04-27 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E23",
+              "value": 355,
+              "formula": null
+            },
+            {
+              "cell": "F23",
+              "value": 103117800,
+              "formula": null
+            },
+            {
+              "cell": "G23",
+              "value": "경기도 안성시 비룡3길 18번지",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A24",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B24",
+              "value": "판교점",
+              "formula": null
+            },
+            {
+              "cell": "D24",
+              "value": "2023-06-14 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E24",
+              "value": 302,
+              "formula": null
+            },
+            {
+              "cell": "F24",
+              "value": 209100400,
+              "formula": null
+            },
+            {
+              "cell": "G24",
+              "value": "경기도 성남시 분당구 판교역로 109 , B동 B129호(백현동, SK HUB 오피스텔)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A25",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B25",
+              "value": "성남점",
+              "formula": null
+            },
+            {
+              "cell": "D25",
+              "value": "2023-12-13 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E25",
+              "value": 303,
+              "formula": null
+            },
+            {
+              "cell": "F25",
+              "value": 207770600,
+              "formula": null
+            },
+            {
+              "cell": "G25",
+              "value": "경기도 성남시 중원구 원터로 97, 101호(성남동)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A26",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B26",
+              "value": "포천시청점",
+              "formula": null
+            },
+            {
+              "cell": "D26",
+              "value": "2025-05-15 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E26",
+              "value": 201,
+              "formula": null
+            },
+            {
+              "cell": "F26",
+              "value": 72718100,
+              "formula": null
+            },
+            {
+              "cell": "G26",
+              "value": "경기도 포천시 포천로 1590-5, 1층(신읍동)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A27",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B27",
+              "value": "시흥정왕점",
+              "formula": null
+            },
+            {
+              "cell": "D27",
+              "value": "2020-04-03 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E27",
+              "value": 323,
+              "formula": null
+            },
+            {
+              "cell": "F27",
+              "value": 222278450,
+              "formula": null
+            },
+            {
+              "cell": "G27",
+              "value": "경기도 시흥시 중심상가1길 14, 201,202,203",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A28",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B28",
+              "value": "봉담점",
+              "formula": null
+            },
+            {
+              "cell": "D28",
+              "value": "2025-11-04 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E28",
+              "value": 230,
+              "formula": null
+            },
+            {
+              "cell": "F28",
+              "value": 107042100,
+              "formula": null
+            },
+            {
+              "cell": "G28",
+              "value": "경기도 화성시 봉담읍 오래4길 12-1, 101호",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A29",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B29",
+              "value": "정자점",
+              "formula": null
+            },
+            {
+              "cell": "D29",
+              "value": "2025-01-08 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E29",
+              "value": 159,
+              "formula": null
+            },
+            {
+              "cell": "F29",
+              "value": 121599500,
+              "formula": null
+            },
+            {
+              "cell": "G29",
+              "value": "경기도 수원시 장안구 송정로 83, 상가동 1층 105호(송죽동, 수원로얄팰리스)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A30",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B30",
+              "value": "호매실점",
+              "formula": null
+            },
+            {
+              "cell": "D30",
+              "value": "2021-09-07 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E30",
+              "value": 327,
+              "formula": null
+            },
+            {
+              "cell": "F30",
+              "value": 150990800,
+              "formula": null
+            },
+            {
+              "cell": "G30",
+              "value": "경기도 수원시 권선구 매실로 38, 1층",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A31",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B31",
+              "value": "내유점",
+              "formula": null
+            },
+            {
+              "cell": "D31",
+              "value": "2020-09-08 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E31",
+              "value": 363,
+              "formula": null
+            },
+            {
+              "cell": "F31",
+              "value": 121212800,
+              "formula": null
+            },
+            {
+              "cell": "G31",
+              "value": "경기도 고양시 덕양구 통일로1108번길 190, 1층 일부",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A32",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B32",
+              "value": "금촌점",
+              "formula": null
+            },
+            {
+              "cell": "D32",
+              "value": "2024-08-21 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E32",
+              "value": 364,
+              "formula": null
+            },
+            {
+              "cell": "F32",
+              "value": 238009272,
+              "formula": null
+            },
+            {
+              "cell": "G32",
+              "value": "경기도 파주시 황골로 78, 1층 일부",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A33",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B33",
+              "value": "포곡점",
+              "formula": null
+            },
+            {
+              "cell": "D33",
+              "value": "2021-12-16 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E33",
+              "value": 302,
+              "formula": null
+            },
+            {
+              "cell": "F33",
+              "value": 210063600,
+              "formula": null
+            },
+            {
+              "cell": "G33",
+              "value": "경기도 용인시 처인구 포곡읍 경안천로 414, 1층",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A34",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B34",
+              "value": "한대역점",
+              "formula": null
+            },
+            {
+              "cell": "D34",
+              "value": "2026-01-16 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E34",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "F34",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "G34",
+              "value": "경기도 안산시 상록구 이화로 36-1, 1층 101호(사동)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A35",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B35",
+              "value": "고잔점",
+              "formula": null
+            },
+            {
+              "cell": "D35",
+              "value": "2020-01-29 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E35",
+              "value": 312,
+              "formula": null
+            },
+            {
+              "cell": "F35",
+              "value": 171764800,
+              "formula": null
+            },
+            {
+              "cell": "G35",
+              "value": "경기도 안산시 단원구 화정천동로 224, 상가동 102호",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A36",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B36",
+              "value": "화성남양점",
+              "formula": null
+            },
+            {
+              "cell": "D36",
+              "value": "2024-05-20 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E36",
+              "value": 300,
+              "formula": null
+            },
+            {
+              "cell": "F36",
+              "value": 104368700,
+              "formula": null
+            },
+            {
+              "cell": "G36",
+              "value": "경기 화성시 남양읍 역골동로 15-5, 102호",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A37",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B37",
+              "value": "전곡점",
+              "formula": null
+            },
+            {
+              "cell": "D37",
+              "value": "2021-05-11 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E37",
+              "value": 322,
+              "formula": null
+            },
+            {
+              "cell": "F37",
+              "value": 65003400,
+              "formula": null
+            },
+            {
+              "cell": "G37",
+              "value": "경기도 연천군 전곡읍 전곡역로 103, 1층",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A38",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B38",
+              "value": "군포점_홀",
+              "formula": null
+            },
+            {
+              "cell": "D38",
+              "value": "2022-07-20 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E38",
+              "value": 356,
+              "formula": null
+            },
+            {
+              "cell": "F38",
+              "value": 349263500,
+              "formula": null
+            },
+            {
+              "cell": "G38",
+              "value": "경기 군포시 산본천로 99, 디퍼이울렛 137호",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A39",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B39",
+              "value": "통진점",
+              "formula": null
+            },
+            {
+              "cell": "D39",
+              "value": "2026-01-16 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E39",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "F39",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "G39",
+              "value": "경기도 김포시 통진읍 서암로6번길 5-9, 101호",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A40",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B40",
+              "value": "시흥시청점_홀",
+              "formula": null
+            },
+            {
+              "cell": "D40",
+              "value": "2022-12-28 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E40",
+              "value": 278,
+              "formula": null
+            },
+            {
+              "cell": "F40",
+              "value": 158072900,
+              "formula": null
+            },
+            {
+              "cell": "G40",
+              "value": "경기도 시흥시 능곡군자1길 117, 1층 일부호(군자동)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A41",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B41",
+              "value": "가능점",
+              "formula": null
+            },
+            {
+              "cell": "D41",
+              "value": "2020-05-13 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E41",
+              "value": 291,
+              "formula": null
+            },
+            {
+              "cell": "F41",
+              "value": 100444130,
+              "formula": null
+            },
+            {
+              "cell": "G41",
+              "value": "경기도 의정부시 가능로 84-1",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A42",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B42",
+              "value": "송우점",
+              "formula": null
+            },
+            {
+              "cell": "D42",
+              "value": "2021-04-07 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E42",
+              "value": 301,
+              "formula": null
+            },
+            {
+              "cell": "F42",
+              "value": 129756600,
+              "formula": null
+            },
+            {
+              "cell": "G42",
+              "value": "경기도 포천시 소흘읍 태봉로 158",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A43",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B43",
+              "value": "하이닉스점_홀",
+              "formula": null
+            },
+            {
+              "cell": "D43",
+              "value": "2025-07-28 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E43",
+              "value": 136,
+              "formula": null
+            },
+            {
+              "cell": "F43",
+              "value": 138544900,
+              "formula": null
+            },
+            {
+              "cell": "G43",
+              "value": "경기도 이천시 대월면 대산로208번길 93-12, 근린생활시설동 지1층 104호(휴먼빌 에듀파크시티)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A44",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B44",
+              "value": "문산점_홀",
+              "formula": null
+            },
+            {
+              "cell": "D44",
+              "value": "2026-01-14 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E44",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "F44",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "G44",
+              "value": "경기도 파주시 문산읍 문향로67번길 10, 1층",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A45",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B45",
+              "value": "삼송점",
+              "formula": null
+            },
+            {
+              "cell": "D45",
+              "value": "2025-07-17 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E45",
+              "value": 144,
+              "formula": null
+            },
+            {
+              "cell": "F45",
+              "value": 84651100,
+              "formula": null
+            },
+            {
+              "cell": "G45",
+              "value": "경기도 고양시 덕양구 세솔로1길 16, 1층",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A46",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B46",
+              "value": "광교점",
+              "formula": null
+            },
+            {
+              "cell": "D46",
+              "value": "2026-01-14 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E46",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "F46",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "G46",
+              "value": "경기도 수원시 영통구 에듀타운로 101, 101동 1층 104호(이의동, 에듀하임 1309오피스텔)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A47",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B47",
+              "value": "병점점_홀",
+              "formula": null
+            },
+            {
+              "cell": "D47",
+              "value": "2026-01-07 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E47",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "F47",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "G47",
+              "value": "경기도 화성시 병점중앙로155번길 8, 지하 1층 전체호(진안동)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A48",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B48",
+              "value": "진접점",
+              "formula": null
+            },
+            {
+              "cell": "D48",
+              "value": "2023-12-06 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E48",
+              "value": 308,
+              "formula": null
+            },
+            {
+              "cell": "F48",
+              "value": 63652900,
+              "formula": null
+            },
+            {
+              "cell": "G48",
+              "value": "경기도 남양주시 진접읍 해밀예당1로 241, 1층 일부",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A49",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B49",
+              "value": "민락점",
+              "formula": null
+            },
+            {
+              "cell": "D49",
+              "value": "2020-09-23 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E49",
+              "value": 306,
+              "formula": null
+            },
+            {
+              "cell": "F49",
+              "value": 101407500,
+              "formula": null
+            },
+            {
+              "cell": "G49",
+              "value": "경기도 의정부시 충의로57번길 48, 1층",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A50",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B50",
+              "value": "서정점",
+              "formula": null
+            },
+            {
+              "cell": "D50",
+              "value": "2025-07-08 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E50",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "F50",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "G50",
+              "value": "경기도 평택시 이충로100번길 23-6, 1층(서정동)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A51",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B51",
+              "value": "처인구점",
+              "formula": null
+            },
+            {
+              "cell": "D51",
+              "value": "2023-12-14 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E51",
+              "value": 313,
+              "formula": null
+            },
+            {
+              "cell": "F51",
+              "value": 147946590,
+              "formula": null
+            },
+            {
+              "cell": "G51",
+              "value": "경기도 용인시 처인구 중부대로 1331번길 7, 1층 일부호(역북동)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A52",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B52",
+              "value": "부곡점",
+              "formula": null
+            },
+            {
+              "cell": "D52",
+              "value": "2026-04-24 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E52",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "F52",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "G52",
+              "value": "경기도 군포시 송부로291번안길 3-14, 1층 106호(부곡동)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A53",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B53",
+              "value": "수원시청점",
+              "formula": null
+            },
+            {
+              "cell": "D53",
+              "value": "2025-07-24 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E53",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "F53",
+              "value": 0,
+              "formula": null
+            },
+            {
+              "cell": "G53",
+              "value": "경기도 수원시 권선구 권선로668번길 19-16, 1층(권선동, 나원빌딩)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A54",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B54",
+              "value": "죽전점",
+              "formula": null
+            },
+            {
+              "cell": "D54",
+              "value": "2024-01-04 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E54",
+              "value": 300,
+              "formula": null
+            },
+            {
+              "cell": "F54",
+              "value": 209863080,
+              "formula": null
+            },
+            {
+              "cell": "G54",
+              "value": "경기도 용인시 수지구 푸른솔로 86, 103호(죽전동)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A55",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B55",
+              "value": "호원점",
+              "formula": null
+            },
+            {
+              "cell": "D55",
+              "value": "2025-04-24 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E55",
+              "value": 242,
+              "formula": null
+            },
+            {
+              "cell": "F55",
+              "value": 231638800,
+              "formula": null
+            },
+            {
+              "cell": "G55",
+              "value": "경기도 의정부시 전좌로156번길 53-1 (호원동)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A56",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B56",
+              "value": "가남점_홀",
+              "formula": null
+            },
+            {
+              "cell": "D56",
+              "value": "2023-10-25 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E56",
+              "value": 351,
+              "formula": null
+            },
+            {
+              "cell": "F56",
+              "value": 214245940,
+              "formula": null
+            },
+            {
+              "cell": "G56",
+              "value": "경기도 여주시 가남읍 태평로 23-1",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A57",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B57",
+              "value": "고읍점",
+              "formula": null
+            },
+            {
+              "cell": "D57",
+              "value": "2024-03-28 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E57",
+              "value": 359,
+              "formula": null
+            },
+            {
+              "cell": "F57",
+              "value": 172328800,
+              "formula": null
+            },
+            {
+              "cell": "G57",
+              "value": "경기도 양주시 고읍남로 23, 151호(광사동, 메가시티프라자)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A58",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B58",
+              "value": "안중점_홀",
+              "formula": null
+            },
+            {
+              "cell": "D58",
+              "value": "2024-06-13 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E58",
+              "value": 321,
+              "formula": null
+            },
+            {
+              "cell": "F58",
+              "value": 166451490,
+              "formula": null
+            },
+            {
+              "cell": "G58",
+              "value": "경기도 평택시 안중읍 안현로서3길 72, 1층",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A59",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B59",
+              "value": "다산점_홀",
+              "formula": null
+            },
+            {
+              "cell": "D59",
+              "value": "2024-06-19 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E59",
+              "value": 306,
+              "formula": null
+            },
+            {
+              "cell": "F59",
+              "value": 264665760,
+              "formula": null
+            },
+            {
+              "cell": "G59",
+              "value": "경기도 남양주시 다산중앙로146번길 12-5, 1층 102호(다산동,강희프라자)",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A60",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B60",
+              "value": "백석점_홀",
+              "formula": null
+            },
+            {
+              "cell": "D60",
+              "value": "2024-11-14 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E60",
+              "value": 360,
+              "formula": null
+            },
+            {
+              "cell": "F60",
+              "value": 399160755,
+              "formula": null
+            },
+            {
+              "cell": "G60",
+              "value": "경기도 고양시 일산동구 호수로 340-25, 106호",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A61",
+              "value": "경기",
+              "formula": null
+            },
+            {
+              "cell": "B61",
+              "value": "중동점",
+              "formula": null
+            },
+            {
+              "cell": "D61",
+              "value": "2022-12-08 00:00:00",
+              "formula": null
+            },
+            {
+              "cell": "E61",
+              "value": 357,
+              "formula": null
+            },
+            {
+              "cell": "F61",
+              "value": 457208680,
+              "formula": null
+            },
+            {
+              "cell": "G61",
+              "value": "경기도 부천시 원미구 중동로248번길 44, 102호 (중동,메트로펠리스)",
+              "formula": null
+            }
+          ]
+        ]
+      },
+      {
+        "title": "예상개설비용",
+        "max_row": 26,
+        "max_column": 9,
+        "nonempty_count": 79,
+        "formula_count": 0,
+        "merged_ranges": [
+          "B9:B10",
+          "A8:A11",
+          "B18:B26",
+          "A3:A6",
+          "A1:I2",
+          "A13:A15"
+        ],
+        "samples": [
+          [
+            {
+              "cell": "A1",
+              "value": "예상 개설비용 목록",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A3",
+              "value": "본사비용",
+              "formula": null
+            },
+            {
+              "cell": "B3",
+              "value": "가맹비",
+              "formula": null
+            },
+            {
+              "cell": "C3",
+              "value": "▣",
+              "formula": null
+            },
+            {
+              "cell": "D3",
+              "value": 2200000,
+              "formula": null
+            },
+            {
+              "cell": "F3",
+              "value": "면제",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "B4",
+              "value": "교육비",
+              "formula": null
+            },
+            {
+              "cell": "C4",
+              "value": "▣",
+              "formula": null
+            },
+            {
+              "cell": "D4",
+              "value": 1100000,
+              "formula": null
+            },
+            {
+              "cell": "F4",
+              "value": "면제",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "B5",
+              "value": "감리비",
+              "formula": null
+            },
+            {
+              "cell": "C5",
+              "value": "▣",
+              "formula": null
+            },
+            {
+              "cell": "D5",
+              "value": 300000,
+              "formula": null
+            },
+            {
+              "cell": "E5",
+              "value": "평당",
+              "formula": null
+            },
+            {
+              "cell": "F5",
+              "value": "면제",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "B6",
+              "value": "물류보증금",
+              "formula": null
+            },
+            {
+              "cell": "C6",
+              "value": "▣",
+              "formula": null
+            },
+            {
+              "cell": "D6",
+              "value": 1000000,
+              "formula": null
+            },
+            {
+              "cell": "F6",
+              "value": "면제",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A8",
+              "value": "인테리어",
+              "formula": null
+            },
+            {
+              "cell": "B8",
+              "value": "인테리어",
+              "formula": null
+            },
+            {
+              "cell": "C8",
+              "value": "▣",
+              "formula": null
+            },
+            {
+              "cell": "D8",
+              "value": 1000000,
+              "formula": null
+            },
+            {
+              "cell": "E8",
+              "value": "평당",
+              "formula": null
+            },
+            {
+              "cell": "G8",
+              "value": "냉난방기 선택란? 주방공사 선택란?",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "B9",
+              "value": "간판",
+              "formula": null
+            },
+            {
+              "cell": "C9",
+              "value": "▣플렉스 간판(천갈이)",
+              "formula": null
+            },
+            {
+              "cell": "D9",
+              "value": 700000,
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C10",
+              "value": "▣채널간판",
+              "formula": null
+            },
+            {
+              "cell": "D10",
+              "value": 2000000,
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "B11",
+              "value": "내외부 사인물",
+              "formula": null
+            },
+            {
+              "cell": "C11",
+              "value": "▣시트지, 내부사인물 포함",
+              "formula": null
+            },
+            {
+              "cell": "D11",
+              "value": 1000000,
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "A13",
+              "value": "주방설비 및 집기",
+              "formula": null
+            },
+            {
+              "cell": "B13",
+              "value": "주방설비",
+              "formula": null
+            },
+            {
+              "cell": "C13",
+              "value": "▣ 냉장고,세척기,싱크대 등",
+              "formula": null
+            },
+            {
+              "cell": "D13",
+              "value": 8000000,
+              "formula": null
+            },
+            {
+              "cell": "G13",
+              "value": "리스트 필요합니까?",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "B14",
+              "value": "홀/주방 집기",
+              "formula": null
+            },
+            {
+              "cell": "C14",
+              "value": "▣ 코팅웍, 받드, 집게, 국자 등",
+              "formula": null
+            },
+            {
+              "cell": "D14",
+              "value": 2100000,
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "B15",
+              "value": "의탁자",
+              "formula": null
+            },
+            {
+              "cell": "C15",
+              "value": "▣2인테이블(600*600*730)",
+              "formula": null
+            },
+            {
+              "cell": "D15",
+              "value": 199650,
+              "formula": null
+            },
+            {
+              "cell": "E15",
+              "value": "개당",
+              "formula": null
+            },
+            {
+              "cell": "G15",
+              "value": "배송비를 포함해야 할지? 88000원",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C16",
+              "value": "└서랍X",
+              "formula": null
+            },
+            {
+              "cell": "D16",
+              "value": 157300,
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C17",
+              "value": "▣의자(1인용)",
+              "formula": null
+            },
+            {
+              "cell": "D17",
+              "value": 21536,
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "B18",
+              "value": "홀운영품목",
+              "formula": null
+            },
+            {
+              "cell": "C18",
+              "value": "수저세트",
+              "formula": null
+            },
+            {
+              "cell": "D18",
+              "value": 2750,
+              "formula": null
+            },
+            {
+              "cell": "E18",
+              "value": "3배",
+              "formula": null
+            },
+            {
+              "cell": "G18",
+              "value": "노출되지는 않지만 계산이 되기 편하도록 테이블 수의 기준으로 계산되도록",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C19",
+              "value": "소스용기",
+              "formula": null
+            },
+            {
+              "cell": "D19",
+              "value": 1210,
+              "formula": null
+            },
+            {
+              "cell": "E19",
+              "value": "1배",
+              "formula": null
+            },
+            {
+              "cell": "G19",
+              "value": "테이블 수의 맞게 계산",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C20",
+              "value": "앞접시",
+              "formula": null
+            },
+            {
+              "cell": "D20",
+              "value": 3850.0000000000005,
+              "formula": null
+            },
+            {
+              "cell": "E20",
+              "value": "2배",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C21",
+              "value": "사이드 그릇2(순대,막창,김밥)",
+              "formula": null
+            },
+            {
+              "cell": "D21",
+              "value": 4950,
+              "formula": null
+            },
+            {
+              "cell": "E21",
+              "value": "1.5배",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C22",
+              "value": "배송비",
+              "formula": null
+            },
+            {
+              "cell": "D22",
+              "value": 5500,
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C23",
+              "value": "메인 떡볶이 그릇",
+              "formula": null
+            },
+            {
+              "cell": "D23",
+              "value": 40954.545454545456,
+              "formula": null
+            },
+            {
+              "cell": "E23",
+              "value": "1배",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C24",
+              "value": "사이드그릇1(볶음밥 등)",
+              "formula": null
+            },
+            {
+              "cell": "D24",
+              "value": 10900,
+              "formula": null
+            },
+            {
+              "cell": "E24",
+              "value": "1.5배",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C25",
+              "value": "물컵",
+              "formula": null
+            },
+            {
+              "cell": "D25",
+              "value": 1934.6153846153845,
+              "formula": null
+            },
+            {
+              "cell": "E25",
+              "value": "2.5배",
+              "formula": null
+            }
+          ],
+          [
+            {
+              "cell": "C26",
+              "value": "사각 튀김바스켓",
+              "formula": null
+            },
+            {
+              "cell": "D26",
+              "value": 8247.272727272728,
+              "formula": null
+            },
+            {
+              "cell": "E26",
+              "value": "1배",
+              "formula": null
+            }
+          ]
+        ]
+      },
+      {
+        "title": "예상매출",
+        "max_row": 1,
+        "max_column": 1,
+        "nonempty_count": 0,
+        "formula_count": 0,
+        "merged_ranges": [],
+        "samples": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,1153 @@
+{
+  "store_sales": {
+    "total_records": 71,
+    "valid_records_days_ge_90": 55,
+    "all_valid": {
+      "average_monthly_sales": 18779225,
+      "median_monthly_sales": 16745233,
+      "p25_monthly_sales": 12776680,
+      "p75_monthly_sales": 21668924,
+      "p90_monthly_sales": 31597574,
+      "min_monthly_sales": 6140332,
+      "max_monthly_sales": 38954521
+    },
+    "hall_valid": {
+      "count": 10,
+      "average_monthly_sales": 24084318,
+      "median_monthly_sales": 23141136
+    },
+    "delivery_or_unspecified_valid": {
+      "count": 45,
+      "average_monthly_sales": 17600315,
+      "median_monthly_sales": 16166419
+    },
+    "top10_by_normalized_monthly_sales": [
+      {
+        "region": "경기",
+        "name": "중동점",
+        "is_hall": false,
+        "operating_days_2025": 357,
+        "sales_2025": 457208680,
+        "normalized_monthly_sales": 38954521,
+        "address": "경기도 부천시 원미구 중동로248번길 44, 102호 (중동,메트로펠리스)"
+      },
+      {
+        "region": "서울",
+        "name": "공덕점_홀",
+        "is_hall": true,
+        "operating_days_2025": 355,
+        "sales_2025": 425900300,
+        "normalized_monthly_sales": 36491458,
+        "address": "서울특별시 마포구 마포대로 63-8, 지하1층 70호"
+      },
+      {
+        "region": "서울",
+        "name": "발산점",
+        "is_hall": false,
+        "operating_days_2025": 349,
+        "sales_2025": 415155900,
+        "normalized_monthly_sales": 36182403,
+        "address": "서울특별시 강서구 강서로 322, 좌측 1층 104호(내발산동)"
+      },
+      {
+        "region": "서울",
+        "name": "은평점",
+        "is_hall": false,
+        "operating_days_2025": 332,
+        "sales_2025": 371818970,
+        "normalized_monthly_sales": 34064740,
+        "address": "서울특별시 은평구 응암로11길 3 (응암동) ,1층 7호"
+      },
+      {
+        "region": "경기",
+        "name": "백석점_홀",
+        "is_hall": true,
+        "operating_days_2025": 360,
+        "sales_2025": 399160755,
+        "normalized_monthly_sales": 33725388,
+        "address": "경기도 고양시 일산동구 호수로 340-25, 106호"
+      },
+      {
+        "region": "서울",
+        "name": "구로점",
+        "is_hall": false,
+        "operating_days_2025": 273,
+        "sales_2025": 287259400,
+        "normalized_monthly_sales": 32005397,
+        "address": "서울특별시 구로구 가마산로 284, 1층 105호"
+      },
+      {
+        "region": "경기",
+        "name": "하이닉스점_홀",
+        "is_hall": true,
+        "operating_days_2025": 136,
+        "sales_2025": 138544900,
+        "normalized_monthly_sales": 30985839,
+        "address": "경기도 이천시 대월면 대산로208번길 93-12, 근린생활시설동 지1층 104호(휴먼빌 에듀파크시티)"
+      },
+      {
+        "region": "경기",
+        "name": "군포점_홀",
+        "is_hall": true,
+        "operating_days_2025": 356,
+        "sales_2025": 349263500,
+        "normalized_monthly_sales": 29841100,
+        "address": "경기 군포시 산본천로 99, 디퍼이울렛 137호"
+      },
+      {
+        "region": "경기",
+        "name": "호원점",
+        "is_hall": false,
+        "operating_days_2025": 242,
+        "sales_2025": 231638800,
+        "normalized_monthly_sales": 29114381,
+        "address": "경기도 의정부시 전좌로156번길 53-1 (호원동)"
+      },
+      {
+        "region": "서울",
+        "name": "숭실대점",
+        "is_hall": false,
+        "operating_days_2025": 302,
+        "sales_2025": 279162700,
+        "normalized_monthly_sales": 28116552,
+        "address": "서울특별시 동작구 상도로37길 26, 1층(상도1동)"
+      }
+    ],
+    "bottom10_by_normalized_monthly_sales": [
+      {
+        "region": "경기",
+        "name": "전곡점",
+        "is_hall": false,
+        "operating_days_2025": 322,
+        "sales_2025": 65003400,
+        "normalized_monthly_sales": 6140332,
+        "address": "경기도 연천군 전곡읍 전곡역로 103, 1층"
+      },
+      {
+        "region": "경기",
+        "name": "진접점",
+        "is_hall": false,
+        "operating_days_2025": 308,
+        "sales_2025": 63652900,
+        "normalized_monthly_sales": 6286068,
+        "address": "경기도 남양주시 진접읍 해밀예당1로 241, 1층 일부"
+      },
+      {
+        "region": "인천",
+        "name": "청라점",
+        "is_hall": false,
+        "operating_days_2025": 156,
+        "sales_2025": 41373300,
+        "normalized_monthly_sales": 8066909,
+        "address": "인천광역시 서구 크리스탈로 94, 101호(청라동, 청라레이크뷰)"
+      },
+      {
+        "region": "경기",
+        "name": "안성점",
+        "is_hall": false,
+        "operating_days_2025": 355,
+        "sales_2025": 103117800,
+        "normalized_monthly_sales": 8835211,
+        "address": "경기도 안성시 비룡3길 18번지"
+      },
+      {
+        "region": "경기",
+        "name": "민락점",
+        "is_hall": false,
+        "operating_days_2025": 306,
+        "sales_2025": 101407500,
+        "normalized_monthly_sales": 10079994,
+        "address": "경기도 의정부시 충의로57번길 48, 1층"
+      },
+      {
+        "region": "경기",
+        "name": "내유점",
+        "is_hall": false,
+        "operating_days_2025": 363,
+        "sales_2025": 121212800,
+        "normalized_monthly_sales": 10156720,
+        "address": "경기도 고양시 덕양구 통일로1108번길 190, 1층 일부"
+      },
+      {
+        "region": "인천",
+        "name": "영종도점",
+        "is_hall": false,
+        "operating_days_2025": 246,
+        "sales_2025": 83979500,
+        "normalized_monthly_sales": 10383644,
+        "address": "인천광역시 중구 운중로 103, 1층"
+      },
+      {
+        "region": "경기",
+        "name": "가능점",
+        "is_hall": false,
+        "operating_days_2025": 291,
+        "sales_2025": 100444130,
+        "normalized_monthly_sales": 10498885,
+        "address": "경기도 의정부시 가능로 84-1"
+      },
+      {
+        "region": "경기",
+        "name": "화성남양점",
+        "is_hall": false,
+        "operating_days_2025": 300,
+        "sales_2025": 104368700,
+        "normalized_monthly_sales": 10581827,
+        "address": "경기 화성시 남양읍 역골동로 15-5, 102호"
+      },
+      {
+        "region": "경기",
+        "name": "야탑점",
+        "is_hall": false,
+        "operating_days_2025": 301,
+        "sales_2025": 105134400,
+        "normalized_monthly_sales": 10624047,
+        "address": "경기도 성남시 분당구 야탑로65번길 8, 2층 206~209호"
+      }
+    ],
+    "records": [
+      {
+        "region": "서울",
+        "name": "발산점",
+        "is_hall": false,
+        "operating_days_2025": 349,
+        "sales_2025": 415155900,
+        "normalized_monthly_sales": 36182403,
+        "address": "서울특별시 강서구 강서로 322, 좌측 1층 104호(내발산동)"
+      },
+      {
+        "region": "서울",
+        "name": "대치점",
+        "is_hall": false,
+        "operating_days_2025": 343,
+        "sales_2025": 144303500,
+        "normalized_monthly_sales": 12796593,
+        "address": "서울특별시 강남구 남부순환로 2917, 청실종합상가 지하 1층 8호 (대치동)"
+      },
+      {
+        "region": "서울",
+        "name": "숭실대점",
+        "is_hall": false,
+        "operating_days_2025": 302,
+        "sales_2025": 279162700,
+        "normalized_monthly_sales": 28116552,
+        "address": "서울특별시 동작구 상도로37길 26, 1층(상도1동)"
+      },
+      {
+        "region": "서울",
+        "name": "건대점",
+        "is_hall": false,
+        "operating_days_2025": 312,
+        "sales_2025": 273325400,
+        "normalized_monthly_sales": 26646306,
+        "address": "서울특별시 광진구 자양로23길 38, 1층 101호"
+      },
+      {
+        "region": "서울",
+        "name": "수유점",
+        "is_hall": false,
+        "operating_days_2025": 354,
+        "sales_2025": 222288500,
+        "normalized_monthly_sales": 19099647,
+        "address": "서울특별시 강북구 도봉로97길 76"
+      },
+      {
+        "region": "서울",
+        "name": "면목점",
+        "is_hall": false,
+        "operating_days_2025": 175,
+        "sales_2025": 73395100,
+        "normalized_monthly_sales": 12756767,
+        "address": "서울특별시 중랑구 면목로51길 13 , 1층"
+      },
+      {
+        "region": "서울",
+        "name": "공덕점_홀",
+        "is_hall": true,
+        "operating_days_2025": 355,
+        "sales_2025": 425900300,
+        "normalized_monthly_sales": 36491458,
+        "address": "서울특별시 마포구 마포대로 63-8, 지하1층 70호"
+      },
+      {
+        "region": "서울",
+        "name": "홍대점",
+        "is_hall": false,
+        "operating_days_2025": 20,
+        "sales_2025": 20075560,
+        "normalized_monthly_sales": 30531581,
+        "address": "서울특별시 마포구 월드컵북로5나길 18, 111-1호 (서교동, 서교동 대우미래사랑)"
+      },
+      {
+        "region": "서울",
+        "name": "은평점",
+        "is_hall": false,
+        "operating_days_2025": 332,
+        "sales_2025": 371818970,
+        "normalized_monthly_sales": 34064740,
+        "address": "서울특별시 은평구 응암로11길 3 (응암동) ,1층 7호"
+      },
+      {
+        "region": "서울",
+        "name": "구로점",
+        "is_hall": false,
+        "operating_days_2025": 273,
+        "sales_2025": 287259400,
+        "normalized_monthly_sales": 32005397,
+        "address": "서울특별시 구로구 가마산로 284, 1층 105호"
+      },
+      {
+        "region": "서울",
+        "name": "불광점",
+        "is_hall": false,
+        "operating_days_2025": 277,
+        "sales_2025": 165654560,
+        "normalized_monthly_sales": 18190107,
+        "address": "서울특별시 은평구 불광로 122-15, 1층 101호(불광동, 주영빌트)"
+      },
+      {
+        "region": "서울",
+        "name": "사당점",
+        "is_hall": false,
+        "operating_days_2025": 0,
+        "sales_2025": 0,
+        "normalized_monthly_sales": 0,
+        "address": "서울특별시 동작구 사당로27길 92, 지하 1층(사당동)"
+      },
+      {
+        "region": "서울",
+        "name": "청량리점",
+        "is_hall": false,
+        "operating_days_2025": 360,
+        "sales_2025": 184144245,
+        "normalized_monthly_sales": 15558484,
+        "address": "서울특별시 동대문구 전농로 192, 상가동 2층 201호"
+      },
+      {
+        "region": "서울",
+        "name": "목동점",
+        "is_hall": false,
+        "operating_days_2025": 0,
+        "sales_2025": 0,
+        "normalized_monthly_sales": 0,
+        "address": "서울특별시 양천구 목동중앙본로7길 37, 1층 3호(목동)"
+      },
+      {
+        "region": "서울",
+        "name": "석관점",
+        "is_hall": false,
+        "operating_days_2025": 333,
+        "sales_2025": 205927200,
+        "normalized_monthly_sales": 18809667,
+        "address": "서울특별시 성북구 화랑로22가길 41, 1층"
+      },
+      {
+        "region": "서울",
+        "name": "왕십리점",
+        "is_hall": false,
+        "operating_days_2025": 0,
+        "sales_2025": 0,
+        "normalized_monthly_sales": 0,
+        "address": "서울특별시 성동구 무학봉21길 11, 1층(하왕십리동)"
+      },
+      {
+        "region": "경기",
+        "name": "장기점",
+        "is_hall": false,
+        "operating_days_2025": 317,
+        "sales_2025": 173053500,
+        "normalized_monthly_sales": 16604765,
+        "address": "경기도 김포시 김포한강1로78번길 32-7, 1층 2호"
+      },
+      {
+        "region": "경기",
+        "name": "영통점",
+        "is_hall": false,
+        "operating_days_2025": 306,
+        "sales_2025": 162638600,
+        "normalized_monthly_sales": 16166419,
+        "address": "경기도 수원시 영통구 매영로310번길 36, 상가동 103호"
+      },
+      {
+        "region": "경기",
+        "name": "야탑점",
+        "is_hall": false,
+        "operating_days_2025": 301,
+        "sales_2025": 105134400,
+        "normalized_monthly_sales": 10624047,
+        "address": "경기도 성남시 분당구 야탑로65번길 8, 2층 206~209호"
+      },
+      {
+        "region": "경기",
+        "name": "안성점",
+        "is_hall": false,
+        "operating_days_2025": 355,
+        "sales_2025": 103117800,
+        "normalized_monthly_sales": 8835211,
+        "address": "경기도 안성시 비룡3길 18번지"
+      },
+      {
+        "region": "경기",
+        "name": "판교점",
+        "is_hall": false,
+        "operating_days_2025": 302,
+        "sales_2025": 209100400,
+        "normalized_monthly_sales": 21060057,
+        "address": "경기도 성남시 분당구 판교역로 109 , B동 B129호(백현동, SK HUB 오피스텔)"
+      },
+      {
+        "region": "경기",
+        "name": "성남점",
+        "is_hall": false,
+        "operating_days_2025": 303,
+        "sales_2025": 207770600,
+        "normalized_monthly_sales": 20857060,
+        "address": "경기도 성남시 중원구 원터로 97, 101호(성남동)"
+      },
+      {
+        "region": "경기",
+        "name": "포천시청점",
+        "is_hall": false,
+        "operating_days_2025": 201,
+        "sales_2025": 72718100,
+        "normalized_monthly_sales": 11004190,
+        "address": "경기도 포천시 포천로 1590-5, 1층(신읍동)"
+      },
+      {
+        "region": "경기",
+        "name": "시흥정왕점",
+        "is_hall": false,
+        "operating_days_2025": 323,
+        "sales_2025": 222278450,
+        "normalized_monthly_sales": 20931794,
+        "address": "경기도 시흥시 중심상가1길 14, 201,202,203"
+      },
+      {
+        "region": "경기",
+        "name": "봉담점",
+        "is_hall": false,
+        "operating_days_2025": 230,
+        "sales_2025": 107042100,
+        "normalized_monthly_sales": 14155930,
+        "address": "경기도 화성시 봉담읍 오래4길 12-1, 101호"
+      },
+      {
+        "region": "경기",
+        "name": "정자점",
+        "is_hall": false,
+        "operating_days_2025": 159,
+        "sales_2025": 121599500,
+        "normalized_monthly_sales": 23261959,
+        "address": "경기도 수원시 장안구 송정로 83, 상가동 1층 105호(송죽동, 수원로얄팰리스)"
+      },
+      {
+        "region": "경기",
+        "name": "호매실점",
+        "is_hall": false,
+        "operating_days_2025": 327,
+        "sales_2025": 150990800,
+        "normalized_monthly_sales": 14044761,
+        "address": "경기도 수원시 권선구 매실로 38, 1층"
+      },
+      {
+        "region": "경기",
+        "name": "내유점",
+        "is_hall": false,
+        "operating_days_2025": 363,
+        "sales_2025": 121212800,
+        "normalized_monthly_sales": 10156720,
+        "address": "경기도 고양시 덕양구 통일로1108번길 190, 1층 일부"
+      },
+      {
+        "region": "경기",
+        "name": "금촌점",
+        "is_hall": false,
+        "operating_days_2025": 364,
+        "sales_2025": 238009272,
+        "normalized_monthly_sales": 19888595,
+        "address": "경기도 파주시 황골로 78, 1층 일부"
+      },
+      {
+        "region": "경기",
+        "name": "포곡점",
+        "is_hall": false,
+        "operating_days_2025": 302,
+        "sales_2025": 210063600,
+        "normalized_monthly_sales": 21157068,
+        "address": "경기도 용인시 처인구 포곡읍 경안천로 414, 1층"
+      },
+      {
+        "region": "경기",
+        "name": "한대역점",
+        "is_hall": false,
+        "operating_days_2025": 0,
+        "sales_2025": 0,
+        "normalized_monthly_sales": 0,
+        "address": "경기도 안산시 상록구 이화로 36-1, 1층 101호(사동)"
+      },
+      {
+        "region": "경기",
+        "name": "고잔점",
+        "is_hall": false,
+        "operating_days_2025": 312,
+        "sales_2025": 171764800,
+        "normalized_monthly_sales": 16745233,
+        "address": "경기도 안산시 단원구 화정천동로 224, 상가동 102호"
+      },
+      {
+        "region": "경기",
+        "name": "화성남양점",
+        "is_hall": false,
+        "operating_days_2025": 300,
+        "sales_2025": 104368700,
+        "normalized_monthly_sales": 10581827,
+        "address": "경기 화성시 남양읍 역골동로 15-5, 102호"
+      },
+      {
+        "region": "경기",
+        "name": "전곡점",
+        "is_hall": false,
+        "operating_days_2025": 322,
+        "sales_2025": 65003400,
+        "normalized_monthly_sales": 6140332,
+        "address": "경기도 연천군 전곡읍 전곡역로 103, 1층"
+      },
+      {
+        "region": "경기",
+        "name": "군포점_홀",
+        "is_hall": true,
+        "operating_days_2025": 356,
+        "sales_2025": 349263500,
+        "normalized_monthly_sales": 29841100,
+        "address": "경기 군포시 산본천로 99, 디퍼이울렛 137호"
+      },
+      {
+        "region": "경기",
+        "name": "통진점",
+        "is_hall": false,
+        "operating_days_2025": 0,
+        "sales_2025": 0,
+        "normalized_monthly_sales": 0,
+        "address": "경기도 김포시 통진읍 서암로6번길 5-9, 101호"
+      },
+      {
+        "region": "경기",
+        "name": "시흥시청점_홀",
+        "is_hall": true,
+        "operating_days_2025": 278,
+        "sales_2025": 158072900,
+        "normalized_monthly_sales": 17295146,
+        "address": "경기도 시흥시 능곡군자1길 117, 1층 일부호(군자동)"
+      },
+      {
+        "region": "경기",
+        "name": "가능점",
+        "is_hall": false,
+        "operating_days_2025": 291,
+        "sales_2025": 100444130,
+        "normalized_monthly_sales": 10498885,
+        "address": "경기도 의정부시 가능로 84-1"
+      },
+      {
+        "region": "경기",
+        "name": "송우점",
+        "is_hall": false,
+        "operating_days_2025": 301,
+        "sales_2025": 129756600,
+        "normalized_monthly_sales": 13112170,
+        "address": "경기도 포천시 소흘읍 태봉로 158"
+      },
+      {
+        "region": "경기",
+        "name": "하이닉스점_홀",
+        "is_hall": true,
+        "operating_days_2025": 136,
+        "sales_2025": 138544900,
+        "normalized_monthly_sales": 30985839,
+        "address": "경기도 이천시 대월면 대산로208번길 93-12, 근린생활시설동 지1층 104호(휴먼빌 에듀파크시티)"
+      },
+      {
+        "region": "경기",
+        "name": "문산점_홀",
+        "is_hall": true,
+        "operating_days_2025": 0,
+        "sales_2025": 0,
+        "normalized_monthly_sales": 0,
+        "address": "경기도 파주시 문산읍 문향로67번길 10, 1층"
+      },
+      {
+        "region": "경기",
+        "name": "삼송점",
+        "is_hall": false,
+        "operating_days_2025": 144,
+        "sales_2025": 84651100,
+        "normalized_monthly_sales": 17880585,
+        "address": "경기도 고양시 덕양구 세솔로1길 16, 1층"
+      },
+      {
+        "region": "경기",
+        "name": "광교점",
+        "is_hall": false,
+        "operating_days_2025": 0,
+        "sales_2025": 0,
+        "normalized_monthly_sales": 0,
+        "address": "경기도 수원시 영통구 에듀타운로 101, 101동 1층 104호(이의동, 에듀하임 1309오피스텔)"
+      },
+      {
+        "region": "경기",
+        "name": "병점점_홀",
+        "is_hall": true,
+        "operating_days_2025": 0,
+        "sales_2025": 0,
+        "normalized_monthly_sales": 0,
+        "address": "경기도 화성시 병점중앙로155번길 8, 지하 1층 전체호(진안동)"
+      },
+      {
+        "region": "경기",
+        "name": "진접점",
+        "is_hall": false,
+        "operating_days_2025": 308,
+        "sales_2025": 63652900,
+        "normalized_monthly_sales": 6286068,
+        "address": "경기도 남양주시 진접읍 해밀예당1로 241, 1층 일부"
+      },
+      {
+        "region": "경기",
+        "name": "민락점",
+        "is_hall": false,
+        "operating_days_2025": 306,
+        "sales_2025": 101407500,
+        "normalized_monthly_sales": 10079994,
+        "address": "경기도 의정부시 충의로57번길 48, 1층"
+      },
+      {
+        "region": "경기",
+        "name": "서정점",
+        "is_hall": false,
+        "operating_days_2025": 0,
+        "sales_2025": 0,
+        "normalized_monthly_sales": 0,
+        "address": "경기도 평택시 이충로100번길 23-6, 1층(서정동)"
+      },
+      {
+        "region": "경기",
+        "name": "처인구점",
+        "is_hall": false,
+        "operating_days_2025": 313,
+        "sales_2025": 147946590,
+        "normalized_monthly_sales": 14377131,
+        "address": "경기도 용인시 처인구 중부대로 1331번길 7, 1층 일부호(역북동)"
+      },
+      {
+        "region": "경기",
+        "name": "부곡점",
+        "is_hall": false,
+        "operating_days_2025": 0,
+        "sales_2025": 0,
+        "normalized_monthly_sales": 0,
+        "address": "경기도 군포시 송부로291번안길 3-14, 1층 106호(부곡동)"
+      },
+      {
+        "region": "경기",
+        "name": "수원시청점",
+        "is_hall": false,
+        "operating_days_2025": 0,
+        "sales_2025": 0,
+        "normalized_monthly_sales": 0,
+        "address": "경기도 수원시 권선구 권선로668번길 19-16, 1층(권선동, 나원빌딩)"
+      },
+      {
+        "region": "경기",
+        "name": "죽전점",
+        "is_hall": false,
+        "operating_days_2025": 300,
+        "sales_2025": 209863080,
+        "normalized_monthly_sales": 21277784,
+        "address": "경기도 용인시 수지구 푸른솔로 86, 103호(죽전동)"
+      },
+      {
+        "region": "경기",
+        "name": "호원점",
+        "is_hall": false,
+        "operating_days_2025": 242,
+        "sales_2025": 231638800,
+        "normalized_monthly_sales": 29114381,
+        "address": "경기도 의정부시 전좌로156번길 53-1 (호원동)"
+      },
+      {
+        "region": "경기",
+        "name": "가남점_홀",
+        "is_hall": true,
+        "operating_days_2025": 351,
+        "sales_2025": 214245940,
+        "normalized_monthly_sales": 18565947,
+        "address": "경기도 여주시 가남읍 태평로 23-1"
+      },
+      {
+        "region": "경기",
+        "name": "고읍점",
+        "is_hall": false,
+        "operating_days_2025": 359,
+        "sales_2025": 172328800,
+        "normalized_monthly_sales": 14600746,
+        "address": "경기도 양주시 고읍남로 23, 151호(광사동, 메가시티프라자)"
+      },
+      {
+        "region": "경기",
+        "name": "안중점_홀",
+        "is_hall": true,
+        "operating_days_2025": 321,
+        "sales_2025": 166451490,
+        "normalized_monthly_sales": 15772273,
+        "address": "경기도 평택시 안중읍 안현로서3길 72, 1층"
+      },
+      {
+        "region": "경기",
+        "name": "다산점_홀",
+        "is_hall": true,
+        "operating_days_2025": 306,
+        "sales_2025": 264665760,
+        "normalized_monthly_sales": 26308007,
+        "address": "경기도 남양주시 다산중앙로146번길 12-5, 1층 102호(다산동,강희프라자)"
+      },
+      {
+        "region": "경기",
+        "name": "백석점_홀",
+        "is_hall": true,
+        "operating_days_2025": 360,
+        "sales_2025": 399160755,
+        "normalized_monthly_sales": 33725388,
+        "address": "경기도 고양시 일산동구 호수로 340-25, 106호"
+      },
+      {
+        "region": "경기",
+        "name": "중동점",
+        "is_hall": false,
+        "operating_days_2025": 357,
+        "sales_2025": 457208680,
+        "normalized_monthly_sales": 38954521,
+        "address": "경기도 부천시 원미구 중동로248번길 44, 102호 (중동,메트로펠리스)"
+      },
+      {
+        "region": "경기",
+        "name": "신갈점",
+        "is_hall": false,
+        "operating_days_2025": 308,
+        "sales_2025": 223380820,
+        "normalized_monthly_sales": 22060065,
+        "address": "경기도 용인시 기흥구 신구로43번길 13-1(신갈동)"
+      },
+      {
+        "region": "경기",
+        "name": "화정점_홀",
+        "is_hall": true,
+        "operating_days_2025": 339,
+        "sales_2025": 222617300,
+        "normalized_monthly_sales": 19974266,
+        "address": "경기도 고양시 덕양구 화신로 263, 2층 209호(화정동, 브릿지타워)"
+      },
+      {
+        "region": "경기",
+        "name": "용이점",
+        "is_hall": false,
+        "operating_days_2025": 0,
+        "sales_2025": 0,
+        "normalized_monthly_sales": 0,
+        "address": ""
+      },
+      {
+        "region": "인천",
+        "name": "숭의점",
+        "is_hall": false,
+        "operating_days_2025": 362,
+        "sales_2025": 173336600,
+        "normalized_monthly_sales": 14564424,
+        "address": "인천광역시 미추홀구 미추로 38 ,1층"
+      },
+      {
+        "region": "인천",
+        "name": "가좌점",
+        "is_hall": false,
+        "operating_days_2025": 332,
+        "sales_2025": 138905800,
+        "normalized_monthly_sales": 12726058,
+        "address": "인천광역시 서구 서달로 20, 1층"
+      },
+      {
+        "region": "인천",
+        "name": "영종도점",
+        "is_hall": false,
+        "operating_days_2025": 246,
+        "sales_2025": 83979500,
+        "normalized_monthly_sales": 10383644,
+        "address": "인천광역시 중구 운중로 103, 1층"
+      },
+      {
+        "region": "인천",
+        "name": "주안점",
+        "is_hall": false,
+        "operating_days_2025": 0,
+        "sales_2025": 0,
+        "normalized_monthly_sales": 0,
+        "address": "인천광역시 미추홀구 인하로247번길 22, 1층 일부호(주안동)"
+      },
+      {
+        "region": "인천",
+        "name": "만수점",
+        "is_hall": false,
+        "operating_days_2025": 41,
+        "sales_2025": 21584160,
+        "normalized_monthly_sales": 16012639,
+        "address": "인천광역시 남동구 하촌로51번길 13-2, 1층"
+      },
+      {
+        "region": "인천",
+        "name": "청라점",
+        "is_hall": false,
+        "operating_days_2025": 156,
+        "sales_2025": 41373300,
+        "normalized_monthly_sales": 8066909,
+        "address": "인천광역시 서구 크리스탈로 94, 101호(청라동, 청라레이크뷰)"
+      },
+      {
+        "region": "인천",
+        "name": "간석점",
+        "is_hall": false,
+        "operating_days_2025": 0,
+        "sales_2025": 0,
+        "normalized_monthly_sales": 0,
+        "address": "인천광역시 남동구 석정로 561, 1층"
+      },
+      {
+        "region": "인천",
+        "name": "계양점",
+        "is_hall": false,
+        "operating_days_2025": 316,
+        "sales_2025": 168042980,
+        "normalized_monthly_sales": 16175023,
+        "address": "인천광역시 계양구 임학서로6번길 3-1, 102호"
+      },
+      {
+        "region": "인천",
+        "name": "인천논현점_홀",
+        "is_hall": true,
+        "operating_days_2025": 258,
+        "sales_2025": 100800265,
+        "normalized_monthly_sales": 11883752,
+        "address": "인천광역시 남동구 포구로 45, 201동 118호"
+      },
+      {
+        "region": "인천",
+        "name": "연수점",
+        "is_hall": false,
+        "operating_days_2025": 316,
+        "sales_2025": 160127995,
+        "normalized_monthly_sales": 15413164,
+        "address": "인천광역시 연수구 벚꽃로158번길 5 1층"
+      }
+    ]
+  },
+  "revenue_assumptions": {
+    "sales_mix": {
+      "delivery": [
+        {
+          "channel": "배달의민족",
+          "ratio": 0.063
+        },
+        {
+          "channel": "배민원",
+          "ratio": 0.4112
+        },
+        {
+          "channel": "요기요",
+          "ratio": 0.075
+        },
+        {
+          "channel": "쿠팡이츠",
+          "ratio": 0.3516
+        },
+        {
+          "channel": "지역배달",
+          "ratio": 0.032
+        },
+        {
+          "channel": "자사앱",
+          "ratio": 0.0243
+        }
+      ],
+      "pickup": [
+        {
+          "channel": "배달의민족 포장",
+          "ratio": 0.0123
+        },
+        {
+          "channel": "쿠팡이츠 포장",
+          "ratio": 0.0025
+        },
+        {
+          "channel": "요기요 포장",
+          "ratio": 0.0074
+        },
+        {
+          "channel": "지역배달 포장",
+          "ratio": 0.0115
+        },
+        {
+          "channel": "홀 포장",
+          "ratio": 0.0082
+        }
+      ],
+      "hall": [
+        {
+          "channel": "카드매출",
+          "ratio": 0.0005
+        },
+        {
+          "channel": "현금매출",
+          "ratio": 0.0005
+        }
+      ]
+    },
+    "labor": {
+      "full_time_monthly_salary": 2500000,
+      "part_timer_hours_per_day": 3,
+      "part_timer_days_per_week": 5,
+      "weeks_per_month": 4.35,
+      "minimum_hourly_wage": 10030,
+      "weekly_holiday_multiplier": 1.2,
+      "employer_insurance_rate": 0.105,
+      "default_full_time_count": 0,
+      "default_part_timer_count": 2.5
+    },
+    "fees": {
+      "average_order_price": 20000,
+      "local_basic_delivery_fee": 4000,
+      "quick_fee_rate_for_baemin_local_self_app": 0.165,
+      "quick_management_monthly_fee": 100000,
+      "baemin_service_rate": 0.068,
+      "baemin_card_rate": 0.03,
+      "baemin_delivery_fee_per_order": 4000,
+      "baemin_one_service_rate": 0.078,
+      "baemin_one_card_rate": 0.03,
+      "baemin_one_delivery_fee_per_order": 3400,
+      "yogiyo_service_rate": 0.085,
+      "yogiyo_card_rate": 0.03,
+      "coupang_service_rate": 0.078,
+      "coupang_card_rate": 0.03,
+      "vat_multiplier": 1.1,
+      "store_card_rate": 5e-05
+    },
+    "fixed_costs": {
+      "default_rent": 500000,
+      "utilities": 705000,
+      "bookkeeping_consumables": 400000,
+      "foodtech": 22000,
+      "royalty": 110000
+    },
+    "cost_ratios": {
+      "ingredients": 0.36,
+      "packaging": 0.04,
+      "total_logistics": 0.4
+    }
+  },
+  "opening_cost_items": [
+    {
+      "row": 3,
+      "group": "본사비용",
+      "name": "가맹비",
+      "spec": "▣",
+      "unit_price": 2200000,
+      "unit": null,
+      "note": null
+    },
+    {
+      "row": 4,
+      "group": null,
+      "name": "교육비",
+      "spec": "▣",
+      "unit_price": 1100000,
+      "unit": null,
+      "note": null
+    },
+    {
+      "row": 5,
+      "group": null,
+      "name": "감리비",
+      "spec": "▣",
+      "unit_price": 300000,
+      "unit": "평당",
+      "note": null
+    },
+    {
+      "row": 6,
+      "group": null,
+      "name": "물류보증금",
+      "spec": "▣",
+      "unit_price": 1000000,
+      "unit": null,
+      "note": null
+    },
+    {
+      "row": 8,
+      "group": "인테리어",
+      "name": "인테리어",
+      "spec": "▣",
+      "unit_price": 1000000,
+      "unit": "평당",
+      "note": null
+    },
+    {
+      "row": 9,
+      "group": null,
+      "name": "간판",
+      "spec": "▣플렉스 간판(천갈이)",
+      "unit_price": 700000,
+      "unit": null,
+      "note": null
+    },
+    {
+      "row": 10,
+      "group": null,
+      "name": null,
+      "spec": "▣채널간판",
+      "unit_price": 2000000,
+      "unit": null,
+      "note": null
+    },
+    {
+      "row": 11,
+      "group": null,
+      "name": "내외부 사인물",
+      "spec": "▣시트지, 내부사인물 포함",
+      "unit_price": 1000000,
+      "unit": null,
+      "note": null
+    },
+    {
+      "row": 13,
+      "group": "주방설비 및 집기",
+      "name": "주방설비",
+      "spec": "▣ 냉장고,세척기,싱크대 등",
+      "unit_price": 8000000,
+      "unit": null,
+      "note": null
+    },
+    {
+      "row": 14,
+      "group": null,
+      "name": "홀/주방 집기",
+      "spec": "▣ 코팅웍, 받드, 집게, 국자 등",
+      "unit_price": 2100000,
+      "unit": null,
+      "note": null
+    },
+    {
+      "row": 15,
+      "group": null,
+      "name": "의탁자",
+      "spec": "▣2인테이블(600*600*730)",
+      "unit_price": 199650,
+      "unit": "개당",
+      "note": null
+    },
+    {
+      "row": 16,
+      "group": null,
+      "name": null,
+      "spec": "└서랍X",
+      "unit_price": 157300,
+      "unit": null,
+      "note": null
+    },
+    {
+      "row": 17,
+      "group": null,
+      "name": null,
+      "spec": "▣의자(1인용)",
+      "unit_price": 21536,
+      "unit": null,
+      "note": null
+    },
+    {
+      "row": 18,
+      "group": null,
+      "name": "홀운영품목",
+      "spec": "수저세트",
+      "unit_price": 2750,
+      "unit": "3배",
+      "note": null
+    },
+    {
+      "row": 19,
+      "group": null,
+      "name": null,
+      "spec": "소스용기",
+      "unit_price": 1210,
+      "unit": "1배",
+      "note": null
+    },
+    {
+      "row": 20,
+      "group": null,
+      "name": null,
+      "spec": "앞접시",
+      "unit_price": 3850,
+      "unit": "2배",
+      "note": null
+    },
+    {
+      "row": 21,
+      "group": null,
+      "name": null,
+      "spec": "사이드 그릇2(순대,막창,김밥)",
+      "unit_price": 4950,
+      "unit": "1.5배",
+      "note": null
+    },
+    {
+      "row": 22,
+      "group": null,
+      "name": null,
+      "spec": "배송비",
+      "unit_price": 5500,
+      "unit": null,
+      "note": null
+    },
+    {
+      "row": 23,
+      "group": null,
+      "name": null,
+      "spec": "메인 떡볶이 그릇",
+      "unit_price": 40955,
+      "unit": "1배",
+      "note": null
+    },
+    {
+      "row": 24,
+      "group": null,
+      "name": null,
+      "spec": "사이드그릇1(볶음밥 등)",
+      "unit_price": 10900,
+      "unit": "1.5배",
+      "note": null
+    },
+    {
+      "row": 25,
+      "group": null,
+      "name": null,
+      "spec": "물컵",
+      "unit_price": 1935,
+      "unit": "2.5배",
+      "note": null
+    },
+    {
+      "row": 26,
+      "group": null,
+      "name": null,
+      "spec": "사각 튀김바스켓",
+      "unit_price": 8247,
+      "unit": "1배",
+      "note": null
+    }
+  ]
+}
