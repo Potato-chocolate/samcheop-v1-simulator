@@ -33,8 +33,8 @@ describe("삼첩분식 상담 계산기", () => {
     expect(new Set(CHANNELS.map((channel) => channel.color)).size).toBe(CHANNELS.length);
   });
 
-  it("비용 막대가 금액과 매출 대비 비율을 함께 렌더링한다", () => {
-    expect(homeSource).toContain("{fmtCompact(item.value)} · 매출 대비 {fmtPct(item.value / revenue.monthlySales)}");
+  it("비용 막대가 금액과 비율을 축약 형식으로 함께 렌더링한다", () => {
+    expect(homeSource).toContain("{fmtCompact(item.value)} · {fmtPct(item.value / revenue.monthlySales)}");
   });
 
   it("상담 포인트 이미지 카드를 제거하고 채널·벤치마크 2열 인사이트만 렌더링한다", () => {

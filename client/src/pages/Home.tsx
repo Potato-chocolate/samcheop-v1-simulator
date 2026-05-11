@@ -468,7 +468,7 @@ export default function Home() {
                       <b>{item.label}</b>
                     </div>
                     <div className="bar-track"><i style={{ width: `${(item.value / biggestCost) * 100}%`, backgroundColor: item.color }} /></div>
-                    <em>{fmtCompact(item.value)} · 매출 대비 {fmtPct(item.value / revenue.monthlySales)}</em>
+                    <em>{fmtCompact(item.value)} · {fmtPct(item.value / revenue.monthlySales)}</em>
                   </div>
                 ))}
               </div>
