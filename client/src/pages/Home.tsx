@@ -7,19 +7,15 @@
 import { useMemo, useState } from "react";
 import {
   ArrowRight,
-  BadgePercent,
   BarChart3,
   Calculator,
   ChevronRight,
   CircleDollarSign,
-  ClipboardCheck,
   FileText,
   Flame,
-  LayoutDashboard,
   PackageCheck,
   ReceiptText,
   Store,
-  Utensils,
 } from "lucide-react";
 
 const ASSETS = {
@@ -53,9 +49,54 @@ const BENCHMARK_STORES = [
   { rank: 5, region: "경기", name: "백석점_홀", sales: 33725388, hall: true },
   { rank: 6, region: "서울", name: "구로점", sales: 32005397, hall: false },
   { rank: 7, region: "경기", name: "하이닉스점_홀", sales: 30985839, hall: true },
-  { rank: 8, region: "서울", name: "홍대점", sales: 30531581, hall: false },
-  { rank: 9, region: "경기", name: "군포점_홀", sales: 29841100, hall: true },
-  { rank: 10, region: "경기", name: "호원점", sales: 29114381, hall: false },
+  { rank: 8, region: "경기", name: "군포점_홀", sales: 29841100, hall: true },
+  { rank: 9, region: "경기", name: "호원점", sales: 29114381, hall: false },
+  { rank: 10, region: "서울", name: "숭실대점", sales: 28116552, hall: false },
+  { rank: 11, region: "서울", name: "건대점", sales: 26646306, hall: false },
+  { rank: 12, region: "경기", name: "다산점_홀", sales: 26308007, hall: true },
+  { rank: 13, region: "경기", name: "정자점", sales: 23261959, hall: false },
+  { rank: 14, region: "경기", name: "신갈점", sales: 22060065, hall: false },
+  { rank: 15, region: "경기", name: "죽전점", sales: 21277784, hall: false },
+  { rank: 16, region: "경기", name: "포곡점", sales: 21157068, hall: false },
+  { rank: 17, region: "경기", name: "판교점", sales: 21060057, hall: false },
+  { rank: 18, region: "경기", name: "시흥정왕점", sales: 20931794, hall: false },
+  { rank: 19, region: "경기", name: "성남점", sales: 20857060, hall: false },
+  { rank: 20, region: "경기", name: "화정점_홀", sales: 19974266, hall: true },
+  { rank: 21, region: "경기", name: "금촌점", sales: 19888595, hall: false },
+  { rank: 22, region: "서울", name: "수유점", sales: 19099647, hall: false },
+  { rank: 23, region: "서울", name: "석관점", sales: 18809667, hall: false },
+  { rank: 24, region: "경기", name: "가남점_홀", sales: 18565947, hall: true },
+  { rank: 25, region: "서울", name: "불광점", sales: 18190107, hall: false },
+  { rank: 26, region: "경기", name: "삼송점", sales: 17880585, hall: false },
+  { rank: 27, region: "경기", name: "시흥시청점_홀", sales: 17295146, hall: true },
+  { rank: 28, region: "경기", name: "고잔점", sales: 16745233, hall: false },
+  { rank: 29, region: "경기", name: "장기점", sales: 16604765, hall: false },
+  { rank: 30, region: "인천", name: "계양점", sales: 16175023, hall: false },
+  { rank: 31, region: "경기", name: "영통점", sales: 16166419, hall: false },
+  { rank: 32, region: "경기", name: "안중점_홀", sales: 15772273, hall: true },
+  { rank: 33, region: "서울", name: "청량리점", sales: 15558484, hall: false },
+  { rank: 34, region: "인천", name: "연수점", sales: 15413164, hall: false },
+  { rank: 35, region: "경기", name: "고읍점", sales: 14600746, hall: false },
+  { rank: 36, region: "인천", name: "숭의점", sales: 14564424, hall: false },
+  { rank: 37, region: "경기", name: "처인구점", sales: 14377131, hall: false },
+  { rank: 38, region: "경기", name: "봉담점", sales: 14155930, hall: false },
+  { rank: 39, region: "경기", name: "호매실점", sales: 14044761, hall: false },
+  { rank: 40, region: "경기", name: "송우점", sales: 13112170, hall: false },
+  { rank: 41, region: "서울", name: "대치점", sales: 12796593, hall: false },
+  { rank: 42, region: "서울", name: "면목점", sales: 12756767, hall: false },
+  { rank: 43, region: "인천", name: "가좌점", sales: 12726058, hall: false },
+  { rank: 44, region: "인천", name: "인천논현점_홀", sales: 11883752, hall: true },
+  { rank: 45, region: "경기", name: "포천시청점", sales: 11004190, hall: false },
+  { rank: 46, region: "경기", name: "야탑점", sales: 10624047, hall: false },
+  { rank: 47, region: "경기", name: "화성남양점", sales: 10581827, hall: false },
+  { rank: 48, region: "경기", name: "가능점", sales: 10498885, hall: false },
+  { rank: 49, region: "인천", name: "영종도점", sales: 10383644, hall: false },
+  { rank: 50, region: "경기", name: "내유점", sales: 10156720, hall: false },
+  { rank: 51, region: "경기", name: "민락점", sales: 10079994, hall: false },
+  { rank: 52, region: "경기", name: "안성점", sales: 8835211, hall: false },
+  { rank: 53, region: "인천", name: "청라점", sales: 8066909, hall: false },
+  { rank: 54, region: "경기", name: "진접점", sales: 6286068, hall: false },
+  { rank: 55, region: "경기", name: "전곡점", sales: 6140332, hall: false },
 ];
 
 export const CHANNELS = [
@@ -353,9 +394,9 @@ export default function Home() {
           </span>
         </a>
         <nav>
-          <a href="#revenue">매출 손익</a>
-          <a href="#cost">개설비용</a>
-          <a href="#assumptions">자료 기준</a>
+          <a href="#nearby">인근매장 조회</a>
+          <a href="#revenue">목표 매출</a>
+          <a href="#cost">창업 비용</a>
         </nav>
       </header>
 
@@ -370,8 +411,8 @@ export default function Home() {
               삼첩분식 상담 자료의 목표매출 산정식, 수도권 매장 매출 통계, 예상 개설비용 항목을 바탕으로 상담 현장에서 바로 설명 가능한 손익·투자비 리포트를 구성했습니다.
             </p>
             <div className="hero-actions">
-              <a href="#revenue" className="primary-cta">매출 시뮬레이션 시작 <ArrowRight size={18} /></a>
-              <a href="#cost" className="secondary-cta">개설비용 보기</a>
+              <a href="#nearby" className="primary-cta">상담 흐름 시작 <ArrowRight size={18} /></a>
+              <a href="#revenue" className="secondary-cta">목표 매출 입력</a>
             </div>
           </div>
           <div className="hero-receipt" aria-label="핵심 통계 요약">
@@ -390,9 +431,9 @@ export default function Home() {
 
         <section className="three-cheop-strip" aria-label="시뮬레이션 단계">
           {[
-            { no: "1첩", title: "목표 매출 입력", text: "평균·중앙값·목표값 프리셋으로 상담 시작점을 빠르게 잡습니다." },
-            { no: "2첩", title: "비용 구조 계산", text: "물류비, 플랫폼 수수료, 인건비, 고정비를 한 장의 손익표로 정리합니다." },
-            { no: "3첩", title: "개설비용 리포트", text: "평수·간판·홀 테이블 수에 따라 초기 투자비를 즉시 비교합니다." },
+            { no: "1첩", title: "인근매장 매출 조회", text: "후보 상권 주변의 참고 매출을 먼저 확인하는 단계입니다. 현재 기능은 개발중으로 안내합니다." },
+            { no: "2첩", title: "목표 매출 입력", text: "수도권 매장 통계와 채널 믹스를 참고해 목표 월매출과 손익 구조를 계산합니다." },
+            { no: "3첩", title: "창업 비용 계산", text: "평수·간판·홀 테이블 수에 따라 초기 투자비와 프로모션 차감액을 비교합니다." },
           ].map((item) => (
             <article key={item.no}>
               <span>{item.no}</span>
@@ -402,11 +443,31 @@ export default function Home() {
           ))}
         </section>
 
+
+        <section id="nearby" className="workspace-section nearby-section">
+          <SectionHeader
+            eyebrow="01 · 인근매장 매출 조회"
+            title="상담 시작점은 후보 상권 주변 매출 확인입니다"
+            description="주소나 상권을 입력해 인근 삼첩분식 매장 매출을 조회하는 기능을 준비 중입니다. 현재 화면에서는 상담 흐름상 첫 단계의 목적과 상태를 명확히 안내합니다."
+          />
+
+          <article className="development-card">
+            <span className="status-pill">개발중</span>
+            <div>
+              <h3>인근매장 매출 조회 기능</h3>
+              <p>
+                상담자는 이 단계에서 후보 점포 주변의 참고 매장, 지역, 월평균 환산 매출을 확인한 뒤 2첩의 목표 매출 입력으로 이동하게 됩니다.
+              </p>
+            </div>
+            <a href="#revenue" className="secondary-cta">2첩 목표 매출 입력으로 이동</a>
+          </article>
+        </section>
+
         <section id="revenue" className="workspace-section revenue-section">
           <SectionHeader
-            eyebrow="01 · 매출 시뮬레이션"
-            title="목표 월매출을 움직이면 손익 구조가 즉시 바뀝니다"
-            description="기본값은 목표매출 산정자료의 3,234만원이며, 수도권 55개 매장 통계 프리셋을 함께 제공합니다."
+            eyebrow="02 · 목표 매출 입력"
+            title="목표 월매출을 입력하면 손익 구조가 즉시 계산됩니다"
+            description="1첩에서 확인할 인근매장 참고 매출을 바탕으로 목표 월매출을 정하고, 수도권 55개 매장 통계 프리셋과 손익표를 함께 확인합니다."
           />
 
           <div className="workspace-grid">
@@ -414,8 +475,8 @@ export default function Home() {
               <div className="panel-title">
                 <Calculator size={20} />
                 <div>
-                  <h3>1첩 · 입력값</h3>
-                  <p>매출과 운영 조건을 조정하세요.</p>
+                  <h3>2첩 · 목표 매출 입력</h3>
+                  <p>목표 매출과 운영 조건을 조정하세요.</p>
                 </div>
               </div>
 
@@ -447,8 +508,8 @@ export default function Home() {
             <section className="result-panel receipt-panel">
               <div className="panel-title panel-title--between">
                 <div>
-                  <span className="tiny-label">2첩 · 손익 리포트</span>
-                  <h3>월 손익 예상</h3>
+                  <span className="tiny-label">2첩 · 손익 계산</span>
+                  <h3>목표 매출 손익 리포트</h3>
                 </div>
                 <ReceiptText size={28} />
               </div>
@@ -522,7 +583,7 @@ export default function Home() {
             </article>
 
             <article className="benchmark-card">
-              <div className="panel-title"><Store size={20} /><h3>수도권 상위 매장 벤치마크</h3></div>
+              <div className="panel-title"><Store size={20} /><h3>25년 기준 수도권 매장 순위</h3></div>
               {BENCHMARK_STORES.map((store) => (
                 <div className="benchmark-row" key={store.rank}>
                   <b>{store.rank}</b>
@@ -536,9 +597,9 @@ export default function Home() {
 
         <section id="cost" className="workspace-section cost-section" style={{ backgroundImage: `linear-gradient(180deg, rgba(255,248,232,.92), rgba(255,248,232,.98)), url(${ASSETS.pattern})` }}>
           <SectionHeader
-            eyebrow="02 · 개설비용 시뮬레이션"
-            title="평수와 홀 구성에 따라 초기 투자비를 다시 계산합니다"
-            description="본사비용 면제 항목은 정상가와 차감액을 분리하여, 상담자가 프로모션 효과를 명확히 설명할 수 있게 구성했습니다."
+            eyebrow="03 · 창업 비용 계산"
+            title="평수와 홀 구성에 따라 창업 비용을 계산합니다"
+            description="2첩에서 정한 목표 매출 이후 실제 창업 검토 단계로 이어지도록, 본사비용 면제 항목과 현장 투자 항목을 분리해 보여줍니다."
           />
 
           <div className="workspace-grid cost-grid">
@@ -546,7 +607,7 @@ export default function Home() {
               <div className="panel-title">
                 <PackageCheck size={20} />
                 <div>
-                  <h3>3첩 · 개설 조건</h3>
+                  <h3>3첩 · 창업 조건</h3>
                   <p>평수, 간판, 홀 운영 여부를 선택하세요.</p>
                 </div>
               </div>
@@ -570,7 +631,7 @@ export default function Home() {
             <section className="result-panel investment-panel">
               <div className="panel-title panel-title--between">
                 <div>
-                  <span className="tiny-label">개설비용 리포트</span>
+                  <span className="tiny-label">3첩 · 창업 비용 리포트</span>
                   <h3>예상 실납부 투자비</h3>
                 </div>
                 <CircleDollarSign size={30} />
@@ -609,20 +670,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="assumptions" className="assumption-section">
-          <div>
-            <span className="eyebrow-chip"><ClipboardCheck size={16} /> 자료 기준</span>
-            <h2>매장 실적 자료와 브랜드 조사를 결합한 상담용 계산기입니다</h2>
-            <p>
-              본 화면은 내부 상담 자료의 주요 수치를 웹 계산기로 옮긴 참고용 도구입니다. 실제 계약·견적·수익 보장을 의미하지 않으며, 가맹 상담 시 후보 상권, 임대 조건, 오픈 프로모션, 배달 권역 정책에 따라 조정되어야 합니다.
-            </p>
-          </div>
-          <div className="assumption-cards">
-            <article><BadgePercent /><b>수수료</b><span>배달앱별 중개·카드·배달비 구조를 상담 산정자료 기준으로 반영했습니다.</span></article>
-            <article><Utensils /><b>물류비</b><span>식자재율 36%, 포장재율 4%를 기본 적용합니다.</span></article>
-            <article><LayoutDashboard /><b>브랜드 UI</b><span>삼첩분식의 레드·옐로우 패키지와 1·2·3첩 구조를 화면 경험에 반영했습니다.</span></article>
-          </div>
-        </section>
       </main>
 
       <footer>

@@ -35,12 +35,12 @@ describe("삼첩분식 상담 화면 QA", () => {
     expect(homeSource).toContain('Math.round(revenue.monthlyOrders).toLocaleString("ko-KR")');
   });
 
-  it("수도권 상위 매장 벤치마크를 10위까지 표시한다", () => {
+  it("25년 기준 수도권 매장 순위를 유효 매장 55개 전체로 표시한다", () => {
     const benchmarkBlock = homeSource.match(/const BENCHMARK_STORES = \[([\s\S]*?)\];/)?.[1] ?? "";
     const rankMatches = benchmarkBlock.match(/rank:/g) ?? [];
 
-    expect(rankMatches).toHaveLength(10);
-    expect(benchmarkBlock).toContain('rank: 10');
-    expect(benchmarkBlock).toContain('name: "호원점"');
+    expect(rankMatches).toHaveLength(55);
+    expect(benchmarkBlock).toContain('rank: 55');
+    expect(benchmarkBlock).toContain('name: "전곡점"');
   });
 });

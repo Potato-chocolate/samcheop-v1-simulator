@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import { CHANNELS, calculateRevenue } from "./Home";
 
 const homeSource = readFileSync("client/src/pages/Home.tsx", "utf8");
+const cssSource = readFileSync("client/src/index.css", "utf8");
 
 describe("삼첩분식 상담 계산기", () => {
   it("공과금을 월매출의 3.5%로 자동 계산하고 고정비에 반영한다", () => {
@@ -46,5 +47,29 @@ describe("삼첩분식 상담 계산기", () => {
     expect(homeSource).toContain('<div className="stacked-bar" aria-label="채널 매출 믹스">\n                {CHANNELS.map((channel) => (');
     expect(homeSource).toContain('<div className="channel-list">\n                {CHANNELS.map((channel) => (');
     expect(homeSource).not.toContain("CHANNELS.slice");
+  });
+
+  it("상담 흐름을 인근매장 조회, 목표 매출 입력, 창업 비용 계산 순서로 안내한다", () => {
+    expect(homeSource).toContain('href="#nearby"');
+    expect(homeSource).toContain('title: "인근매장 매출 조회"');
+    expect(homeSource).toContain('title: "목표 매출 입력"');
+    expect(homeSource).toContain('title: "창업 비용 계산"');
+    expect(homeSource).toContain('className="status-pill">개발중');
+    expect(homeSource).not.toContain('id="assumptions"');
+  });
+
+  it("25년 기준 수도권 매장 순위가 유효 매장 55개 전체를 렌더링한다", () => {
+    const rankItems = homeSource.match(/rank: \d+/g) ?? [];
+
+    expect(rankItems).toHaveLength(55);
+    expect(homeSource).toContain('25년 기준 수도권 매장 순위');
+    expect(homeSource).toContain('name: "전곡점"');
+  });
+
+  it("채널 목록, 매장 순위, 창업 비용 표는 축소 카드 안에서 세로 스크롤을 제공한다", () => {
+    expect(cssSource).toContain('.channel-list {\n  --visible-list-rows: 5;');
+    expect(cssSource).toContain('max-height: calc(var(--visible-list-rows) * var(--list-row-height));');
+    expect(cssSource).toContain('.insight-grid--two .benchmark-card {\n  max-height: calc(5.4rem + var(--visible-list-rows) * var(--list-row-height));');
+    expect(cssSource).toContain('.cost-table {\n  max-height: 34rem;\n  overflow-y: auto;');
   });
 });

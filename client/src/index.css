@@ -1628,3 +1628,129 @@ footer a {
   font-weight: 700;
   line-height: 1.6;
 }
+
+/* Reorganized 1·2·3-cheop flow: compact cards and scrollable reference panels */
+.nearby-section {
+  padding-top: 4rem;
+}
+
+.development-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  padding: clamp(1.05rem, 2vw, 1.45rem);
+  border: 2px solid rgba(185, 28, 28, 0.18);
+  border-radius: 1.35rem;
+  background:
+    radial-gradient(circle at top right, rgba(242, 183, 5, 0.2), transparent 34%),
+    rgba(255, 255, 255, 0.84);
+  box-shadow: 0 20px 42px rgba(82, 43, 22, 0.08);
+}
+
+.development-card h3 {
+  margin: 0 0 0.35rem;
+  font-family: "Black Han Sans", sans-serif;
+  font-size: clamp(1.85rem, 4vw, 3rem);
+  line-height: 1;
+}
+
+.development-card p {
+  margin: 0;
+  color: var(--sam-muted);
+  font-weight: 750;
+  line-height: 1.65;
+}
+
+.status-pill {
+  display: inline-grid;
+  min-width: 5.6rem;
+  min-height: 5.6rem;
+  place-items: center;
+  border: 2px solid var(--sam-ink);
+  border-radius: 50%;
+  background: var(--sam-yellow);
+  color: var(--sam-red-deep);
+  font-weight: 950;
+  transform: rotate(-6deg);
+  box-shadow: 5px 5px 0 var(--sam-red);
+}
+
+.metric-card {
+  min-height: 6.8rem;
+  padding: 0.85rem;
+}
+
+.preset {
+  min-height: 4.55rem;
+}
+
+.field-card {
+  padding: 0.78rem;
+}
+
+.insight-grid--two .mix-card,
+.insight-grid--two .benchmark-card {
+  max-height: 31rem;
+  overflow: hidden;
+}
+
+.channel-list,
+.benchmark-card {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(185, 28, 28, 0.48) rgba(37, 27, 22, 0.07);
+}
+
+.channel-list {
+  --visible-list-rows: 5;
+  --list-row-height: 2.68rem;
+  max-height: calc(var(--visible-list-rows) * var(--list-row-height));
+  overflow-y: auto;
+  padding-right: 0.35rem;
+}
+
+.benchmark-card {
+  --visible-list-rows: 5;
+  --list-row-height: 2.85rem;
+  overflow-y: auto;
+  padding-right: 0.85rem;
+}
+
+.insight-grid--two .benchmark-card {
+  max-height: calc(5.4rem + var(--visible-list-rows) * var(--list-row-height));
+}
+
+.benchmark-row {
+  padding: 0.45rem 0;
+}
+
+.benchmark-row b {
+  width: 1.55rem;
+  height: 1.55rem;
+  font-size: 0.82rem;
+}
+
+.cost-table {
+  max-height: 34rem;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(185, 28, 28, 0.48) rgba(37, 27, 22, 0.07);
+}
+
+@media (max-width: 760px) {
+  .development-card {
+    grid-template-columns: 1fr;
+  }
+
+  .status-pill {
+    min-width: 4.8rem;
+    min-height: 4.8rem;
+  }
+
+  .channel-list,
+  .benchmark-card,
+  .cost-table {
+    max-height: none;
+    overflow: visible;
+  }
+}
