@@ -1,5 +1,5 @@
 /*
- * Design philosophy: Premium Bunsik Package Collage for Samcheop v1.
+ * Design philosophy: Premium Bunsik Package Collage for Samcheop franchise counseling.
  * Global styles define chili-red, package-yellow, cream receipt paper, charcoal ink, asymmetric card layouts,
  * tactile shadows, and print-friendly receipt panels for a Korean franchise counseling simulator.
  */
@@ -126,6 +126,8 @@
     @apply bg-background text-foreground;
     margin: 0;
     font-family: "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    word-break: keep-all;
+    overflow-wrap: break-word;
     background:
       radial-gradient(circle at 10% 10%, rgba(242, 183, 5, 0.22), transparent 28rem),
       radial-gradient(circle at 88% 2%, rgba(185, 28, 28, 0.16), transparent 32rem),
@@ -214,7 +216,8 @@
   border-radius: 0.8rem;
   background: var(--sam-red);
   color: var(--sam-yellow);
-  font-family: "Black Han Sans", "Noto Sans KR", sans-serif;
+  font-family: "Noto Sans KR", system-ui, sans-serif;
+  font-weight: 900;
   font-size: 1.65rem;
   line-height: 1;
   box-shadow: 5px 5px 0 var(--sam-yellow);
@@ -225,8 +228,11 @@
 .section-header h2,
 .hero-content h1,
 .assumption-section h2 {
-  font-family: "Black Han Sans", "Noto Sans KR", sans-serif;
+  font-family: "Noto Sans KR", system-ui, sans-serif;
+  font-weight: 900;
   letter-spacing: -0.035em;
+  word-break: keep-all;
+  text-wrap: balance;
 }
 
 .brand-lockup b {
@@ -315,9 +321,9 @@
 
 .hero-content h1 {
   margin: 1.15rem 0 1rem;
-  max-width: 43rem;
-  font-size: clamp(3rem, 8vw, 6.9rem);
-  line-height: 0.92;
+  max-width: 44rem;
+  font-size: clamp(2.65rem, 6.25vw, 5.25rem);
+  line-height: 1.08;
 }
 
 .hero-content mark {
@@ -653,7 +659,7 @@
   margin-bottom: 0.55rem;
 }
 
-.field-card input[type="number"] {
+.field-card input[type="text"] {
   width: 100%;
   border: 0;
   border-bottom: 2px solid rgba(37, 27, 22, 0.12);
@@ -664,7 +670,7 @@
   letter-spacing: -0.03em;
 }
 
-.field-card input[type="number"]:focus {
+.field-card input[type="text"]:focus {
   outline: none;
   border-bottom-color: var(--sam-red);
 }
@@ -1307,7 +1313,7 @@ footer a {
   gap: 0.45rem;
   max-width: 100%;
   margin: 0.9rem 0 0;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
   color: var(--sam-red-deep);
   font-size: 0.82rem;
   font-weight: 850;
@@ -1385,7 +1391,7 @@ footer a {
 .saved-report-item em {
   color: var(--sam-red-deep);
   font-size: 0.76rem;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
   font-style: normal;
 }
 
@@ -1439,7 +1445,8 @@ footer a {
 
 .shared-report-header h1 {
   margin: 0.7rem 0 0.35rem;
-  font-family: "Black Han Sans", "Noto Sans KR", sans-serif;
+  font-family: "Noto Sans KR", system-ui, sans-serif;
+  font-weight: 900;
   font-size: clamp(2rem, 4vw, 3.6rem);
   line-height: 0.98;
 }
@@ -1558,4 +1565,12 @@ footer a {
     box-shadow: none !important;
     background: white !important;
   }
+}
+
+.report-save-card p {
+  margin: 0.55rem 0 0;
+  color: var(--sam-muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.6;
 }

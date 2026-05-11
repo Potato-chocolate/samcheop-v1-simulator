@@ -1,14 +1,10 @@
 /*
- * Design philosophy: Premium Bunsik Package Collage for Samcheop v1.
+ * Design philosophy: Premium Bunsik Package Collage for Samcheop franchise counseling.
  * This page uses a 1-cheop / 2-cheop / 3-cheop consultation flow, chili-red and package-yellow accents,
  * receipt-style result panels, tactile paper cards, and asymmetric food-packaging imagery.
  * Every interaction should reinforce a franchise counseling tool that feels practical, appetizing, and brand-specific.
  */
-import { useEffect, useMemo, useState } from "react";
-import { useAuth } from "@/_core/hooks/useAuth";
-import { getLoginUrl } from "@/const";
-import { trpc } from "@/lib/trpc";
-import { toast } from "sonner";
+import { useMemo, useState } from "react";
 import {
   ArrowRight,
   BadgePercent,
@@ -17,14 +13,11 @@ import {
   ChevronRight,
   CircleDollarSign,
   ClipboardCheck,
-  Copy,
   FileText,
   Flame,
   LayoutDashboard,
   PackageCheck,
   ReceiptText,
-  Save,
-  Share2,
   Store,
   Utensils,
 } from "lucide-react";
@@ -58,6 +51,11 @@ const BENCHMARK_STORES = [
   { rank: 3, region: "서울", name: "발산점", sales: 36182403, hall: false },
   { rank: 4, region: "서울", name: "은평점", sales: 34064740, hall: false },
   { rank: 5, region: "경기", name: "백석점_홀", sales: 33725388, hall: true },
+  { rank: 6, region: "서울", name: "구로점", sales: 32005397, hall: false },
+  { rank: 7, region: "경기", name: "하이닉스점_홀", sales: 30985839, hall: true },
+  { rank: 8, region: "서울", name: "홍대점", sales: 30531581, hall: false },
+  { rank: 9, region: "경기", name: "군포점_홀", sales: 29841100, hall: true },
+  { rank: 10, region: "경기", name: "호원점", sales: 29114381, hall: false },
 ];
 
 const CHANNELS = [
@@ -105,15 +103,6 @@ type CostInputs = {
   showWaivedFees: boolean;
 };
 
-type SimulatorShareState = {
-  version: 1;
-  revenueInputs: RevenueInputs;
-  costInputs: CostInputs;
-  reportTitle?: string;
-  candidateName?: string;
-  reportMemo?: string;
-};
-
 const DEFAULT_REVENUE: RevenueInputs = {
   monthlySales: 32344100,
   avgOrder: 20000,
@@ -139,51 +128,18 @@ const fmtWon = (value: number) =>
 const fmtCompact = (value: number) => `${Math.round((value || 0) / 10000).toLocaleString("ko-KR")}만원`;
 const fmtPct = (value: number) => `${(value * 100).toFixed(1)}%`;
 const clamp = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max);
-const isRecord = (value: unknown): value is Record<string, unknown> => Boolean(value && typeof value === "object");
-const toNumber = (value: unknown, fallback: number) => (typeof value === "number" && Number.isFinite(value) ? value : fallback);
-const toText = (value: unknown, fallback = "") => (typeof value === "string" ? value : fallback);
-const toMode = (value: unknown, fallback: StoreMode): StoreMode => (value === "delivery" || value === "hybrid" ? value : fallback);
-const toSignType = (value: unknown, fallback: SignType): SignType => (value === "flex" || value === "channel" ? value : fallback);
-
-function encodeSimulatorShareState(payload: SimulatorShareState) {
-  return btoa(encodeURIComponent(JSON.stringify(payload)));
-}
-
-function decodeSimulatorShareState(raw: string): SimulatorShareState | null {
-  try {
-    const parsed = JSON.parse(decodeURIComponent(atob(raw))) as unknown;
-    if (!isRecord(parsed) || parsed.version !== 1 || !isRecord(parsed.revenueInputs) || !isRecord(parsed.costInputs)) {
-      return null;
-    }
-    return {
-      version: 1,
-      revenueInputs: {
-        monthlySales: toNumber(parsed.revenueInputs.monthlySales, DEFAULT_REVENUE.monthlySales),
-        avgOrder: toNumber(parsed.revenueInputs.avgOrder, DEFAULT_REVENUE.avgOrder),
-        rent: toNumber(parsed.revenueInputs.rent, DEFAULT_REVENUE.rent),
-        utilities: toNumber(parsed.revenueInputs.utilities, DEFAULT_REVENUE.utilities),
-        fullTime: toNumber(parsed.revenueInputs.fullTime, DEFAULT_REVENUE.fullTime),
-        partTime: toNumber(parsed.revenueInputs.partTime, DEFAULT_REVENUE.partTime),
-        mode: toMode(parsed.revenueInputs.mode, DEFAULT_REVENUE.mode),
-      },
-      costInputs: {
-        area: toNumber(parsed.costInputs.area, DEFAULT_COST.area),
-        signType: toSignType(parsed.costInputs.signType, DEFAULT_COST.signType),
-        tableCount: toNumber(parsed.costInputs.tableCount, DEFAULT_COST.tableCount),
-        mode: toMode(parsed.costInputs.mode, DEFAULT_COST.mode),
-        showWaivedFees:
-          typeof parsed.costInputs.showWaivedFees === "boolean"
-            ? parsed.costInputs.showWaivedFees
-            : DEFAULT_COST.showWaivedFees,
-      },
-      reportTitle: toText(parsed.reportTitle, "삼첩분식 창업 상담 리포트"),
-      candidateName: toText(parsed.candidateName),
-      reportMemo: toText(parsed.reportMemo),
-    };
-  } catch {
-    return null;
-  }
-}
+const formatInputValue = (value: number) => {
+  if (!Number.isFinite(value)) return "";
+  return Number.isInteger(value)
+    ? value.toLocaleString("ko-KR")
+    : value.toLocaleString("ko-KR", { maximumFractionDigits: 1 });
+};
+const parseFormattedNumber = (value: string) => {
+  const normalized = value.replace(/,/g, "").trim();
+  if (!normalized) return 0;
+  const parsed = Number(normalized);
+  return Number.isFinite(parsed) ? parsed : 0;
+};
 
 function calculatePlatformFee(monthlySales: number, avgOrder: number) {
   const orderPrice = Math.max(avgOrder, 1);
@@ -334,12 +290,11 @@ function Field({
       <span className="field-card__label">{label}</span>
       <div className="field-card__input-row">
         <input
-          type="number"
-          value={Number.isInteger(value) ? value : value.toFixed(1)}
-          min={min}
-          max={max}
-          step={step}
-          onChange={(event) => onChange(Number(event.target.value))}
+          type="text"
+          inputMode="decimal"
+          value={formatInputValue(value)}
+          aria-label={`${label} 직접 입력`}
+          onChange={(event) => onChange(parseFormattedNumber(event.target.value))}
         />
         {suffix && <em>{suffix}</em>}
       </div>
@@ -369,46 +324,6 @@ function SectionHeader({ eyebrow, title, description }: { eyebrow: string; title
 export default function Home() {
   const [revenueInputs, setRevenueInputs] = useState<RevenueInputs>(DEFAULT_REVENUE);
   const [costInputs, setCostInputs] = useState<CostInputs>(DEFAULT_COST);
-  const [reportTitle, setReportTitle] = useState("삼첩분식 창업 상담 리포트");
-  const [candidateName, setCandidateName] = useState("");
-  const [reportMemo, setReportMemo] = useState("");
-  const [showSavedReports, setShowSavedReports] = useState(false);
-  const [lastShareUrl, setLastShareUrl] = useState("");
-  const [calculatorShareUrl, setCalculatorShareUrl] = useState("");
-  const { isAuthenticated } = useAuth();
-  const utils = trpc.useUtils();
-  const reportsQuery = trpc.reports.list.useQuery(undefined, { enabled: isAuthenticated });
-  useEffect(() => {
-    const rawState = new URLSearchParams(window.location.search).get("sim");
-    if (!rawState) return;
-
-    const restored = decodeSimulatorShareState(rawState);
-    if (!restored) {
-      toast.error("공유 링크의 입력값을 읽을 수 없습니다.");
-      return;
-    }
-
-    setRevenueInputs(restored.revenueInputs);
-    setCostInputs(restored.costInputs);
-    setReportTitle(restored.reportTitle || "삼첩분식 창업 상담 리포트");
-    setCandidateName(restored.candidateName || "");
-    setReportMemo(restored.reportMemo || "");
-    toast.success("공유 링크의 계산 입력값을 복원했습니다.");
-  }, []);
-
-  const saveReportMutation = trpc.reports.save.useMutation({
-    onSuccess: async (report) => {
-      await utils.reports.list.invalidate();
-      if (!report) return;
-      const shareUrl = `${window.location.origin}/report/${report.shareSlug}`;
-      setLastShareUrl(shareUrl);
-      await navigator.clipboard.writeText(shareUrl).catch(() => undefined);
-      toast.success("상담 리포트를 저장하고 공유 링크를 복사했습니다.");
-    },
-    onError: (error) => {
-      toast.error(error.message || "리포트 저장 중 오류가 발생했습니다.");
-    },
-  });
   const revenue = useMemo(() => calculateRevenue(revenueInputs), [revenueInputs]);
   const opening = useMemo(() => calculateOpeningCost(costInputs), [costInputs]);
   const revenueCostItems = [
@@ -421,97 +336,36 @@ export default function Home() {
   const biggestCost = Math.max(...revenueCostItems.map((item) => item.value), 1);
   const totalMix = CHANNELS.reduce((acc, item) => acc + item.ratio, 0);
 
-  const buildReportPayload = () => ({
-    title: reportTitle || "삼첩분식 창업 상담 리포트",
-    candidateName: candidateName || null,
-    memo: reportMemo || null,
-    origin: window.location.origin,
-    revenueInputs,
-    costInputs,
-    revenueSummary: {
-      monthlySales: revenue.monthlySales,
-      logistics: revenue.logistics,
-      ingredients: revenue.ingredients,
-      packaging: revenue.packaging,
-      platformTotal: revenue.platform.total,
-      labor: revenue.labor,
-      fixed: revenue.fixed,
-      totalCost: revenue.totalCost,
-      profit: revenue.profit,
-      margin: revenue.margin,
-      dailySales: revenue.dailySales,
-      monthlyOrders: revenue.monthlyOrders,
-      bepSales: revenue.bepSales,
-    },
-    openingSummary: opening,
-  });
-
-  const handleSaveReport = () => {
-    if (!isAuthenticated) {
-      toast.info("리포트를 서버에 저장하려면 먼저 로그인해 주세요.");
-      window.location.href = getLoginUrl();
-      return;
-    }
-    saveReportMutation.mutate(buildReportPayload());
-  };
-
   const handlePrint = () => {
     window.print();
-  };
-
-  const handleCopyShare = async () => {
-    if (!lastShareUrl) {
-      toast.info("먼저 리포트를 저장하면 공유 링크가 발급됩니다.");
-      return;
-    }
-    await navigator.clipboard.writeText(lastShareUrl).catch(() => undefined);
-    toast.success("최근 저장 리포트의 공유 링크를 복사했습니다.");
-  };
-
-  const handleCopyCalculatorShare = async () => {
-    const url = new URL(window.location.origin);
-    const encoded = encodeSimulatorShareState({
-      version: 1,
-      revenueInputs,
-      costInputs,
-      reportTitle,
-      candidateName,
-      reportMemo,
-    });
-    url.searchParams.set("sim", encoded);
-    url.hash = "revenue";
-    setCalculatorShareUrl(url.toString());
-    await navigator.clipboard.writeText(url.toString()).catch(() => undefined);
-    toast.success("현재 입력값을 복원하는 계산기 공유 링크를 복사했습니다.");
   };
 
   return (
     <div className="site-shell">
       <header className="topbar">
-        <a className="brand-lockup" href="#top" aria-label="삼첩분식 v1 시뮬레이터 홈">
+        <a className="brand-lockup" href="#top" aria-label="삼첩분식 창업 상담 시뮬레이터 홈">
           <span className="brand-mark">3</span>
           <span>
-            <b>삼첩분식 v1</b>
-            <small>Franchise Simulator</small>
+            <b>삼첩분식 상담 계산기</b>
+            <small>Franchise Counseling</small>
           </span>
         </a>
         <nav>
           <a href="#revenue">매출 손익</a>
           <a href="#cost">개설비용</a>
           <a href="#assumptions">자료 기준</a>
-          <button type="button" className="topbar-action" onClick={() => setShowSavedReports(true)}>저장 리포트</button>
         </nav>
       </header>
 
       <main id="top">
         <section className="hero-section" style={{ backgroundImage: `linear-gradient(90deg, rgba(255,248,232,.98) 0%, rgba(255,248,232,.94) 44%, rgba(255,248,232,.58) 63%, rgba(255,248,232,.18) 100%), url(${ASSETS.hero})` }}>
           <div className="hero-content">
-            <span className="eyebrow-chip"><Flame size={16} /> 삼첩분식 창업 상담용 v1</span>
+            <span className="eyebrow-chip"><Flame size={16} /> 삼첩분식 창업 상담용</span>
             <h1>
               매출과 개설비용을 <mark>1·2·3첩</mark>처럼 펼쳐보는 프랜차이즈 시뮬레이터
             </h1>
             <p>
-              v1 삼첩분식 엑셀 자료의 목표매출 산정식, 수도권 매장 매출 통계, 예상 개설비용 항목을 바탕으로 상담 현장에서 바로 설명 가능한 손익·투자비 리포트를 구성했습니다.
+              삼첩분식 상담 자료의 목표매출 산정식, 수도권 매장 매출 통계, 예상 개설비용 항목을 바탕으로 상담 현장에서 바로 설명 가능한 손익·투자비 리포트를 구성했습니다.
             </p>
             <div className="hero-actions">
               <a href="#revenue" className="primary-cta">매출 시뮬레이션 시작 <ArrowRight size={18} /></a>
@@ -550,7 +404,7 @@ export default function Home() {
           <SectionHeader
             eyebrow="01 · 매출 시뮬레이션"
             title="목표 월매출을 움직이면 손익 구조가 즉시 바뀝니다"
-            description="기본값은 v1 목표매출 산정자료의 3,234만원이며, 수도권 55개 매장 통계 프리셋을 함께 제공합니다."
+            description="기본값은 목표매출 산정자료의 3,234만원이며, 수도권 55개 매장 통계 프리셋을 함께 제공합니다."
           />
 
           <div className="workspace-grid">
@@ -628,39 +482,15 @@ export default function Home() {
 
               <div className="report-save-card no-print">
                 <div>
-                  <span className="tiny-label">상담 리포트 저장</span>
-                  <h4>후보자 정보와 메모를 함께 저장해 공유 링크를 발급합니다</h4>
+                  <span className="tiny-label">상담 리포트 출력</span>
+                  <h4>로그인이나 클라우드 저장 없이 현재 계산 결과를 로컬 PDF로 저장합니다</h4>
+                  <p>버튼을 누른 뒤 인쇄 대화상자에서 대상 항목을 PDF 저장으로 선택하면 상담 현장에서 바로 파일로 보관할 수 있습니다.</p>
                 </div>
-                <div className="report-meta-grid">
-                  <label>
-                    <span>리포트 제목</span>
-                    <input value={reportTitle} onChange={(event) => setReportTitle(event.target.value)} />
-                  </label>
-                  <label>
-                    <span>후보자명</span>
-                    <input placeholder="예: 홍길동 예비점주" value={candidateName} onChange={(event) => setCandidateName(event.target.value)} />
-                  </label>
-                </div>
-                <label className="report-memo-field">
-                  <span>상담 메모</span>
-                  <textarea placeholder="상권, 임대료 협의, 재상담 일정 등 현장 메모를 남겨두세요." value={reportMemo} onChange={(event) => setReportMemo(event.target.value)} />
-                </label>
                 <div className="report-action-row">
-                  <button type="button" className="primary-cta button-reset" onClick={handleSaveReport} disabled={saveReportMutation.isPending}>
-                    <Save size={17} /> {saveReportMutation.isPending ? "저장 중" : "리포트 저장·링크 복사"}
-                  </button>
-                  <button type="button" className="secondary-cta button-reset" onClick={handlePrint}>
-                    <FileText size={17} /> PDF 저장/인쇄
-                  </button>
-                  <button type="button" className="secondary-cta button-reset" onClick={handleCopyShare}>
-                    <Copy size={17} /> 최근 저장 링크 복사
-                  </button>
-                  <button type="button" className="secondary-cta button-reset" onClick={handleCopyCalculatorShare}>
-                    <Share2 size={17} /> 입력값 공유 링크
+                  <button type="button" className="primary-cta button-reset" onClick={handlePrint}>
+                    <FileText size={17} /> PDF 저장
                   </button>
                 </div>
-                {lastShareUrl && <p className="share-url"><Share2 size={15} /> 저장 리포트: {lastShareUrl}</p>}
-                {calculatorShareUrl && <p className="share-url"><Share2 size={15} /> 입력값 복원: {calculatorShareUrl}</p>}
               </div>
             </section>
           </div>
@@ -671,7 +501,7 @@ export default function Home() {
               <div>
                 <span>상담 포인트</span>
                 <h3>영수증형 손익표로 설명합니다</h3>
-                <p>식자재율 36%, 포장재율 4%, 로열티 11만원, 기본 파트타이머 2.5명 등 v1 자료의 핵심 가정을 그대로 노출해 상담 신뢰도를 높입니다.</p>
+                <p>식자재율 36%, 포장재율 4%, 로열티 11만원, 기본 파트타이머 2.5명 등 핵심 가정을 화면에 함께 보여 상담 신뢰도를 높입니다.</p>
               </div>
             </article>
 
@@ -788,13 +618,13 @@ export default function Home() {
         <section id="assumptions" className="assumption-section">
           <div>
             <span className="eyebrow-chip"><ClipboardCheck size={16} /> 자료 기준</span>
-            <h2>v1 엑셀 자료와 브랜드 조사를 결합한 상담용 초안입니다</h2>
+            <h2>매장 실적 자료와 브랜드 조사를 결합한 상담용 계산기입니다</h2>
             <p>
-              본 화면은 v1 자료의 수치를 웹 계산기로 옮긴 1차 구현입니다. 실제 계약·견적·수익 보장을 의미하지 않으며, 가맹 상담 시 후보 상권, 임대 조건, 오픈 프로모션, 배달 권역 정책에 따라 조정되어야 합니다.
+              본 화면은 내부 상담 자료의 주요 수치를 웹 계산기로 옮긴 참고용 도구입니다. 실제 계약·견적·수익 보장을 의미하지 않으며, 가맹 상담 시 후보 상권, 임대 조건, 오픈 프로모션, 배달 권역 정책에 따라 조정되어야 합니다.
             </p>
           </div>
           <div className="assumption-cards">
-            <article><BadgePercent /><b>수수료</b><span>배달앱별 중개·카드·배달비 구조를 v1 산정자료 기준으로 반영했습니다.</span></article>
+            <article><BadgePercent /><b>수수료</b><span>배달앱별 중개·카드·배달비 구조를 상담 산정자료 기준으로 반영했습니다.</span></article>
             <article><Utensils /><b>물류비</b><span>식자재율 36%, 포장재율 4%를 기본 적용합니다.</span></article>
             <article><LayoutDashboard /><b>브랜드 UI</b><span>삼첩분식의 레드·옐로우 패키지와 1·2·3첩 구조를 화면 경험에 반영했습니다.</span></article>
           </div>
@@ -802,55 +632,12 @@ export default function Home() {
       </main>
 
       <footer>
-        <b>삼첩분식 v1 시뮬레이터</b>
-        <span>자료 기반 내부 상담용 · v2 단막 구조 온보딩 후 삼첩분식 전용으로 재설계</span>
+        <b>삼첩분식 창업 상담 시뮬레이터</b>
+        <span>자료 기반 내부 상담용 · 계약·견적·수익 보장을 의미하지 않는 참고 계산기</span>
         <a href="#top">맨 위로 <ChevronRight size={14} /></a>
       </footer>
 
-      {showSavedReports && (
-        <div className="report-modal no-print" role="dialog" aria-modal="true" aria-label="저장된 상담 리포트 목록">
-          <div className="report-modal__backdrop" onClick={() => setShowSavedReports(false)} />
-          <section className="report-modal__panel">
-            <div className="panel-title panel-title--between">
-              <div>
-                <span className="tiny-label">저장 리포트</span>
-                <h3>상담 이력과 공유 링크</h3>
-              </div>
-              <button type="button" className="modal-close" onClick={() => setShowSavedReports(false)}>닫기</button>
-            </div>
-            {!isAuthenticated ? (
-              <div className="empty-report-state">
-                <p>저장된 리포트는 로그인 후 확인할 수 있습니다.</p>
-                <button type="button" className="primary-cta button-reset" onClick={() => { window.location.href = getLoginUrl(); }}>로그인하기</button>
-              </div>
-            ) : reportsQuery.isLoading ? (
-              <div className="empty-report-state"><p>저장 목록을 불러오는 중입니다.</p></div>
-            ) : reportsQuery.data?.length ? (
-              <div className="saved-report-list">
-                {reportsQuery.data.map((report) => {
-                  if (!report) return null;
-                  const shareUrl = `${window.location.origin}/report/${report.shareSlug}`;
-                  return (
-                    <article className="saved-report-item" key={report.id}>
-                      <div>
-                        <b>{report.title}</b>
-                        <span>{report.candidateName || "후보자 미기재"} · {new Date(report.createdAt).toLocaleString("ko-KR")}</span>
-                        <em>{shareUrl}</em>
-                      </div>
-                      <div>
-                        <button type="button" onClick={() => window.open(shareUrl, "_blank", "noopener,noreferrer")}>열기</button>
-                        <button type="button" onClick={async () => { await navigator.clipboard.writeText(shareUrl).catch(() => undefined); toast.success("공유 링크를 복사했습니다."); }}>복사</button>
-                      </div>
-                    </article>
-                  );
-                })}
-              </div>
-            ) : (
-              <div className="empty-report-state"><p>아직 저장된 상담 리포트가 없습니다. 현재 계산 결과를 저장하면 여기에 표시됩니다.</p></div>
-            )}
-          </section>
-        </div>
-      )}
+
     </div>
   );
 }

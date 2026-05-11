@@ -1,5 +1,5 @@
 /*
- * Design philosophy: Premium Bunsik Package Collage for Samcheop v1.
+ * Design philosophy: Premium Bunsik Package Collage for Samcheop franchise counseling.
  * The root keeps a warm light theme so red/yellow package colors, receipt panels, and Korean franchise counseling UI remain legible.
  */
 import { Toaster } from "@/components/ui/sonner";
@@ -9,14 +9,12 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-import SharedReport from "./pages/SharedReport";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
-      <Route path={"/report/:shareSlug"} component={SharedReport} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
