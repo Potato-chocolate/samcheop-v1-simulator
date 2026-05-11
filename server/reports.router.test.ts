@@ -51,7 +51,6 @@ const revenueInputs = {
   monthlySales: 32344100,
   avgOrder: 20000,
   rent: 500000,
-  utilities: 705000,
   fullTime: 0,
   partTime: 2.5,
   mode: "hybrid" as const,

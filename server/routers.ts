@@ -17,7 +17,6 @@ const revenueInputsSchema = z.object({
   monthlySales: z.number(),
   avgOrder: z.number(),
   rent: z.number(),
-  utilities: z.number(),
   fullTime: z.number(),
   partTime: z.number(),
   mode: z.enum(["delivery", "hybrid"]),

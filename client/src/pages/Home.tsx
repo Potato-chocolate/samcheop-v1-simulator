@@ -58,20 +58,20 @@ const BENCHMARK_STORES = [
   { rank: 10, region: "경기", name: "호원점", sales: 29114381, hall: false },
 ];
 
-const CHANNELS = [
-  { group: "배달", name: "배달의민족", ratio: 0.063, kind: "baemin" },
-  { group: "배달", name: "배민원", ratio: 0.4112, kind: "baeminOne" },
-  { group: "배달", name: "요기요", ratio: 0.075, kind: "yogiyo" },
-  { group: "배달", name: "쿠팡이츠", ratio: 0.3516, kind: "coupang" },
-  { group: "배달", name: "지역배달", ratio: 0.032, kind: "local" },
-  { group: "배달", name: "자사앱", ratio: 0.0243, kind: "self" },
-  { group: "포장", name: "배민 포장", ratio: 0.0123, kind: "pickupBaemin" },
-  { group: "포장", name: "쿠팡 포장", ratio: 0.0025, kind: "pickupCoupang" },
-  { group: "포장", name: "요기요 포장", ratio: 0.0074, kind: "pickupYogiyo" },
-  { group: "포장", name: "지역 포장", ratio: 0.0115, kind: "pickupLocal" },
-  { group: "포장", name: "홀 포장", ratio: 0.0082, kind: "hallPickup" },
-  { group: "홀", name: "카드매출", ratio: 0.0005, kind: "hallCard" },
-  { group: "홀", name: "현금매출", ratio: 0.0005, kind: "cash" },
+export const CHANNELS = [
+  { group: "배달", name: "배민원", ratio: 0.4112, kind: "baeminOne", color: "#b91c1c" },
+  { group: "배달", name: "쿠팡이츠", ratio: 0.3516, kind: "coupang", color: "#ef7d22" },
+  { group: "배달", name: "요기요", ratio: 0.075, kind: "yogiyo", color: "#7c3aed" },
+  { group: "배달", name: "배달의민족", ratio: 0.063, kind: "baemin", color: "#0891b2" },
+  { group: "배달", name: "지역배달", ratio: 0.032, kind: "local", color: "#2563eb" },
+  { group: "배달", name: "자사앱", ratio: 0.0243, kind: "self", color: "#0f766e" },
+  { group: "포장", name: "배민 포장", ratio: 0.0123, kind: "pickupBaemin", color: "#eab308" },
+  { group: "포장", name: "지역 포장", ratio: 0.0115, kind: "pickupLocal", color: "#f59e0b" },
+  { group: "포장", name: "홀 포장", ratio: 0.0082, kind: "hallPickup", color: "#84cc16" },
+  { group: "포장", name: "요기요 포장", ratio: 0.0074, kind: "pickupYogiyo", color: "#a3e635" },
+  { group: "포장", name: "쿠팡 포장", ratio: 0.0025, kind: "pickupCoupang", color: "#facc15" },
+  { group: "홀", name: "카드매출", ratio: 0.0005, kind: "hallCard", color: "#64748b" },
+  { group: "홀", name: "현금매출", ratio: 0.0005, kind: "cash", color: "#94a3b8" },
 ];
 
 const PRESETS = [
@@ -89,7 +89,6 @@ type RevenueInputs = {
   monthlySales: number;
   avgOrder: number;
   rent: number;
-  utilities: number;
   fullTime: number;
   partTime: number;
   mode: StoreMode;
@@ -107,7 +106,6 @@ const DEFAULT_REVENUE: RevenueInputs = {
   monthlySales: 32344100,
   avgOrder: 20000,
   rent: 500000,
-  utilities: 705000,
   fullTime: 0,
   partTime: 2.5,
   mode: "hybrid",
@@ -164,14 +162,16 @@ function calculatePlatformFee(monthlySales: number, avgOrder: number) {
   return { details, quickManagementFee, total };
 }
 
-function calculateRevenue(inputs: RevenueInputs) {
+export function calculateRevenue(inputs: RevenueInputs) {
   const monthlySales = Math.max(0, inputs.monthlySales);
   const logistics = monthlySales * 0.4;
   const platform = calculatePlatformFee(monthlySales, inputs.avgOrder);
   const fullTimeLabor = inputs.fullTime * 2500000 * 1.105;
   const partTimeLabor = inputs.partTime * 3 * 5 * 4.35 * 10030 * 1.2 * 1.105;
   const labor = fullTimeLabor + partTimeLabor;
-  const fixed = inputs.rent + inputs.utilities + 400000 + 22000 + 110000;
+  const utilities = Math.round(monthlySales * 0.035);
+  const fixedBase = inputs.rent + 400000 + 22000 + 110000;
+  const fixed = fixedBase + utilities;
   const totalCost = logistics + platform.total + labor + fixed;
   const profit = monthlySales - totalCost;
   const margin = monthlySales > 0 ? profit / monthlySales : 0;
@@ -181,7 +181,8 @@ function calculateRevenue(inputs: RevenueInputs) {
   const profitAt = (sales: number) => {
     const salesPlatform = calculatePlatformFee(sales, inputs.avgOrder);
     const salesLogistics = sales * 0.4;
-    return sales - salesLogistics - salesPlatform.total - labor - fixed;
+    const salesFixed = fixedBase + sales * 0.035;
+    return sales - salesLogistics - salesPlatform.total - labor - salesFixed;
   };
 
   let low = 0;
@@ -201,6 +202,7 @@ function calculateRevenue(inputs: RevenueInputs) {
     fullTimeLabor,
     partTimeLabor,
     labor,
+    utilities,
     fixed,
     totalCost,
     profit,
@@ -435,7 +437,7 @@ export default function Home() {
               <Field label="월매출" suffix="원" value={revenueInputs.monthlySales} min={6000000} max={50000000} step={100000} onChange={(monthlySales) => setRevenueInputs((prev) => ({ ...prev, monthlySales }))} />
               <Field label="평균 객단가" suffix="원" value={revenueInputs.avgOrder} min={12000} max={30000} step={500} onChange={(avgOrder) => setRevenueInputs((prev) => ({ ...prev, avgOrder }))} />
               <Field label="월 임대료" suffix="원" value={revenueInputs.rent} min={0} max={3000000} step={50000} onChange={(rent) => setRevenueInputs((prev) => ({ ...prev, rent }))} />
-              <Field label="공과금" suffix="원" value={revenueInputs.utilities} min={200000} max={1500000} step={10000} onChange={(utilities) => setRevenueInputs((prev) => ({ ...prev, utilities }))} />
+              <p className="auto-cost-note">공과금은 월매출의 3.5%로 자동 반영됩니다.</p>
               <div className="split-fields">
                 <Field label="정직원" suffix="명" value={revenueInputs.fullTime} min={0} max={4} step={0.5} onChange={(fullTime) => setRevenueInputs((prev) => ({ ...prev, fullTime }))} />
                 <Field label="파트타이머" suffix="명" value={revenueInputs.partTime} min={0} max={6} step={0.5} onChange={(partTime) => setRevenueInputs((prev) => ({ ...prev, partTime }))} />
@@ -466,7 +468,7 @@ export default function Home() {
                       <b>{item.label}</b>
                     </div>
                     <div className="bar-track"><i style={{ width: `${(item.value / biggestCost) * 100}%`, backgroundColor: item.color }} /></div>
-                    <em>{fmtCompact(item.value)}</em>
+                    <em>{fmtCompact(item.value)} · 매출 대비 {fmtPct(item.value / revenue.monthlySales)}</em>
                   </div>
                 ))}
               </div>
@@ -477,6 +479,7 @@ export default function Home() {
                 <div><span>플랫폼·배달 수수료</span><b>- {fmtWon(revenue.platform.total)}</b></div>
                 <div><span>인건비</span><b>- {fmtWon(revenue.labor)}</b></div>
                 <div><span>고정비</span><b>- {fmtWon(revenue.fixed)}</b></div>
+                <div><span>└ 공과금 자동 반영</span><b>{fmtWon(revenue.utilities)} · 매출의 3.5%</b></div>
                 <div className="total"><span>예상 영업이익</span><b>{fmtWon(revenue.profit)}</b></div>
               </div>
 
@@ -495,16 +498,7 @@ export default function Home() {
             </section>
           </div>
 
-          <div className="insight-grid">
-            <article className="image-card">
-              <img src={ASSETS.consulting} alt="삼첩분식 상담용 대시보드 이미지" />
-              <div>
-                <span>상담 포인트</span>
-                <h3>영수증형 손익표로 설명합니다</h3>
-                <p>식자재율 36%, 포장재율 4%, 로열티 11만원, 기본 파트타이머 2.5명 등 핵심 가정을 화면에 함께 보여 상담 신뢰도를 높입니다.</p>
-              </div>
-            </article>
-
+          <div className="insight-grid insight-grid--two">
             <article className="mix-card">
               <div className="panel-title"><BarChart3 size={20} /><h3>채널 매출 믹스</h3></div>
               <div className="stacked-bar" aria-label="채널 매출 믹스">
@@ -512,15 +506,15 @@ export default function Home() {
                   <span
                     key={channel.name}
                     title={`${channel.name} ${fmtPct(channel.ratio)}`}
-                    style={{ width: `${(channel.ratio / totalMix) * 100}%` }}
-                    className={`mix-${channel.group}`}
+                    style={{ width: `${(channel.ratio / totalMix) * 100}%`, backgroundColor: channel.color }}
+                    className={`mix-segment mix-${channel.group}`}
                   />
                 ))}
               </div>
               <div className="channel-list">
-                {CHANNELS.slice(0, 8).map((channel) => (
+                {CHANNELS.map((channel) => (
                   <div key={channel.name}>
-                    <span>{channel.name}</span>
+                    <span><i style={{ backgroundColor: channel.color }} />{channel.name}</span>
                     <b>{fmtPct(channel.ratio)}</b>
                   </div>
                 ))}
