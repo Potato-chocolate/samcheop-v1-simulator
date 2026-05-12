@@ -6,7 +6,7 @@ const homeSource = readFileSync("client/src/pages/Home.tsx", "utf8").replace(/\r
 const cssSource = readFileSync("client/src/index.css", "utf8").replace(/\r\n/g, "\n");
 
 describe("삼첩분식 상담 계산기", () => {
-  it("공과금을 월매출의 3.5%로 자동 계산하고 고정비에 반영한다", () => {
+  it("공과금을 월매출의 2.2%로 자동 계산하고 고정비 = 공과금 + 임대료 + 푸드테크(22,000원)로 구성한다", () => {
     const result = calculateRevenue({
       monthlySales: 10_000_000,
       avgOrder: 20_000,
@@ -16,8 +16,8 @@ describe("삼첩분식 상담 계산기", () => {
       mode: "hybrid",
     });
 
-    expect(result.utilities).toBe(350_000);
-    expect(result.fixed).toBe(1_382_000);
+    expect(result.utilities).toBe(220_000);
+    expect(result.fixed).toBe(742_000);
   });
 
   it("채널 매출 믹스가 상위 비중부터 하위 비중까지 내림차순으로 정렬되어 있다", () => {

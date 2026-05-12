@@ -153,9 +153,9 @@ export function calculateRevenue(inputs: RevenueInputs) {
   const fullTimeLabor = inputs.fullTime * 2500000 * 1.105;
   const partTimeLabor = inputs.partTime * 3 * 5 * 4.35 * 10030 * 1.2 * 1.105;
   const labor = fullTimeLabor + partTimeLabor;
-  const utilities = Math.round(monthlySales * 0.035);
-  const fixedBase = inputs.rent + 400000 + 22000 + 110000;
-  const fixed = fixedBase + utilities;
+  const utilities = Math.round(monthlySales * 0.022);
+  const foodtech = 22000;
+  const fixed = utilities + inputs.rent + foodtech;
   const totalCost = logistics + platform.total + labor + fixed;
   const profit = monthlySales - totalCost;
   const margin = monthlySales > 0 ? profit / monthlySales : 0;
@@ -165,7 +165,7 @@ export function calculateRevenue(inputs: RevenueInputs) {
   const profitAt = (sales: number) => {
     const salesPlatform = calculatePlatformFee(sales, inputs.avgOrder);
     const salesLogistics = sales * 0.4;
-    const salesFixed = fixedBase + sales * 0.035;
+    const salesFixed = inputs.rent + foodtech + sales * 0.022;
     return sales - salesLogistics - salesPlatform.total - labor - salesFixed;
   };
 
@@ -636,7 +636,7 @@ export default function Home() {
               <Field label="월매출" suffix="원" value={revenueInputs.monthlySales} min={6000000} max={50000000} step={100000} onChange={(monthlySales) => setRevenueInputs((prev) => ({ ...prev, monthlySales }))} />
               <Field label="평균 객단가" suffix="원" value={revenueInputs.avgOrder} min={12000} max={30000} step={500} onChange={(avgOrder) => setRevenueInputs((prev) => ({ ...prev, avgOrder }))} />
               <Field label="월 임대료" suffix="원" value={revenueInputs.rent} min={0} max={3000000} step={50000} onChange={(rent) => setRevenueInputs((prev) => ({ ...prev, rent }))} />
-              <p className="auto-cost-note">공과금은 월매출의 3.5%로 자동 반영됩니다.</p>
+              <p className="auto-cost-note">공과금 = 월매출 2.2% + 푸드테크</p>
               <div className="split-fields">
                 <Field label="정직원" suffix="명" value={revenueInputs.fullTime} min={0} max={4} step={0.5} onChange={(fullTime) => setRevenueInputs((prev) => ({ ...prev, fullTime }))} />
                 <Field label="파트타이머" suffix="명" value={revenueInputs.partTime} min={0} max={6} step={0.5} onChange={(partTime) => setRevenueInputs((prev) => ({ ...prev, partTime }))} />
@@ -678,7 +678,6 @@ export default function Home() {
                 <div><span>플랫폼·배달 수수료</span><b>- {fmtWon(revenue.platform.total)}</b></div>
                 <div><span>인건비</span><b>- {fmtWon(revenue.labor)}</b></div>
                 <div><span>고정비</span><b>- {fmtWon(revenue.fixed)}</b></div>
-                <div><span>└ 공과금 자동 반영</span><b>{fmtWon(revenue.utilities)} · 매출의 3.5%</b></div>
                 <div className="total"><span>예상 영업이익</span><b>{fmtWon(revenue.profit)}</b></div>
               </div>
 
