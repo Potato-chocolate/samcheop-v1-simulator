@@ -602,7 +602,7 @@ export default function Home() {
                             }
                           >
                             <td>{i + 1}</td>
-                            <td>{c.store.name}</td>
+                            <td>매장 {String.fromCharCode(65 + i)}</td>
                             <td>{fmtKwon(Math.round(c.annualizedSales / 1000))} 천원 (VAT 포함)</td>
                             <td>
                               {!nearbyResult.shortageFlag && (i === 0 || i === nearbyResult.rank1to5.length - 1)
