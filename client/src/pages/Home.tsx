@@ -443,9 +443,22 @@ export default function Home() {
             <p>
               삼첩분식 상담 자료의 목표매출 산정식, 수도권 매장 매출 통계, 예상 개설비용 항목을 바탕으로 상담 현장에서 바로 설명 가능한 손익·투자비 리포트를 구성했습니다.
             </p>
-            <div className="hero-actions">
-              <a href="#nearby" className="primary-cta">상담 흐름 시작 <ArrowRight size={18} /></a>
-              <a href="#revenue" className="secondary-cta">목표 매출 입력</a>
+            <div className="hero-actions step-cta-row">
+              <a href="#nearby" className="step-cta step-cta--1">
+                <span className="step-cta__no">1첩</span>
+                <span className="step-cta__title">인근매장 매출 조회</span>
+                <ArrowRight size={16} />
+              </a>
+              <a href="#revenue" className="step-cta step-cta--2">
+                <span className="step-cta__no">2첩</span>
+                <span className="step-cta__title">목표 매출 입력</span>
+                <ArrowRight size={16} />
+              </a>
+              <a href="#cost" className="step-cta step-cta--3">
+                <span className="step-cta__no">3첩</span>
+                <span className="step-cta__title">창업 비용 계산</span>
+                <ArrowRight size={16} />
+              </a>
             </div>
           </div>
           <div className="hero-receipt" aria-label="핵심 통계 요약">
