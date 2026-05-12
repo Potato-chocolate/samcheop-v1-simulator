@@ -38,14 +38,16 @@ describe("삼첩분식 상담 계산기", () => {
     expect(homeSource).toContain("{fmtCompact(item.value)} · {fmtPct(item.value / revenue.monthlySales)}");
   });
 
-  it("상담 포인트 이미지 카드를 제거하고 채널·벤치마크 2열 인사이트만 렌더링한다", () => {
-    expect(homeSource).toContain('className="insight-grid insight-grid--two"');
+  it("벤치마크 매장 순위 카드를 숨기고 채널 매출 믹스 단독 인사이트로 렌더링한다", () => {
+    expect(homeSource).toContain('className="insight-grid insight-grid--single"');
+    expect(homeSource).toContain('className="mix-card mix-card--wide"');
     expect(homeSource).not.toContain('className="image-card"');
+    expect(homeSource).not.toContain('25년 기준 수도권 매장 순위');
   });
 
   it("누적 막대와 채널 목록이 동일한 CHANNELS 배열 전체를 사용한다", () => {
     expect(homeSource).toContain('<div className="stacked-bar" aria-label="채널 매출 믹스">\n                {CHANNELS.map((channel) => (');
-    expect(homeSource).toContain('<div className="channel-list">\n                {CHANNELS.map((channel) => (');
+    expect(homeSource).toContain('<div className="channel-list channel-list--grid">\n                {CHANNELS.map((channel) => (');
     expect(homeSource).not.toContain("CHANNELS.slice");
   });
 
@@ -56,14 +58,6 @@ describe("삼첩분식 상담 계산기", () => {
     expect(homeSource).toContain('title: "창업 비용 계산"');
     expect(homeSource).toContain('id="nearby"');
     expect(homeSource).not.toContain('id="assumptions"');
-  });
-
-  it("25년 기준 수도권 매장 순위가 유효 매장 55개 전체를 렌더링한다", () => {
-    const rankItems = homeSource.match(/rank: \d+/g) ?? [];
-
-    expect(rankItems).toHaveLength(55);
-    expect(homeSource).toContain('25년 기준 수도권 매장 순위');
-    expect(homeSource).toContain('name: "전곡점"');
   });
 
   it("STORE_STATS.validStores 통계는 71개 매장을 기준으로 표기된다", () => {
@@ -93,10 +87,10 @@ describe("삼첩분식 상담 계산기", () => {
     expect(homeSource).toContain("nearbyResult.minEstimate * 1000) / 12");
   });
 
-  it("채널 목록, 매장 순위, 창업 비용 표는 축소 카드 안에서 세로 스크롤을 제공한다", () => {
-    expect(cssSource).toContain('.channel-list {\n  --visible-list-rows: 5;');
-    expect(cssSource).toContain('max-height: calc(var(--visible-list-rows) * var(--list-row-height));');
-    expect(cssSource).toContain('.insight-grid--two .benchmark-card {\n  max-height: calc(5.4rem + var(--visible-list-rows) * var(--list-row-height));');
+  it("채널 목록은 그리드로 펼쳐 스크롤 없이 노출하고, 창업 비용 표만 축소 카드 스크롤을 유지한다", () => {
+    expect(cssSource).toContain('.channel-list--grid {');
+    expect(cssSource).toContain('grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));');
+    expect(cssSource).toContain('max-height: none;');
     expect(cssSource).toContain('.cost-table {\n  max-height: 34rem;\n  overflow-y: auto;');
   });
 });
