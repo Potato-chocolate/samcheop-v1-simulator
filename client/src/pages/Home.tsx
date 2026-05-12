@@ -37,7 +37,7 @@ const ASSETS = {
 };
 
 const STORE_STATS = {
-  validStores: 55,
+  validStores: 71,
   average: 18779225,
   median: 16745233,
   p25: 12776680,
@@ -438,7 +438,7 @@ export default function Home() {
           <div className="hero-content">
             <span className="eyebrow-chip"><Flame size={16} /> 삼첩분식 창업 상담용</span>
             <h1>
-              매출과 개설비용을 <mark>1·2·3첩</mark>처럼 펼쳐보는 프랜차이즈 시뮬레이터
+              매출과 개설비용을 <mark>1·2·3첩</mark>처럼 펼쳐보는 삼첩분식 가맹 계산기
             </h1>
             <p>
               삼첩분식 상담 자료의 목표매출 산정식, 수도권 매장 매출 통계, 예상 개설비용 항목을 바탕으로 상담 현장에서 바로 설명 가능한 손익·투자비 리포트를 구성했습니다.
@@ -662,7 +662,7 @@ export default function Home() {
           <SectionHeader
             eyebrow="02 · 목표 매출 입력"
             title="목표 월매출을 입력하면 손익 구조가 즉시 계산됩니다"
-            description="1첩에서 확인할 인근매장 참고 매출을 바탕으로 목표 월매출을 정하고, 수도권 55개 매장 통계 프리셋과 손익표를 함께 확인합니다."
+            description="1첩에서 확인할 인근매장 참고 매출을 바탕으로 목표 월매출을 정하고, 수도권 71개 매장 통계 프리셋과 손익표를 함께 확인합니다."
           />
 
           <div className="workspace-grid">

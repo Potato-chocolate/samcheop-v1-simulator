@@ -66,6 +66,11 @@ describe("삼첩분식 상담 계산기", () => {
     expect(homeSource).toContain('name: "전곡점"');
   });
 
+  it("STORE_STATS.validStores 통계는 71개 매장을 기준으로 표기된다", () => {
+    expect(homeSource).toContain('validStores: 71,');
+    expect(homeSource).toContain('수도권 71개 매장 통계');
+  });
+
   it("2첩 PRESETS가 6개 카드로 구성된다", () => {
     const presetIds = ["national", "metro-avg", "metro-p25", "metro-p10", "nearby-max", "nearby-min"];
     for (const id of presetIds) {
