@@ -72,7 +72,7 @@ node scripts/validate_simulator_config.mjs   # recompute CONFIG → simulator_co
 `vitest.config.ts` uses the **node environment** — there is no jsdom. Frontend tests assert against `Home.tsx` source text read via `readFileSync` (e.g. checking JSX strings, class names, formatting templates) rather than rendering components. When refactoring `Home.tsx`, expect to update these string-match assertions in `client/src/pages/Home.calculations.test.ts`.
 
 Test inventory:
-- `client/src/pages/Home.calculations.test.ts` — 공과금 3.5% 자동 반영, `CHANNELS` 내림차순/색상 유일성/합계, `fmtCompact·fmtPct` JSX 포맷, 1–3첩 섹션 순서, 벤치마크 매장 카운트, **PRESETS 6 카드(id/label/disabled) + 연환산천원→월매출원 변환식**. Windows CRLF 차단 위해 `readFileSync` 결과는 `.replace(/\r\n/g, "\n")` 적용.
+- `client/src/pages/Home.calculations.test.ts` — 공과금 2.2% + 푸드테크(22,000원) 고정비 합산, `CHANNELS` 내림차순/색상 유일성/합계, `fmtCompact·fmtPct` JSX 포맷, 1–3첩 섹션 순서, `validStores: 71` 통계 표기, 인사이트 그리드 single 컬럼(벤치마크 카드 hide), 채널 목록 grid 펼침, **PRESETS 6 카드(id/label/disabled) + 연환산천원→월매출원 변환식**. Windows CRLF 차단 위해 `readFileSync` 결과는 `.replace(/\r\n/g, "\n")` 적용.
 - `client/src/lib/nearby.test.ts` — 정보공개서 예시값 회귀(avg 108,127 / max 136,132 / min 80,122 천원), 권역 판정(광화문→seoul, 수원역→gyeongin, 부산역→outside), 1년 미만/180일 미만 제외, shortageFlag(N<5), Top 5 거리 선정 (22 tests).
 - `server/auth.logout.test.ts` — 로그아웃 시 세션 쿠키 클리어.
 - `server/reports.router.test.ts` — `reports` 프로시저 4종 + 권한 검증.
@@ -94,7 +94,7 @@ Server tests run without a live DB by exercising the router directly.
 - The default `monthlySales` (32,344,100원) and `partTime` (2.5명) are derived from the Excel workbook, not arbitrary. Cross-reference `v1_excel_config_spec.md` §3 before tuning.
 - Channel mix in `CHANNELS` must sum to ~100% and stay sorted descending by `ratio` — `Home.calculations.test.ts` enforces both. Each channel needs a unique color (also enforced).
 - `logistics`(식자재+포장)는 `monthlySales × 0.40`으로 단일 비율 적용. 식자재 36% / 포장 4%로 분리되어 있지만 합산 단일 곱셈이라 두 값을 따로 조정하려면 `calculateRevenue` 시그니처부터 바꿔야 한다.
-- Fixed-cost utilities are auto-computed as `monthlySales × 3.5%` and folded into `result.fixed`; do not re-add a utilities input.
+- 고정비 = 공과금(`monthlySales × 2.2%`) + `inputs.rent` + 푸드테크 22,000원 정액. `result.utilities`는 공과금만 가리키며 별도 입력 필드 없음. 안내 문구도 "공과금 = 월매출 2.2% + 푸드테크"로 통일.
 - Platform fee comes from `calculatePlatformFee` over all 13 `CHANNELS` (배달/포장/홀 카테고리). 채널 추가/수수료 조정 시 이 함수와 `CHANNELS` 양쪽 모두 검토.
 - BEP is found by binary search up to ₩70,000,000 — bump the bound if you change the cost structure to allow higher break-even.
 - 1첩 산식의 ±25.9%는 시행령 제9조 제3항 "최고/최저 1.7배 상한" → 평균 기준 편차율로 고정. avg×1.259 / avg×0.741. 검증값: `client/src/lib/nearby.test.ts`의 정보공개서 예시 회귀.
