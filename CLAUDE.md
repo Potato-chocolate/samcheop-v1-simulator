@@ -95,7 +95,8 @@ Server tests run without a live DB by exercising the router directly.
 - Channel mix in `CHANNELS` must sum to ~100% and stay sorted descending by `ratio` — `Home.calculations.test.ts` enforces both. Each channel needs a unique color (also enforced).
 - `logistics`(식자재+포장)는 `monthlySales × 0.40`으로 단일 비율 적용. 식자재 36% / 포장 4%로 분리되어 있지만 합산 단일 곱셈이라 두 값을 따로 조정하려면 `calculateRevenue` 시그니처부터 바꿔야 한다.
 - 고정비 = 공과금(`monthlySales × 2.2%`) + `inputs.rent` + 푸드테크 22,000원 정액. `result.utilities`는 공과금만 가리키며 별도 입력 필드 없음. 안내 문구도 "공과금 = 월매출 2.2% + 푸드테크"로 통일.
-- Platform fee comes from `calculatePlatformFee` over all 13 `CHANNELS` (배달/포장/홀 카테고리). 채널 추가/수수료 조정 시 이 함수와 `CHANNELS` 양쪽 모두 검토.
+- **로열티 110,000원은 고정비와 분리된 별도 라인** (`revenue.royalty`). 손익표·비용 막대 차트 모두 별도 노출이며 `fixed`에 합산하지 않음. `totalCost = logistics + platform + labor + fixed + royalty`이고 `profitAt` BEP 함수에서도 동일 차감.
+- Platform fee comes from `calculatePlatformFee` over all 13 `CHANNELS` (배달/포장/홀 카테고리). **산식은 26년 Excel 「목표매출 산정자료」 F37~F47 셀과 정합** — 배민(가게배달)은 퀵비 16.5% + 중개·결제 + 주문당 배달비(VAT), 배민원/요기요/쿠팡이츠는 중개·결제 + 주문당 배달비 모두 VAT(×1.1), 포장 5채널은 0원, 카드매출만 0.005% 정액. 채널 추가/수수료 조정 시 `v1_excel_config_spec.md` §3·§6과 `scripts/validate_simulator_config.mjs`도 같이 갱신.
 - BEP is found by binary search up to ₩70,000,000 — bump the bound if you change the cost structure to allow higher break-even.
 - 1첩 산식의 ±25.9%는 시행령 제9조 제3항 "최고/최저 1.7배 상한" → 평균 기준 편차율로 고정. avg×1.259 / avg×0.741. 검증값: `client/src/lib/nearby.test.ts`의 정보공개서 예시 회귀.
 

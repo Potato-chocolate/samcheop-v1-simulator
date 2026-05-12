@@ -1,5 +1,5 @@
 <!-- Parent: ../AGENTS.md -->
-<!-- Generated: 2026-05-12 | Updated: 2026-05-12 -->
+<!-- Generated: 2026-05-12 | Updated: 2026-05-12 (Excel 26.03 원본 정합 + 로열티 별도 라인) -->
 
 # pages
 
@@ -19,7 +19,8 @@ wouter-routed top-level views. Each file is a leaf React component reachable fro
 
 ### Working In This Directory
 - **`Home.tsx` is the single biggest fragile surface.** The companion test asserts against literal substrings in the source — e.g. `"{fmtCompact(item.value)} · {fmtPct(item.value / revenue.monthlySales)}"`, `'className="insight-grid insight-grid--two"'`, `'<div className="stacked-bar" aria-label="채널 매출 믹스">\n                {CHANNELS.map((channel) => ('`. Renaming a class, reordering a `useMemo`, or reformatting JSX whitespace can break tests without changing behavior. Either preserve the exact string or update the test in the same change.
-- `calculateRevenue` is the only function `Home.tsx` exposes for direct unit testing. Keep it pure (no React hooks inside), no side effects, returns the full breakdown (revenue, utilities, fixed, labor, platform, BEP). Existing callers depend on the field names — see the Zod `revenueSummarySchema` on the server.
+- `calculateRevenue` is the only function `Home.tsx` exposes for direct unit testing. Keep it pure (no React hooks inside), no side effects, returns the full breakdown (revenue, utilities, fixed, **royalty**, labor, platform, BEP). 로열티는 `fixed`에 합산하지 않은 별도 필드. Existing callers depend on the field names — see the Zod `revenueSummarySchema` on the server.
+- Platform fee 산식은 26년 Excel 「목표매출 산정자료」 F37~F47 셀과 1:1 정합. 산식 수정 시 `v1_excel_config_spec.md` §3·§6, `scripts/validate_simulator_config.mjs`, `Home.calculations.test.ts`의 채널별 fee 회귀 4건도 함께 갱신.
 - BEP search uses binary search up to ₩70,000,000. Raise the upper bound if a structural cost change pushes break-even higher; otherwise BEP silently saturates.
 - `CHANNELS` must remain sorted descending by `ratio`, sum ~100%, and each have a unique `#rrggbb` color. The test enforces all three.
 - `SharedReport` parses the slug from `window.location.pathname.split("/").filter(Boolean).at(-1)` rather than wouter params. If you wire the route through `<Route path="/report/:slug">`, update both sides.
