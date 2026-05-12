@@ -382,6 +382,60 @@
   transform: translateY(-3px);
 }
 
+/* 3단계 시작 버튼 — primary-cta 톤을 공유하되 단계별로 미묘하게 채도/명도 차이 */
+.step-cta-row {
+  align-items: stretch;
+}
+
+.step-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 3.25rem;
+  padding: 0 1.1rem 0 0.7rem;
+  border-radius: 999px;
+  border: 2px solid var(--sam-ink);
+  color: white;
+  font-weight: 950;
+  text-decoration: none;
+  transition: all 180ms ease;
+  box-shadow: 6px 6px 0 var(--sam-yellow);
+}
+
+.step-cta__no {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.4rem;
+  height: 2.2rem;
+  padding: 0 0.5rem;
+  border-radius: 999px;
+  background: var(--sam-yellow);
+  color: var(--sam-red-deep);
+  font-size: 0.9rem;
+  letter-spacing: -0.02em;
+}
+
+.step-cta__title {
+  letter-spacing: -0.01em;
+}
+
+.step-cta--1 {
+  background: var(--sam-red);
+}
+.step-cta--2 {
+  background: #a01818;
+  box-shadow: 6px 6px 0 #e0a800;
+}
+.step-cta--3 {
+  background: var(--sam-red-deep);
+  box-shadow: 6px 6px 0 #c99500;
+}
+
+.step-cta:hover {
+  transform: translateY(-3px);
+}
+
 .hero-receipt {
   position: relative;
   z-index: 2;
