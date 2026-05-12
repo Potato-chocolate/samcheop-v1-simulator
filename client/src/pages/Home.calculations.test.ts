@@ -93,4 +93,44 @@ describe("삼첩분식 상담 계산기", () => {
     expect(cssSource).toContain('max-height: none;');
     expect(cssSource).toContain('.cost-table {\n  max-height: 34rem;\n  overflow-y: auto;');
   });
+
+  it("플랫폼·배달 수수료는 26년 Excel 「목표매출 산정자료」 산식을 따른다 (배민 가게배달 퀵비 + 모든 앱 배달비×VAT)", () => {
+    const result = calculateRevenue({
+      monthlySales: 32_344_100,
+      avgOrder: 20_000,
+      rent: 500_000,
+      fullTime: 0,
+      partTime: 2.5,
+      mode: "hybrid",
+    });
+
+    // Excel F39+F40+F41+F42+F47 + F37(배민/지역/자사 퀵비 16.5%) + F38(퀵관리비) = 9,789,893
+    expect(Math.round(result.platform.total)).toBe(9_789_893);
+
+    const find = (kind: string) =>
+      result.platform.details.find((d) => d.kind === kind)!;
+
+    // 배민(가게배달): 퀵비 16.5% + 중개·결제 VAT + 주문당 배달비×VAT — Excel 1,004,168
+    expect(Math.round(find("baemin").fee)).toBe(1_004_168);
+    // 배민원: 중개·결제 VAT + 주문당 배달비×VAT — Excel 4,067,108
+    expect(Math.round(find("baeminOne").fee)).toBe(4_067_108);
+    // 요기요: 신규 추가된 주문당 배달비 4,000원×VAT — Excel 840,542
+    expect(Math.round(find("yogiyo").fee)).toBe(840_542);
+    // 쿠팡이츠: 신규 추가된 주문당 배달비 3,400원×VAT — Excel 3,477,614
+    expect(Math.round(find("coupang").fee)).toBe(3_477_614);
+    // 포장 채널은 Excel 원본에서 수수료 없음
+    for (const k of ["pickupBaemin", "pickupCoupang", "pickupYogiyo", "pickupLocal", "hallPickup"]) {
+      expect(find(k).fee).toBe(0);
+    }
+    // 매출이 0이면 퀵관리비도 0
+    const zero = calculateRevenue({
+      monthlySales: 0,
+      avgOrder: 20_000,
+      rent: 0,
+      fullTime: 0,
+      partTime: 0,
+      mode: "hybrid",
+    });
+    expect(zero.platform.total).toBe(0);
+  });
 });

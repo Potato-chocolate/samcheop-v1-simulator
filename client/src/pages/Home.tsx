@@ -123,22 +123,27 @@ const parseFormattedNumber = (value: string) => {
   return Number.isFinite(parsed) ? parsed : 0;
 };
 
+// 수수료 산식 출처: v1_excel_config_spec.md §3 (26년 매출분석시트 「목표매출 산정자료」 F37~F47)
+// - 배달의민족: 가게배달이라 퀵비(16.5%) + 중개·결제(VAT 별도) + 주문당 배달비(VAT 별도)
+// - 배민원/쿠팡이츠/요기요: 중개·결제 + 주문당 배달비, 모두 VAT 별도(×1.1)
+// - 포장 채널: Excel 원본에서 별도 수수료 없음 — 0원
+// - 카드매출: 0.005% 정액
 function calculatePlatformFee(monthlySales: number, avgOrder: number) {
   const orderPrice = Math.max(avgOrder, 1);
   const details = CHANNELS.map((channel) => {
     const sales = monthlySales * channel.ratio;
     const orders = sales / orderPrice;
     let fee = 0;
-    if (channel.kind === "baemin") fee = sales * (0.068 + 0.03) * 1.1 + orders * 4000;
-    if (channel.kind === "baeminOne") fee = sales * (0.078 + 0.03) * 1.1 + orders * 3400;
-    if (channel.kind === "yogiyo") fee = sales * (0.085 + 0.03) * 1.1;
-    if (channel.kind === "coupang") fee = sales * (0.078 + 0.03) * 1.1;
+    if (channel.kind === "baemin")
+      fee = sales * 0.165 + sales * (0.068 + 0.03) * 1.1 + orders * 4000 * 1.1;
+    if (channel.kind === "baeminOne")
+      fee = sales * (0.078 + 0.03) * 1.1 + orders * 3400 * 1.1;
+    if (channel.kind === "yogiyo")
+      fee = sales * (0.085 + 0.03) * 1.1 + orders * 4000 * 1.1;
+    if (channel.kind === "coupang")
+      fee = sales * (0.078 + 0.03) * 1.1 + orders * 3400 * 1.1;
     if (channel.kind === "local" || channel.kind === "self") fee = sales * 0.165;
-    if (channel.kind === "pickupBaemin") fee = sales * (0.068 + 0.03) * 1.1;
-    if (channel.kind === "pickupCoupang") fee = sales * (0.078 + 0.03) * 1.1;
-    if (channel.kind === "pickupYogiyo") fee = sales * (0.085 + 0.03) * 1.1;
-    if (channel.kind === "pickupLocal") fee = sales * 0.03;
-    if (channel.kind === "hallPickup" || channel.kind === "hallCard") fee = sales * 0.00005;
+    if (channel.kind === "hallCard") fee = sales * 0.00005;
     return { ...channel, sales, orders, fee };
   });
   const quickManagementFee = monthlySales > 0 ? 100000 : 0;
