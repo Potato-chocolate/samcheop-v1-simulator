@@ -161,7 +161,8 @@ export function calculateRevenue(inputs: RevenueInputs) {
   const utilities = Math.round(monthlySales * 0.022);
   const foodtech = 22000;
   const fixed = utilities + inputs.rent + foodtech;
-  const totalCost = logistics + platform.total + labor + fixed;
+  const royalty = 110000;
+  const totalCost = logistics + platform.total + labor + fixed + royalty;
   const profit = monthlySales - totalCost;
   const margin = monthlySales > 0 ? profit / monthlySales : 0;
   const dailySales = monthlySales / 30.4;
@@ -171,7 +172,7 @@ export function calculateRevenue(inputs: RevenueInputs) {
     const salesPlatform = calculatePlatformFee(sales, inputs.avgOrder);
     const salesLogistics = sales * 0.4;
     const salesFixed = inputs.rent + foodtech + sales * 0.022;
-    return sales - salesLogistics - salesPlatform.total - labor - salesFixed;
+    return sales - salesLogistics - salesPlatform.total - labor - salesFixed - royalty;
   };
 
   let low = 0;
@@ -193,6 +194,7 @@ export function calculateRevenue(inputs: RevenueInputs) {
     labor,
     utilities,
     fixed,
+    royalty,
     totalCost,
     profit,
     margin,
@@ -330,6 +332,7 @@ export default function Home() {
     { label: "플랫폼·배달", value: revenue.platform.total, color: "#ef7d22" },
     { label: "인건비", value: revenue.labor, color: "#1f2937" },
     { label: "고정비", value: revenue.fixed, color: "#64748b" },
+    { label: "로열티", value: revenue.royalty, color: "#9333ea" },
   ];
   const biggestCost = Math.max(...revenueCostItems.map((item) => item.value), 1);
   const totalMix = CHANNELS.reduce((acc, item) => acc + item.ratio, 0);
@@ -683,6 +686,7 @@ export default function Home() {
                 <div><span>플랫폼·배달 수수료</span><b>- {fmtWon(revenue.platform.total)}</b></div>
                 <div><span>인건비</span><b>- {fmtWon(revenue.labor)}</b></div>
                 <div><span>고정비</span><b>- {fmtWon(revenue.fixed)}</b></div>
+                <div><span>로열티</span><b>- {fmtWon(revenue.royalty)}</b></div>
                 <div className="total"><span>예상 영업이익</span><b>{fmtWon(revenue.profit)}</b></div>
               </div>
 

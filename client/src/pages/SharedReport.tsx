@@ -59,6 +59,7 @@ export default function SharedReport() {
     ["플랫폼·배달 수수료", -report.revenueSummary.platformTotal],
     ["인건비", -report.revenueSummary.labor],
     ["고정비", -report.revenueSummary.fixed],
+    ["로열티", -report.revenueSummary.royalty],
     ["예상 영업이익", report.revenueSummary.profit],
     ["본사비용 정상가", report.openingSummary.headquartersGross],
     ["프로모션 차감", -report.openingSummary.headquartersDiscount],

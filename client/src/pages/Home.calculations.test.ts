@@ -133,4 +133,36 @@ describe("삼첩분식 상담 계산기", () => {
     });
     expect(zero.platform.total).toBe(0);
   });
+
+  it("로열티 110,000원은 고정비와 분리된 별도 라인이며 영업이익에서 별도 차감된다", () => {
+    const result = calculateRevenue({
+      monthlySales: 10_000_000,
+      avgOrder: 20_000,
+      rent: 500_000,
+      fullTime: 0,
+      partTime: 0,
+      mode: "hybrid",
+    });
+
+    // 로열티는 고정비에 합산되지 않음
+    expect(result.royalty).toBe(110_000);
+    expect(result.fixed).toBe(742_000);
+
+    // totalCost와 profit은 로열티를 별도 차감한 값
+    expect(result.totalCost).toBe(
+      result.logistics + result.platform.total + result.labor + result.fixed + result.royalty,
+    );
+    expect(result.profit).toBe(result.monthlySales - result.totalCost);
+  });
+
+  it("손익표 영수증과 비용 막대 차트 모두 로열티를 별도 라인으로 노출한다", () => {
+    // 막대 차트(receipt-lines)의 비용 항목 순서
+    expect(homeSource).toContain('{ label: "식자재", value: revenue.ingredients');
+    expect(homeSource).toContain('{ label: "로열티", value: revenue.royalty, color: "#9333ea" },');
+
+    // 영수증형 손익표 라인: 고정비 다음, 영업이익 위
+    expect(homeSource).toContain(
+      '<div><span>고정비</span><b>- {fmtWon(revenue.fixed)}</b></div>\n                <div><span>로열티</span><b>- {fmtWon(revenue.royalty)}</b></div>\n                <div className="total"><span>예상 영업이익</span><b>{fmtWon(revenue.profit)}</b></div>',
+    );
+  });
 });
