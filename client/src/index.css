@@ -1335,37 +1335,7 @@ footer a {
   }
 }
 
-@media print {
-  .topbar,
-  .hero-section,
-  .three-cheop-strip,
-  .control-panel,
-  .image-card,
-  .mix-card,
-  .benchmark-card,
-  .assumption-section,
-  footer {
-    display: none !important;
-  }
-
-  .workspace-section,
-  .cost-section {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    background: white !important;
-  }
-
-  .workspace-grid {
-    display: block;
-  }
-
-  .result-panel {
-    box-shadow: none;
-    border-color: #222;
-    page-break-inside: avoid;
-  }
-}
+/* 인쇄 규칙은 아래 통합 @media print 블록에서 처리 (1665 부근) */
 
 .topbar-action {
   padding: 0.58rem 0.85rem;
@@ -1663,6 +1633,15 @@ footer a {
 }
 
 @media print {
+  /* 색상 배경·그라데이션을 PDF에 그대로 출력 (없으면 KPI 카드, 막대, 합계 줄이 흰 배경+흰 글자로 흐려짐) */
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
   .no-print,
   .topbar,
   footer {
@@ -1687,6 +1666,9 @@ footer a {
   .three-cheop-strip,
   .insight-grid,
   .control-panel,
+  .image-card,
+  .mix-card,
+  .benchmark-card,
   .assumption-section {
     display: none !important;
   }
@@ -1702,7 +1684,46 @@ footer a {
   .shared-report-shell {
     border: 0 !important;
     box-shadow: none !important;
-    background: white !important;
+  }
+
+  /* 모바일 미디어 폴백이 인쇄에서 적용돼 receipt-line/cost-row가 1열로 무너지는 문제 차단 */
+  .metric-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 0.55rem !important;
+  }
+
+  .receipt-line {
+    grid-template-columns: 7.5rem 1fr 8rem !important;
+    gap: 0.7rem !important;
+  }
+
+  .receipt-line em {
+    text-align: right !important;
+  }
+
+  .cost-row {
+    grid-template-columns: 9rem minmax(0, 1fr) 8rem !important;
+    gap: 1rem !important;
+  }
+
+  .cost-row b {
+    text-align: right !important;
+  }
+
+  /* 큰 카드/표가 페이지 중간에서 잘리지 않도록 */
+  .result-panel,
+  .investment-panel,
+  .receipt-lines,
+  .profit-statement,
+  .cost-table,
+  .legal-kpi,
+  .disclosure-table {
+    page-break-inside: avoid;
+  }
+
+  /* control-panel hide 후 cost-grid에 result만 남는 빈 공간 정리 */
+  .cost-section {
+    padding-top: 1.2rem !important;
   }
 }
 
