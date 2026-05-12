@@ -49,8 +49,8 @@ export default function SharedReport() {
   const metrics = [
     ["월매출", fmtCompact(report.revenueSummary.monthlySales), `일평균 ${fmtCompact(report.revenueSummary.dailySales)}`],
     ["예상 영업이익", fmtCompact(report.revenueSummary.profit), `영업이익률 ${fmtPct(report.revenueSummary.margin)}`],
-    ["BEP 월매출", fmtCompact(report.revenueSummary.bepSales), "현재 비용구조 기준"],
-    ["실납부 투자비", fmtCompact(report.openingSummary.net), "VAT 별도 기준"],
+    ["손익분기점 월매출", fmtCompact(report.revenueSummary.bepSales), "현재 비용구조 기준"],
+    ["실납부 투자비", fmtCompact(report.openingSummary.net), "부가세 별도 기준"],
   ];
 
   const detailRows = [

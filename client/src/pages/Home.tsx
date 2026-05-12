@@ -13,10 +13,17 @@ import {
   CircleDollarSign,
   FileText,
   Flame,
+  MapPin,
   PackageCheck,
   ReceiptText,
   Store,
 } from "lucide-react";
+import NearbyMap from "@/components/NearbyMap";
+import {
+  calculateNearbyDisclosure,
+  fmtKwon,
+  type DisclosureResult,
+} from "@/lib/nearby";
 
 const ASSETS = {
   hero:
@@ -115,13 +122,8 @@ export const CHANNELS = [
   { group: "홀", name: "현금매출", ratio: 0.0005, kind: "cash", color: "#94a3b8" },
 ];
 
-const PRESETS = [
-  { label: "중앙값", value: STORE_STATS.median, caption: "55개 매장 중위" },
-  { label: "평균", value: STORE_STATS.average, caption: "수도권 평균" },
-  { label: "상위 25%", value: STORE_STATS.p75, caption: "성장권" },
-  { label: "목표값", value: 32344100, caption: "엑셀 목표" },
-  { label: "상위 10%", value: STORE_STATS.p90, caption: "고성과권" },
-];
+// TODO: 전국 데이터 입수 시 실제 값으로 교체 (현재 수도권 평균으로 임시 대체)
+const NATIONAL_MONTHLY_AVG = STORE_STATS.average;
 
 type SignType = "flex" | "channel";
 type StoreMode = "delivery" | "hybrid";
@@ -367,8 +369,15 @@ function SectionHeader({ eyebrow, title, description }: { eyebrow: string; title
 export default function Home() {
   const [revenueInputs, setRevenueInputs] = useState<RevenueInputs>(DEFAULT_REVENUE);
   const [costInputs, setCostInputs] = useState<CostInputs>(DEFAULT_COST);
+  const [nearbyResult, setNearbyResult] = useState<DisclosureResult | null>(null);
+  const [siteCoords, setSiteCoords] = useState<{ lat: number; lng: number } | null>(null);
   const revenue = useMemo(() => calculateRevenue(revenueInputs), [revenueInputs]);
   const opening = useMemo(() => calculateOpeningCost(costInputs), [costInputs]);
+
+  const handleMapClick = (lat: number, lng: number) => {
+    setSiteCoords({ lat, lng });
+    setNearbyResult(calculateNearbyDisclosure(lat, lng));
+  };
   const revenueCostItems = [
     { label: "식자재", value: revenue.ingredients, color: "#b91c1c" },
     { label: "포장재", value: revenue.packaging, color: "#f2b705" },
@@ -378,6 +387,30 @@ export default function Home() {
   ];
   const biggestCost = Math.max(...revenueCostItems.map((item) => item.value), 1);
   const totalMix = CHANNELS.reduce((acc, item) => acc + item.ratio, 0);
+
+  const presets = useMemo(
+    () => [
+      { id: "national", label: "전국 평균", caption: "25년 가맹점 월매출", value: NATIONAL_MONTHLY_AVG, disabled: false },
+      { id: "metro-avg", label: "수도권 평균", caption: "25년 가맹점 월매출", value: STORE_STATS.average, disabled: false },
+      { id: "metro-p25", label: "수도권 상위 25%", caption: "월매출 기준", value: STORE_STATS.p75, disabled: false },
+      { id: "metro-p10", label: "수도권 상위 10%", caption: "월매출 기준", value: STORE_STATS.p90, disabled: false },
+      {
+        id: "nearby-max",
+        label: "인근 매장 평균 최고액",
+        caption: nearbyResult ? "1첩 산출값" : "1첩 먼저 진행하세요",
+        value: nearbyResult ? Math.round((nearbyResult.maxEstimate * 1000) / 12) : 0,
+        disabled: !nearbyResult,
+      },
+      {
+        id: "nearby-min",
+        label: "인근 매장 평균 최저액",
+        caption: nearbyResult ? "1첩 산출값" : "1첩 먼저 진행하세요",
+        value: nearbyResult ? Math.round((nearbyResult.minEstimate * 1000) / 12) : 0,
+        disabled: !nearbyResult,
+      },
+    ],
+    [nearbyResult],
+  );
 
   const handlePrint = () => {
     window.print();
@@ -445,22 +478,171 @@ export default function Home() {
 
 
         <section id="nearby" className="workspace-section nearby-section">
+          <div className="nearby-disclaimer-banner">
+            본 화면은 공식 정보공개서가 아닌 상담용 참고 자료입니다.
+          </div>
+
           <SectionHeader
             eyebrow="01 · 인근매장 매출 조회"
-            title="상담 시작점은 후보 상권 주변 매출 확인입니다"
-            description="주소나 상권을 입력해 인근 삼첩분식 매장 매출을 조회하는 기능을 준비 중입니다. 현재 화면에서는 상담 흐름상 첫 단계의 목적과 상태를 명확히 안내합니다."
+            title="가맹사업법 정보공개서 양식의 인근 가맹점 매출 범위"
+            description="지도에서 후보 점포 위치를 클릭하면 가맹사업법 제9조에 따라 인근 매장 매출 범위를 산출합니다."
           />
 
-          <article className="development-card">
-            <span className="status-pill">개발중</span>
-            <div>
-              <h3>인근매장 매출 조회 기능</h3>
-              <p>
-                상담자는 이 단계에서 후보 점포 주변의 참고 매장, 지역, 월평균 환산 매출을 확인한 뒤 2첩의 목표 매출 입력으로 이동하게 됩니다.
-              </p>
-            </div>
-            <a href="#revenue" className="secondary-cta">2첩 목표 매출 입력으로 이동</a>
-          </article>
+          <div className="workspace-grid">
+            <aside className="control-panel">
+              <div className="panel-title">
+                <MapPin size={20} />
+                <div>
+                  <h3>1첩 · 가맹 예정지 입력</h3>
+                  <p>지도를 클릭해 후보 점포 위치를 지정하세요.</p>
+                </div>
+              </div>
+
+              <NearbyMap
+                stores={
+                  nearbyResult
+                    ? nearbyResult.candidates.filter(c => !c.excluded).map(c => c.store)
+                    : []
+                }
+                excludedStores={
+                  nearbyResult
+                    ? nearbyResult.candidates.filter(c => c.excluded).map(c => c.store)
+                    : []
+                }
+                selectedSite={siteCoords}
+                highlightedStoreNames={
+                  nearbyResult ? nearbyResult.rank1to5.map(c => c.store.name) : []
+                }
+                onClick={handleMapClick}
+              />
+
+              {siteCoords && nearbyResult && (
+                <p className="region-indicator">
+                  {nearbyResult.region === "seoul"
+                    ? "서울 권역"
+                    : nearbyResult.region === "gyeonggi"
+                      ? "경기 권역"
+                      : nearbyResult.region === "incheon"
+                        ? "인천 권역"
+                        : "수도권 외 지역"}
+                </p>
+              )}
+              {!siteCoords && (
+                <p className="region-indicator region-indicator--placeholder">
+                  지도를 클릭하면 권역이 자동 판정됩니다
+                </p>
+              )}
+            </aside>
+
+            <section className="result-panel receipt-panel">
+              <div className="panel-title panel-title--between">
+                <div>
+                  <span className="tiny-label">1첩 · 정보공개서 양식</span>
+                  <h3>예상 매출액의 범위</h3>
+                </div>
+                <ReceiptText size={28} />
+              </div>
+
+              {!nearbyResult ? (
+                <div className="nearby-empty-state">
+                  <MapPin size={36} />
+                  <p>지도에서 위치를 선택하세요</p>
+                  <span>클릭한 위치 기준으로 인근 매장 매출 범위를 계산합니다.</span>
+                </div>
+              ) : nearbyResult.region === "outside" ? (
+                <div className="nearby-empty-state">
+                  <MapPin size={36} />
+                  <p>수도권 외 지역입니다</p>
+                  <span>현재 데이터는 서울·경기·인천 권역만 지원합니다.</span>
+                </div>
+              ) : (
+                <>
+                  <div className="legal-kpi">
+                    <div className="kpi-row">
+                      <span>최고액</span>
+                      <b>{fmtKwon(nearbyResult.maxEstimate)} 천원 (VAT 포함)</b>
+                    </div>
+                    <div className="kpi-row kpi-row--min">
+                      <span>최저액</span>
+                      <b>{fmtKwon(nearbyResult.minEstimate)} 천원 (VAT 포함)</b>
+                    </div>
+                  </div>
+
+                  {nearbyResult.rank1to5.length > 0 ? (
+                    <table className="disclosure-table">
+                      <thead>
+                        <tr>
+                          <th>매출액 순위</th>
+                          <th>가맹점명</th>
+                          <th>직전 사업연도 매출 환산액</th>
+                          <th>비고</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {nearbyResult.rank1to5.map((c, i) => (
+                          <tr
+                            key={c.store.name}
+                            className={
+                              !nearbyResult.shortageFlag && (i === 0 || i === nearbyResult.rank1to5.length - 1)
+                                ? "excluded-row"
+                                : ""
+                            }
+                          >
+                            <td>{i + 1}</td>
+                            <td>{c.store.name}</td>
+                            <td>{fmtKwon(Math.round(c.annualizedSales / 1000))} 천원 (VAT 포함)</td>
+                            <td>
+                              {!nearbyResult.shortageFlag && (i === 0 || i === nearbyResult.rank1to5.length - 1)
+                                ? "제외"
+                                : ""}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  ) : (
+                    <div className="shortage-warning">
+                      해당 권역에 조건 충족 매장이 없습니다. 매장 좌표 산출 후 다시 시도하세요.
+                    </div>
+                  )}
+
+                  <p className="disclosure-rationale">
+                    당사에서 예상한 귀하의 점포 예정지 매출액의 범위는 위 표의 5개 가맹점 중
+                    가장 작은 가맹점과 가장 큰 가맹점을 제외한 나머지 3개 가맹점을 기준으로
+                    평균 매출액에 (±25.9%)를 곱하여 산출한 것입니다.
+                    가맹사업거래의 공정화에 관한 법률 제9조 제5항 및 같은 법 시행령 제9조 제3항의
+                    규정에 따르면 예상매출액의 최고액은 최저액의 1.7배를 초과하지 않도록 되어 있으며,
+                    이 규정에 따른 최대 비율은 (±25.9%)입니다.
+                  </p>
+
+                  {nearbyResult.shortageFlag && (
+                    <div className="shortage-warning">
+                      해당 권역의 조건 충족 매장이{" "}
+                      {nearbyResult.shortageCount ?? nearbyResult.rank1to5.length}개뿐이므로
+                      가맹사업법 권장 산식(2~4위 평균)이 아닌 단순 평균으로 산출되었습니다.
+                    </div>
+                  )}
+
+                  <p className="disclaimer">
+                    예상매출액은 기존 가맹점사업자의 매출액을 근거로 작성된 것으로 가맹희망자가
+                    운영할 가맹점의 매출액은 상권변화, 고객변화, 가맹점사업자의 노력차이 등 기타
+                    환경변화에 따라 변동될 수 있으며, 가맹본부가 가맹희망자에게 예상매출액을
+                    보장하는 것이 아닙니다.
+                  </p>
+
+                  <button
+                    type="button"
+                    className="primary-cta"
+                    onClick={() => {
+                      document.getElementById("revenue")?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                  >
+                    이 권역으로 2첩 시작 <ArrowRight size={18} />
+                  </button>
+                </>
+              )}
+            </section>
+          </div>
         </section>
 
         <section id="revenue" className="workspace-section revenue-section">
@@ -481,16 +663,18 @@ export default function Home() {
               </div>
 
               <div className="preset-grid">
-                {PRESETS.map((preset) => (
+                {presets.map((preset) => (
                   <button
-                    key={preset.label}
+                    key={preset.id}
                     type="button"
-                    className={revenueInputs.monthlySales === preset.value ? "preset active" : "preset"}
-                    onClick={() => setRevenueInputs((prev) => ({ ...prev, monthlySales: preset.value }))}
+                    className={`preset${revenueInputs.monthlySales === preset.value && !preset.disabled ? " active" : ""}${preset.disabled ? " preset--disabled" : ""}`}
+                    onClick={() => !preset.disabled && setRevenueInputs((prev) => ({ ...prev, monthlySales: preset.value }))}
+                    disabled={preset.disabled}
+                    aria-disabled={preset.disabled}
                   >
                     <b>{preset.label}</b>
                     <span>{preset.caption}</span>
-                    <em>{fmtCompact(preset.value)}</em>
+                    <em>{preset.disabled ? "—" : fmtCompact(preset.value)}</em>
                   </button>
                 ))}
               </div>
