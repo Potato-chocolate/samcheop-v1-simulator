@@ -377,12 +377,12 @@ export default function Home() {
       <main id="top">
         <section className="hero-section" style={{ backgroundImage: `linear-gradient(90deg, rgba(255,248,232,.98) 0%, rgba(255,248,232,.94) 44%, rgba(255,248,232,.58) 63%, rgba(255,248,232,.18) 100%), url(${ASSETS.hero})` }}>
           <div className="hero-content">
-            <span className="eyebrow-chip"><Flame size={16} /> 삼첩분식 창업 상담용</span>
+            <span className="eyebrow-chip"><Flame size={16} /> 삼첩분식 예비 창업자용</span>
             <h1>
               매출과 개설비용을 <mark>1·2·3첩</mark>처럼 펼쳐보는 삼첩분식 가맹 계산기
             </h1>
             <p>
-              삼첩분식 상담 자료의 목표매출 산정식, 수도권 매장 매출 통계, 예상 개설비용 항목을 바탕으로 상담 현장에서 바로 설명 가능한 손익·투자비 리포트를 구성했습니다.
+              삼첩분식의 목표매출 산정식, 수도권 매장 매출 통계, 예상 개설비용 항목을 바탕으로 손익과 투자비를 한눈에 확인하실 수 있도록 구성했습니다.
             </p>
             <div className="hero-actions step-cta-row">
               <a href="#nearby" className="step-cta step-cta--1">
@@ -418,7 +418,7 @@ export default function Home() {
 
         <section className="three-cheop-strip" aria-label="시뮬레이션 단계">
           {[
-            { no: "1첩", title: "인근매장 매출 조회", text: "후보 상권 주변의 참고 매출을 먼저 확인하는 단계입니다. 현재 기능은 개발중으로 안내합니다." },
+            { no: "1첩", title: "인근매장 매출 조회", text: "후보 상권 주변의 참고 매출을 먼저 확인하는 단계입니다. 현재 준비 중입니다." },
             { no: "2첩", title: "목표 매출 입력", text: "수도권 매장 통계와 채널 믹스를 참고해 목표 월매출과 손익 구조를 계산합니다." },
             { no: "3첩", title: "창업 비용 계산", text: "평수·간판·홀 테이블 수에 따라 초기 투자비와 프로모션 차감액을 비교합니다." },
           ].map((item) => (
@@ -603,7 +603,7 @@ export default function Home() {
           <SectionHeader
             eyebrow="02 · 목표 매출 입력"
             title="목표 월매출을 입력하면 손익 구조가 즉시 계산됩니다"
-            description="1첩에서 확인할 인근매장 참고 매출을 바탕으로 목표 월매출을 정하고, 수도권 71개 매장 통계 프리셋과 손익표를 함께 확인합니다."
+            description="1첩에서 확인하신 인근매장 참고 매출을 바탕으로 목표 월매출을 정하고, 수도권 71개 매장 통계 프리셋과 손익표를 함께 살펴보세요."
           />
 
           <div className="workspace-grid">
@@ -655,7 +655,7 @@ export default function Home() {
               <div className="metric-grid">
                 <MetricCard label="월매출" value={fmtCompact(revenue.monthlySales)} sub={`일평균 ${fmtCompact(revenue.dailySales)}`} tone="red" />
                 <MetricCard label="예상 영업이익" value={fmtCompact(revenue.profit)} sub={`영업이익률 ${fmtPct(revenue.margin)}`} tone={revenue.profit >= 0 ? "yellow" : "dark"} />
-                <MetricCard label="BEP 월매출" value={fmtCompact(revenue.bepSales)} sub="현재 비용구조 기준" />
+                <MetricCard label="손익분기점 월매출" value={fmtCompact(revenue.bepSales)} sub="현재 비용구조 기준" />
                 <MetricCard label="예상 주문수" value={`${Math.round(revenue.monthlyOrders).toLocaleString("ko-KR")}건`} sub="객단가 기준 환산" />
               </div>
 
@@ -683,9 +683,9 @@ export default function Home() {
 
               <div className="report-save-card no-print">
                 <div>
-                  <span className="tiny-label">상담 리포트 출력</span>
-                  <h4>로그인이나 클라우드 저장 없이 현재 계산 결과를 로컬 PDF로 저장합니다</h4>
-                  <p>버튼을 누른 뒤 인쇄 대화상자에서 대상 항목을 PDF 저장으로 선택하면 상담 현장에서 바로 파일로 보관할 수 있습니다.</p>
+                  <span className="tiny-label">결과 리포트 저장</span>
+                  <h4>로그인 없이 지금 화면의 계산 결과를 PDF 파일로 저장하실 수 있습니다</h4>
+                  <p>버튼을 누른 뒤 인쇄 대화상자에서 대상을 "PDF로 저장"으로 선택하시면 파일로 보관하실 수 있습니다.</p>
                 </div>
                 <div className="report-action-row">
                   <button type="button" className="primary-cta button-reset" onClick={handlePrint}>
@@ -725,7 +725,7 @@ export default function Home() {
           <SectionHeader
             eyebrow="03 · 창업 비용 계산"
             title="평수와 홀 구성에 따라 창업 비용을 계산합니다"
-            description="2첩에서 정한 목표 매출 이후 실제 창업 검토 단계로 이어지도록, 본사비용 면제 항목과 현장 투자 항목을 분리해 보여줍니다."
+            description="2첩에서 정하신 목표 매출에 이어, 본사비용 면제 항목과 현장 투자 항목을 분리해 정리했습니다."
           />
 
           <div className="workspace-grid cost-grid">
@@ -763,7 +763,7 @@ export default function Home() {
                 <CircleDollarSign size={30} />
               </div>
               <div className="investment-hero">
-                <span>VAT 별도 기준</span>
+                <span>부가세 별도 기준</span>
                 <strong>{fmtCompact(opening.net)}</strong>
                 <p>정상가 대비 {fmtCompact(opening.headquartersDiscount)} 차감</p>
               </div>
@@ -788,7 +788,7 @@ export default function Home() {
                 ))}
                 <div className="cost-row total">
                   <span>실납부 예상 합계</span>
-                  <em>VAT 별도, 현장 별도공사 제외</em>
+                  <em>부가세 별도, 현장 별도공사 제외</em>
                   <b>{fmtWon(opening.net)}</b>
                 </div>
               </div>
@@ -799,8 +799,8 @@ export default function Home() {
       </main>
 
       <footer>
-        <b>삼첩분식 창업 상담 시뮬레이터</b>
-        <span>자료 기반 내부 상담용 · 계약·견적·수익 보장을 의미하지 않는 참고 계산기</span>
+        <b>삼첩분식 창업 시뮬레이터</b>
+        <span>삼첩분식 자료 기반 참고 계산기 · 계약·견적·수익을 보장하지 않습니다</span>
         <a href="#top">맨 위로 <ChevronRight size={14} /></a>
       </footer>
 
