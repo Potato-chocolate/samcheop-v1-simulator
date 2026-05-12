@@ -215,7 +215,7 @@ function calculateOpeningCost(inputs: CostInputs) {
         inputs.tableCount * 1210 +
         inputs.tableCount * 2 * 3850 +
         inputs.tableCount * 1.5 * 4950 +
-        5500 +
+        inputs.tableCount * 5500 +
         inputs.tableCount * 40955 +
         inputs.tableCount * 1.5 * 10900 +
         inputs.tableCount * 2.5 * 1935 +
