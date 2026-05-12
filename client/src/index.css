@@ -906,6 +906,31 @@
   color: rgba(255, 255, 255, 0.72);
 }
 
+/* 2첩 한정 — 결과 리포트 저장 카드가 3첩으로 이동한 만큼
+   입력 패널과 손익 리포트 카드의 세로 높이를 stretch로 맞추고,
+   손익표(profit-statement)가 남는 공간을 흡수해 빈 영역 없이 채운다. */
+.revenue-section .workspace-grid {
+  align-items: stretch;
+}
+
+.revenue-section .control-panel,
+.revenue-section .result-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.revenue-section .control-panel {
+  position: static;
+}
+
+.revenue-section .profit-statement {
+  flex: 1 1 auto;
+}
+
+.revenue-section .profit-statement div {
+  padding: 0.95rem 1.1rem;
+}
+
 .insight-grid {
   display: grid;
   grid-template-columns: 1.25fr 0.82fr 0.82fr;
