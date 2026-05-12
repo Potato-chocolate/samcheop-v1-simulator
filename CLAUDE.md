@@ -21,7 +21,7 @@ pnpm db:push      # drizzle-kit generate && migrate  (requires DATABASE_URL)
 node scripts/validate_simulator_config.mjs   # recompute CONFIG → simulator_config_validation.json
 ```
 
-`pnpm dev` reads `NODE_ENV=development` and the Linux-style env assignment in `package.json` may not work in bare PowerShell; use Git Bash / WSL or set `$env:NODE_ENV` before invoking `tsx watch server/_core/index.ts`.
+`pnpm dev`/`pnpm start`는 `cross-env`로 `NODE_ENV`를 셸 독립적으로 주입한다. PowerShell·cmd·Bash·WSL 어디서든 그대로 동작. 포트는 3000 기본, 점유 시 3001~3019로 자동 fallback (`server/_core/index.ts:54–58`).
 
 ## Architecture
 
@@ -50,7 +50,18 @@ node scripts/validate_simulator_config.mjs   # recompute CONFIG → simulator_co
 
 ## Frontend
 
-**Single-page app.** `client/src/pages/Home.tsx` is the entire product surface. It owns the 1첩 (인근매장 매출 조회 — 개발중) → 2첩 (목표 매출 입력) → 3첩 (창업 비용 계산) consultation flow plus exports `calculateRevenue` and `CHANNELS` that the test suite consumes. The `SharedReport` page renders a saved report by `shareSlug`.
+**Single-page app.** `client/src/pages/Home.tsx` is the entire product surface. It owns the 1첩 (인근매장 매출 조회 — 가맹사업법 정보공개서 양식) → 2첩 (목표 매출 입력, PRESETS 6 카드) → 3첩 (창업 비용 계산) consultation flow plus exports `calculateRevenue` and `CHANNELS` that the test suite consumes. 1첩 산출(`nearbyResult.maxEstimate/minEstimate`)이 2첩 PRESETS ⑤⑥에 자동 주입되며, `nearbyResult`가 null이면 ⑤⑥은 disabled. The `SharedReport` page (route `/report/:shareSlug`) renders a saved report; `NotFound.tsx` handles `/404` and the wouter fallback Route.
+
+**1첩 인근매장 매출 조회** (`#nearby` 섹션): 가맹사업법 시행령 제9조 제3항 산식 구현. 가장 가까운 5개 매장(**같은 권역** — `seoul` / `gyeonggi` / `incheon` 3개 권역 완전 분리, 계약 1년+, 운영 180일+, 좌표 보유) → 1·5위 제외 → 2~4위 평균 매출 × (1 ± 0.259) = 최고/최저액. 권역 경계 인접 지역에서 권역이 다른 가까운 매장은 제외되며, 인천처럼 매장 풀이 작은 권역(10개)은 shortageFlag(<5) 가능성이 높음. 핵심 파일:
+- `client/src/lib/nearby.ts` — `calculateNearbyDisclosure`, `detectRegion`, `haversineKm`, `annualizedSales` (순수함수, vitest node 통과). `Region = "seoul"|"gyeonggi"|"incheon"|"outside"`는 `regions.ts`에서 re-export.
+- `client/src/components/NearbyMap.tsx` — Leaflet OSM 지도. **vitest node 환경 회피 위해 leaflet은 useEffect 안에서 dynamic import** (`window` 참조 방지). type-only `import type * as LeafletNS from "leaflet"`은 top-level OK.
+- `client/src/data/stores.ts` — 70개 매장 (`name, region, address, contractDate, operatingDays2025, sales2025, lat, lng, isHall, isOperating`). 좌표는 빌드 타임 산출. `region` 필드(`"서울"|"경기"|"인천"`)와 `lib/nearby.ts`의 `detectRegionFromStore` 매핑은 일대일.
+- `client/src/data/regions.geojson` + `client/src/data/regions.ts` — 서울/경인 권역 폴리곤. **자동 생성 파일** (`node scripts/build_regions_geojson.mjs`). 출처: southkorea-maps kostat 2018, RDP 단순화(epsilon=0.003) 적용. 코드에서는 `regions.ts`의 `REGIONS` import.
+- `scripts/build_regions_geojson.mjs` — 17 시도 원본에서 서울 + 경인(경기∪인천) 추출·단순화 후 regions.geojson/ts 동시 출력.
+- `scripts/geocode_stores.mjs` — 빌드 타임 매장 좌표 채우기. `--provider forge`(기본, FORGE_API_URL/KEY 환경변수) 또는 `--provider nominatim`(키 불필요, 1 req/sec). 도로명 단축 fallback(콤마·괄호 제거 → 도로명만 → 시/구) 4단계로 한국 상세주소 매칭 보강. 재실행 안전.
+- 알려진 후속: ① Nominatim 매칭률 한계로 일부 매장 lat/lng=null 잔존 가능 — 실패한 매장은 수동 좌표 입력 또는 Kakao/VWorld 등 한국 친화 API 키 교체 ② Home.tsx의 `NATIONAL_MONTHLY_AVG`는 TODO 상수(현재 STORE_STATS.average와 동일).
+
+**Router base path handling.** `client/src/App.tsx` derives `ROUTER_BASE` from `import.meta.env.BASE_URL` and **strips the trailing slash** via `.replace(/\/$/, "")` before passing to wouter's `<Router base>`. wouter requires no trailing slash even though Vite's `base` ends with one. When adding new routes, never hardcode the `/samcheop-v1-simulator` prefix — wouter handles it.
 
 **Vite aliases** (mirrored in `tsconfig.json` and `vitest.config.ts`): `@` → `client/src`, `@shared` → `shared`, `@assets` → `attached_assets`. The Vite `root` is `client/`, not the repo root — static assets go in `client/public/`.
 
@@ -60,7 +71,14 @@ node scripts/validate_simulator_config.mjs   # recompute CONFIG → simulator_co
 
 `vitest.config.ts` uses the **node environment** — there is no jsdom. Frontend tests assert against `Home.tsx` source text read via `readFileSync` (e.g. checking JSX strings, class names, formatting templates) rather than rendering components. When refactoring `Home.tsx`, expect to update these string-match assertions in `client/src/pages/Home.calculations.test.ts`.
 
-Server tests (`server/*.test.ts`) cover the auth logout cookie clear, the reports router, and a UI QA smoke. They run without a live DB by exercising the router directly.
+Test inventory:
+- `client/src/pages/Home.calculations.test.ts` — 공과금 3.5% 자동 반영, `CHANNELS` 내림차순/색상 유일성/합계, `fmtCompact·fmtPct` JSX 포맷, 1–3첩 섹션 순서, 벤치마크 매장 카운트, **PRESETS 6 카드(id/label/disabled) + 연환산천원→월매출원 변환식**. Windows CRLF 차단 위해 `readFileSync` 결과는 `.replace(/\r\n/g, "\n")` 적용.
+- `client/src/lib/nearby.test.ts` — 정보공개서 예시값 회귀(avg 108,127 / max 136,132 / min 80,122 천원), 권역 판정(광화문→seoul, 수원역→gyeongin, 부산역→outside), 1년 미만/180일 미만 제외, shortageFlag(N<5), Top 5 거리 선정 (22 tests).
+- `server/auth.logout.test.ts` — 로그아웃 시 세션 쿠키 클리어.
+- `server/reports.router.test.ts` — `reports` 프로시저 4종 + 권한 검증.
+- `server/ui.qa.test.ts` — Home.tsx UI 스모크.
+
+Server tests run without a live DB by exercising the router directly.
 
 ## Conventions
 
@@ -74,15 +92,19 @@ Server tests (`server/*.test.ts`) cover the auth logout cookie clear, the report
 ## Things to know before changing calculations
 
 - The default `monthlySales` (32,344,100원) and `partTime` (2.5명) are derived from the Excel workbook, not arbitrary. Cross-reference `v1_excel_config_spec.md` §3 before tuning.
-- Channel mix in `CHANNELS` must sum to ~100% and stay sorted descending by `ratio` — `Home.calculations.test.ts` enforces both.
+- Channel mix in `CHANNELS` must sum to ~100% and stay sorted descending by `ratio` — `Home.calculations.test.ts` enforces both. Each channel needs a unique color (also enforced).
+- `logistics`(식자재+포장)는 `monthlySales × 0.40`으로 단일 비율 적용. 식자재 36% / 포장 4%로 분리되어 있지만 합산 단일 곱셈이라 두 값을 따로 조정하려면 `calculateRevenue` 시그니처부터 바꿔야 한다.
 - Fixed-cost utilities are auto-computed as `monthlySales × 3.5%` and folded into `result.fixed`; do not re-add a utilities input.
+- Platform fee comes from `calculatePlatformFee` over all 13 `CHANNELS` (배달/포장/홀 카테고리). 채널 추가/수수료 조정 시 이 함수와 `CHANNELS` 양쪽 모두 검토.
 - BEP is found by binary search up to ₩70,000,000 — bump the bound if you change the cost structure to allow higher break-even.
+- 1첩 산식의 ±25.9%는 시행령 제9조 제3항 "최고/최저 1.7배 상한" → 평균 기준 편차율로 고정. avg×1.259 / avg×0.741. 검증값: `client/src/lib/nearby.test.ts`의 정보공개서 예시 회귀.
 
 ## **관련 문서 최신화**[중요]
 - 메인 폴더와 각 폴더에 있는 AGENTS.md 는 코드가 수정, 변경, 추가, 신규가 생겼을 때 최신화 또는 신규 AGENTS.md 를 만든다.
 - AGENTS.md 와 마찬가지로 CLAUDE.md 를 최신화 한다. CLAUDE.md 는 250줄 이하로 효율적인 문맥으로 관리한다. 
 - CLAUDE.md 는 사용자가 아닌 오직 클로드 코드 만을 위한 파일이다. 클로드 코드 가 참고하기 편하게 작성한다. 
-- 사용자가 세션을 종료하겠다고 하면 해당 세션에서 필요하다 판단되는 것은 memory 에 기억한다.
+- 사용자가 세션을 종료하겠다고 하면 해당 세션에서 필요하다 판단되는 것들을 memory 에 기억한다.
+- 프론트엔드 디자인 관련해서는 DESIGN.md 를 참조하며, 디자인이 추가되거나 바뀌면 항상 최신화 한다.
 
 ## Deployment (GitHub Pages, static)
 

@@ -114,5 +114,9 @@ client/public/__manus__/version.json
 
 # Local agent workspace (oh-my-claudecode plans/state, agent caches)
 .omc/
+.omx/
 .agents/
+.claude/
+.playwright-mcp/
+_pr_backup/
 skills-lock.json

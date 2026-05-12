@@ -2,8 +2,8 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { CHANNELS, calculateRevenue } from "./Home";
 
-const homeSource = readFileSync("client/src/pages/Home.tsx", "utf8");
-const cssSource = readFileSync("client/src/index.css", "utf8");
+const homeSource = readFileSync("client/src/pages/Home.tsx", "utf8").replace(/\r\n/g, "\n");
+const cssSource = readFileSync("client/src/index.css", "utf8").replace(/\r\n/g, "\n");
 
 describe("삼첩분식 상담 계산기", () => {
   it("공과금을 월매출의 3.5%로 자동 계산하고 고정비에 반영한다", () => {
@@ -54,7 +54,7 @@ describe("삼첩분식 상담 계산기", () => {
     expect(homeSource).toContain('title: "인근매장 매출 조회"');
     expect(homeSource).toContain('title: "목표 매출 입력"');
     expect(homeSource).toContain('title: "창업 비용 계산"');
-    expect(homeSource).toContain('className="status-pill">개발중');
+    expect(homeSource).toContain('id="nearby"');
     expect(homeSource).not.toContain('id="assumptions"');
   });
 
@@ -64,6 +64,28 @@ describe("삼첩분식 상담 계산기", () => {
     expect(rankItems).toHaveLength(55);
     expect(homeSource).toContain('25년 기준 수도권 매장 순위');
     expect(homeSource).toContain('name: "전곡점"');
+  });
+
+  it("2첩 PRESETS가 6개 카드로 구성된다", () => {
+    const presetIds = ["national", "metro-avg", "metro-p25", "metro-p10", "nearby-max", "nearby-min"];
+    for (const id of presetIds) {
+      expect(homeSource).toContain(`id: "${id}"`);
+    }
+    const presetLabels = ["전국 평균", "수도권 평균", "수도권 상위 25%", "수도권 상위 10%", "인근 매장 평균 최고액", "인근 매장 평균 최저액"];
+    for (const label of presetLabels) {
+      expect(homeSource).toContain(`label: "${label}"`);
+    }
+  });
+
+  it("인근 매장 PRESETS ⑤⑥은 nearbyResult 없을 때 disabled 처리된다", () => {
+    expect(homeSource).toContain("preset--disabled");
+    expect(homeSource).toContain("disabled: !nearbyResult");
+    expect(homeSource).toContain("preset.disabled");
+  });
+
+  it("인근 매장 PRESETS 값 변환식이 연환산천원→월매출원 (× 1000 / 12) 이다", () => {
+    expect(homeSource).toContain("nearbyResult.maxEstimate * 1000) / 12");
+    expect(homeSource).toContain("nearbyResult.minEstimate * 1000) / 12");
   });
 
   it("채널 목록, 매장 순위, 창업 비용 표는 축소 카드 안에서 세로 스크롤을 제공한다", () => {

@@ -1,0 +1,86 @@
+export type Store = {
+  name: string;
+  region: "서울" | "경기" | "인천";
+  address: string;
+  contractDate: string;
+  operatingDays2025: number;
+  sales2025: number;
+  lat: number | null;
+  lng: number | null;
+  isHall: boolean;
+  isOperating: boolean;
+};
+
+export const STORES: Store[] = [
+  { name: "발산점", region: "서울", address: "서울특별시 강서구 강서로 322, 좌측 1층 104호(내발산동)", contractDate: "2023-10-12", operatingDays2025: 349, sales2025: 415155900, lat: 37.5543744, lng: 126.8371103, isHall: false, isOperating: true },
+  { name: "대치점", region: "서울", address: "서울특별시 강남구 남부순환로 2917, 청실종합상가 지하 1층 8호 (대치동)", contractDate: "2023-10-21", operatingDays2025: 343, sales2025: 144303500, lat: 37.4931748, lng: 127.0591948, isHall: false, isOperating: true },
+  { name: "숭실대점", region: "서울", address: "서울특별시 동작구 상도로37길 26, 1층(상도1동)", contractDate: "2024-12-03", operatingDays2025: 302, sales2025: 279162700, lat: 37.5002507, lng: 126.950949, isHall: false, isOperating: true },
+  { name: "건대점", region: "서울", address: "서울특별시 광진구 자양로23길 38, 1층 101호", contractDate: "2022-10-20", operatingDays2025: 312, sales2025: 273325400, lat: 37.5421099, lng: 127.0830656, isHall: false, isOperating: true },
+  { name: "수유점", region: "서울", address: "서울특별시 강북구 도봉로97길 76", contractDate: "2023-06-07", operatingDays2025: 354, sales2025: 222288500, lat: 37.6421824, lng: 127.0268441, isHall: false, isOperating: true },
+  { name: "면목점", region: "서울", address: "서울특별시 중랑구 면목로51길 13, 1층", contractDate: "2022-12-08", operatingDays2025: 175, sales2025: 73395100, lat: 37.583279, lng: 127.0866907, isHall: false, isOperating: true },
+  { name: "공덕점_홀", region: "서울", address: "서울특별시 마포구 마포대로 63-8, 지하1층 70호", contractDate: "2024-03-07", operatingDays2025: 355, sales2025: 425900300, lat: 37.542234, lng: 126.9478743, isHall: true, isOperating: true },
+  { name: "홍대점", region: "서울", address: "서울특별시 마포구 월드컵북로5나길 18, 111-1호 (서교동, 서교동 대우미래사랑)", contractDate: "2025-12-11", operatingDays2025: 20, sales2025: 20075560, lat: 37.5572774, lng: 126.9167922, isHall: false, isOperating: true },
+  { name: "은평점", region: "서울", address: "서울특별시 은평구 응암로11길 3 (응암동), 1층 7호", contractDate: "2021-12-06", operatingDays2025: 332, sales2025: 371818970, lat: 37.5882809, lng: 126.9161672, isHall: false, isOperating: true },
+  { name: "구로점", region: "서울", address: "서울특별시 구로구 가마산로 284, 1층 105호", contractDate: "2022-04-25", operatingDays2025: 273, sales2025: 287259400, lat: 37.4863642, lng: 126.8781785, isHall: false, isOperating: true },
+  { name: "불광점", region: "서울", address: "서울특별시 은평구 불광로 122-15, 1층 101호(불광동, 주영빌트)", contractDate: "2025-03-06", operatingDays2025: 277, sales2025: 165654560, lat: 37.6109348, lng: 126.9306324, isHall: false, isOperating: true },
+  { name: "사당점", region: "서울", address: "서울특별시 동작구 사당로27길 92, 지하 1층(사당동)", contractDate: "2026-06-01", operatingDays2025: 0, sales2025: 0, lat: 37.4872953, lng: 126.975361, isHall: false, isOperating: false },
+  { name: "청량리점", region: "서울", address: "서울특별시 동대문구 전농로 192, 상가동 2층 201호", contractDate: "2022-06-16", operatingDays2025: 360, sales2025: 184144245, lat: 37.5813398, lng: 127.0555474, isHall: false, isOperating: true },
+  { name: "목동점", region: "서울", address: "서울특별시 양천구 목동중앙본로7길 37, 1층 3호(목동)", contractDate: "2026-02-03", operatingDays2025: 0, sales2025: 0, lat: 37.5399702, lng: 126.8663341, isHall: false, isOperating: false },
+  { name: "석관점", region: "서울", address: "서울특별시 성북구 화랑로22가길 41, 1층", contractDate: "2021-05-04", operatingDays2025: 333, sales2025: 205927200, lat: 37.607593, lng: 127.0524436, isHall: false, isOperating: true },
+  { name: "왕십리점", region: "서울", address: "서울특별시 성동구 무학봉21길 11, 1층(하왕십리동)", contractDate: "2026-01-14", operatingDays2025: 0, sales2025: 0, lat: 37.5621861, lng: 127.0310843, isHall: false, isOperating: false },
+  { name: "장기점", region: "경기", address: "경기도 김포시 김포한강1로78번길 32-7, 1층 2호", contractDate: "2022-01-19", operatingDays2025: 317, sales2025: 173053500, lat: 37.6434876, lng: 126.6718134, isHall: false, isOperating: true },
+  { name: "영통점", region: "경기", address: "경기도 수원시 영통구 매영로310번길 36, 상가동 103호", contractDate: "2020-11-24", operatingDays2025: 306, sales2025: 162638600, lat: 37.2521686, lng: 127.065486, isHall: false, isOperating: true },
+  { name: "야탑점", region: "경기", address: "경기도 성남시 분당구 야탑로65번길 8, 2층 206~209호", contractDate: "2021-03-22", operatingDays2025: 301, sales2025: 105134400, lat: 37.4105143, lng: 127.1263619, isHall: false, isOperating: true },
+  { name: "안성점", region: "경기", address: "경기도 안성시 비룡3길 18번지", contractDate: "2021-04-27", operatingDays2025: 355, sales2025: 103117800, lat: 37.013898, lng: 127.2637884, isHall: false, isOperating: true },
+  { name: "판교점", region: "경기", address: "경기도 성남시 분당구 판교역로 109, B동 B129호(백현동, SK HUB 오피스텔)", contractDate: "2023-06-14", operatingDays2025: 302, sales2025: 209100400, lat: 37.3909829, lng: 127.1086959, isHall: false, isOperating: true },
+  { name: "성남점", region: "경기", address: "경기도 성남시 중원구 원터로 97, 101호(성남동)", contractDate: "2023-12-13", operatingDays2025: 303, sales2025: 207770600, lat: 37.4312796, lng: 127.1442401, isHall: false, isOperating: true },
+  { name: "포천시청점", region: "경기", address: "경기도 포천시 포천로 1590-5, 1층(신읍동)", contractDate: "2025-05-15", operatingDays2025: 201, sales2025: 72718100, lat: 37.8205914, lng: 127.2109912, isHall: false, isOperating: true },
+  { name: "시흥정왕점", region: "경기", address: "경기도 시흥시 중심상가1길 14, 201,202,203", contractDate: "2020-04-03", operatingDays2025: 323, sales2025: 222278450, lat: 37.3433235, lng: 126.7348078, isHall: false, isOperating: true },
+  { name: "봉담점", region: "경기", address: "경기도 화성시 봉담읍 오래4길 12-1, 101호", contractDate: "2025-11-04", operatingDays2025: 230, sales2025: 107042100, lat: 37.2203962, lng: 126.9549475, isHall: false, isOperating: true },
+  { name: "정자점", region: "경기", address: "경기도 수원시 장안구 송정로 83, 상가동 1층 105호(송죽동, 수원로얄팰리스)", contractDate: "2025-01-08", operatingDays2025: 159, sales2025: 121599500, lat: 37.2984786, lng: 127.0157982, isHall: false, isOperating: true },
+  { name: "호매실점", region: "경기", address: "경기도 수원시 권선구 매실로 38, 1층", contractDate: "2021-09-07", operatingDays2025: 327, sales2025: 150990800, lat: 37.2676594, lng: 126.9563854, isHall: false, isOperating: true },
+  { name: "내유점", region: "경기", address: "경기도 고양시 덕양구 통일로1108번길 190, 1층 일부", contractDate: "2020-09-08", operatingDays2025: 363, sales2025: 121212800, lat: 37.7153669, lng: 126.8530261, isHall: false, isOperating: true },
+  { name: "금촌점", region: "경기", address: "경기도 파주시 황골로 78, 1층 일부", contractDate: "2024-08-21", operatingDays2025: 364, sales2025: 238009272, lat: 37.7555991, lng: 126.7780457, isHall: false, isOperating: true },
+  { name: "포곡점", region: "경기", address: "경기도 용인시 처인구 포곡읍 경안천로 414, 1층", contractDate: "2021-12-16", operatingDays2025: 302, sales2025: 210063600, lat: 37.2468685, lng: 127.215092, isHall: false, isOperating: true },
+  { name: "한대역점", region: "경기", address: "경기도 안산시 상록구 이화로 36-1, 1층 101호(사동)", contractDate: "2026-01-16", operatingDays2025: 0, sales2025: 0, lat: 37.3008618, lng: 126.8563876, isHall: false, isOperating: false },
+  { name: "고잔점", region: "경기", address: "경기도 안산시 단원구 화정천동로 224, 상가동 102호", contractDate: "2020-01-29", operatingDays2025: 312, sales2025: 171764800, lat: 37.3353445, lng: 126.817035, isHall: false, isOperating: true },
+  { name: "화성남양점", region: "경기", address: "경기 화성시 남양읍 역골동로 15-5, 102호", contractDate: "2024-05-20", operatingDays2025: 300, sales2025: 104368700, lat: 37.2097847, lng: 126.8309514, isHall: false, isOperating: true },
+  { name: "전곡점", region: "경기", address: "경기도 연천군 전곡읍 전곡역로 103, 1층", contractDate: "2021-05-11", operatingDays2025: 322, sales2025: 65003400, lat: 38.0222751, lng: 127.0644601, isHall: false, isOperating: true },
+  { name: "군포점_홀", region: "경기", address: "경기 군포시 산본천로 99, 디퍼이울렛 137호", contractDate: "2022-07-20", operatingDays2025: 356, sales2025: 349263500, lat: 37.3633713, lng: 126.9326336, isHall: true, isOperating: true },
+  { name: "통진점", region: "경기", address: "경기도 김포시 통진읍 서암로6번길 5-9, 101호", contractDate: "2026-01-16", operatingDays2025: 0, sales2025: 0, lat: 37.6864316, lng: 126.5959005, isHall: false, isOperating: false },
+  { name: "시흥시청점_홀", region: "경기", address: "경기도 시흥시 능곡군자1길 117, 1층 일부호(군자동)", contractDate: "2022-12-28", operatingDays2025: 278, sales2025: 158072900, lat: 37.3675083, lng: 126.8056857, isHall: true, isOperating: true },
+  { name: "가능점", region: "경기", address: "경기도 의정부시 가능로 84-1", contractDate: "2020-05-13", operatingDays2025: 291, sales2025: 100444130, lat: 37.746782, lng: 127.0471822, isHall: false, isOperating: true },
+  { name: "송우점", region: "경기", address: "경기도 포천시 소흘읍 태봉로 158", contractDate: "2021-04-07", operatingDays2025: 301, sales2025: 129756600, lat: 37.8948267, lng: 127.2007295, isHall: false, isOperating: true },
+  { name: "하이닉스점_홀", region: "경기", address: "경기도 이천시 대월면 대산로208번길 93-12, 근린생활시설동 지1층 104호(휴먼빌 에듀파크시티)", contractDate: "2025-07-28", operatingDays2025: 136, sales2025: 138544900, lat: 37.2408594, lng: 127.4837001, isHall: true, isOperating: true },
+  { name: "문산점_홀", region: "경기", address: "경기도 파주시 문산읍 문향로67번길 10, 1층", contractDate: "2026-01-14", operatingDays2025: 0, sales2025: 0, lat: 37.8582336, lng: 126.7846607, isHall: true, isOperating: false },
+  { name: "삼송점", region: "경기", address: "경기도 고양시 덕양구 세솔로1길 16, 1층", contractDate: "2025-07-17", operatingDays2025: 144, sales2025: 84651100, lat: 37.6519039, lng: 126.8892629, isHall: false, isOperating: true },
+  { name: "광교점", region: "경기", address: "경기도 수원시 영통구 에듀타운로 101, 101동 1층 104호(이의동, 에듀하임 1309오피스텔)", contractDate: "2026-01-14", operatingDays2025: 0, sales2025: 0, lat: 37.2865417, lng: 127.0503947, isHall: false, isOperating: false },
+  { name: "병점점_홀", region: "경기", address: "경기도 화성시 병점중앙로155번길 8, 지하 1층 전체호(진안동)", contractDate: "2026-01-07", operatingDays2025: 0, sales2025: 0, lat: 37.2105835, lng: 127.0352747, isHall: true, isOperating: false },
+  { name: "진접점", region: "경기", address: "경기도 남양주시 진접읍 해밀예당1로 241, 1층 일부", contractDate: "2023-12-06", operatingDays2025: 308, sales2025: 63652900, lat: 37.7214937, lng: 127.2043674, isHall: false, isOperating: true },
+  { name: "민락점", region: "경기", address: "경기도 의정부시 충의로57번길 48, 1층", contractDate: "2020-09-23", operatingDays2025: 306, sales2025: 101407500, lat: 37.7364, lng: 127.0857342, isHall: false, isOperating: true },
+  { name: "서정점", region: "경기", address: "경기도 평택시 이충로100번길 23-6, 1층(서정동)", contractDate: "2025-07-08", operatingDays2025: 0, sales2025: 0, lat: 37.0639725, lng: 127.0662731, isHall: false, isOperating: false },
+  { name: "처인구점", region: "경기", address: "경기도 용인시 처인구 중부대로 1331번길 7, 1층 일부호(역북동)", contractDate: "2023-12-14", operatingDays2025: 313, sales2025: 147946590, lat: 37.2521951, lng: 127.3257159, isHall: false, isOperating: true },
+  { name: "부곡점", region: "경기", address: "경기도 군포시 송부로291번안길 3-14, 1층 106호(부곡동)", contractDate: "2026-04-24", operatingDays2025: 0, sales2025: 0, lat: 37.3222412, lng: 126.9443125, isHall: false, isOperating: false },
+  { name: "수원시청점", region: "경기", address: "경기도 수원시 권선구 권선로668번길 19-16, 1층(권선동, 나원빌딩)", contractDate: "2025-07-24", operatingDays2025: 0, sales2025: 0, lat: 37.2585632, lng: 127.0246916, isHall: false, isOperating: false },
+  { name: "죽전점", region: "경기", address: "경기도 용인시 수지구 푸른솔로 86, 103호(죽전동)", contractDate: "2024-01-04", operatingDays2025: 300, sales2025: 209863080, lat: 37.326194, lng: 127.118602, isHall: false, isOperating: true },
+  { name: "호원점", region: "경기", address: "경기도 의정부시 전좌로156번길 53-1 (호원동)", contractDate: "2025-04-24", operatingDays2025: 242, sales2025: 231638800, lat: 37.7224068, lng: 127.0421793, isHall: false, isOperating: true },
+  { name: "가남점_홀", region: "경기", address: "경기도 여주시 가남읍 태평로 23-1", contractDate: "2023-10-25", operatingDays2025: 351, sales2025: 214245940, lat: 37.2982901, lng: 127.637033, isHall: true, isOperating: true },
+  { name: "고읍점", region: "경기", address: "경기도 양주시 고읍남로 23, 151호(광사동, 메가시티프라자)", contractDate: "2024-03-28", operatingDays2025: 359, sales2025: 172328800, lat: 37.7872373, lng: 127.0828688, isHall: false, isOperating: true },
+  { name: "안중점_홀", region: "경기", address: "경기도 평택시 안중읍 안현로서3길 72, 1층", contractDate: "2024-06-13", operatingDays2025: 321, sales2025: 166451490, lat: 36.9878114, lng: 126.9237709, isHall: true, isOperating: true },
+  { name: "다산점_홀", region: "경기", address: "경기도 남양주시 다산중앙로146번길 12-5, 1층 102호(다산동,강희프라자)", contractDate: "2024-06-19", operatingDays2025: 306, sales2025: 264665760, lat: 37.6260299, lng: 127.1588205, isHall: true, isOperating: true },
+  { name: "백석점_홀", region: "경기", address: "경기도 고양시 일산동구 호수로 340-25, 106호", contractDate: "2024-11-14", operatingDays2025: 360, sales2025: 399160755, lat: 37.6598863, lng: 126.7676182, isHall: true, isOperating: true },
+  { name: "중동점", region: "경기", address: "경기도 부천시 원미구 중동로248번길 44, 102호 (중동,메트로펠리스)", contractDate: "2022-12-08", operatingDays2025: 357, sales2025: 457208680, lat: 37.5013429, lng: 126.7723596, isHall: false, isOperating: true },
+  { name: "신갈점", region: "경기", address: "경기도 용인시 기흥구 신구로43번길 13-1(신갈동)", contractDate: "2024-03-29", operatingDays2025: 308, sales2025: 223380820, lat: 37.2801, lng: 127.1148, isHall: false, isOperating: true },
+  { name: "화정점_홀", region: "경기", address: "경기도 고양시 덕양구 화신로 263, 2층 209호(화정동, 브릿지타워)", contractDate: "2025-04-02", operatingDays2025: 339, sales2025: 222617300, lat: 37.6304332, lng: 126.8320431, isHall: true, isOperating: true },
+  { name: "숭의점", region: "인천", address: "인천광역시 미추홀구 미추로 38, 1층", contractDate: "2021-07-05", operatingDays2025: 362, sales2025: 173336600, lat: 37.4630134, lng: 126.6468035, isHall: false, isOperating: true },
+  { name: "가좌점", region: "인천", address: "인천광역시 서구 서달로 20, 1층", contractDate: "2023-03-09", operatingDays2025: 332, sales2025: 138905800, lat: 37.5020833, lng: 126.6782366, isHall: false, isOperating: true },
+  { name: "영종도점", region: "인천", address: "인천광역시 중구 운중로 103, 1층", contractDate: "2020-08-06", operatingDays2025: 246, sales2025: 83979500, lat: 37.4944666, lng: 126.5458031, isHall: false, isOperating: true },
+  { name: "주안점", region: "인천", address: "인천광역시 미추홀구 인하로247번길 22, 1층 일부호(주안동)", contractDate: "2026-02-12", operatingDays2025: 0, sales2025: 0, lat: 37.4491666, lng: 126.6756344, isHall: false, isOperating: false },
+  { name: "만수점", region: "인천", address: "인천광역시 남동구 하촌로51번길 13-2, 1층", contractDate: "2025-11-17", operatingDays2025: 41, sales2025: 21584160, lat: 37.4525822, lng: 126.7323765, isHall: false, isOperating: true },
+  { name: "청라점", region: "인천", address: "인천광역시 서구 크리스탈로 94, 101호(청라동, 청라레이크뷰)", contractDate: "2025-07-09", operatingDays2025: 156, sales2025: 41373300, lat: 37.5278934, lng: 126.6367992, isHall: false, isOperating: true },
+  { name: "간석점", region: "인천", address: "인천광역시 남동구 석정로 561, 1층", contractDate: "2026-03-06", operatingDays2025: 0, sales2025: 0, lat: 37.4661798, lng: 126.6972249, isHall: false, isOperating: false },
+  { name: "계양점", region: "인천", address: "인천광역시 계양구 임학서로6번길 3-1, 102호", contractDate: "2022-08-07", operatingDays2025: 316, sales2025: 168042980, lat: 37.5450989, lng: 126.7340097, isHall: false, isOperating: true },
+  { name: "인천논현점_홀", region: "인천", address: "인천광역시 남동구 포구로 45, 201동 118호", contractDate: "2025-02-13", operatingDays2025: 258, sales2025: 100800265, lat: 37.4078811, lng: 126.7325554, isHall: true, isOperating: true },
+  { name: "연수점", region: "인천", address: "인천광역시 연수구 벚꽃로158번길 5 1층", contractDate: "2022-11-07", operatingDays2025: 316, sales2025: 160127995, lat: 37.4185484, lng: 126.6764608, isHall: false, isOperating: true },
+];
+
