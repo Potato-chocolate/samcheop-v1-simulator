@@ -54,7 +54,7 @@ node scripts/validate_simulator_config.mjs   # recompute CONFIG → simulator_co
 
 **1첩 인근매장 매출 조회** (`#nearby` 섹션): 가맹사업법 시행령 제9조 제3항 산식 구현. 가장 가까운 5개 매장(**같은 권역** — `seoul` / `gyeonggi` / `incheon` 3개 권역 완전 분리, 계약 1년+, 운영 180일+, 좌표 보유) → 1·5위 제외 → 2~4위 평균 매출 × (1 ± 0.259) = 최고/최저액. 권역 경계 인접 지역에서 권역이 다른 가까운 매장은 제외되며, 인천처럼 매장 풀이 작은 권역(10개)은 shortageFlag(<5) 가능성이 높음. 핵심 파일:
 - `client/src/lib/nearby.ts` — `calculateNearbyDisclosure`, `detectRegion`, `haversineKm`, `annualizedSales` (순수함수, vitest node 통과). `Region = "seoul"|"gyeonggi"|"incheon"|"outside"`는 `regions.ts`에서 re-export.
-- `client/src/components/NearbyMap.tsx` — Leaflet OSM 지도. **vitest node 환경 회피 위해 leaflet은 useEffect 안에서 dynamic import** (`window` 참조 방지). type-only `import type * as LeafletNS from "leaflet"`은 top-level OK.
+- `client/src/components/NearbyMap.tsx` — Leaflet OSM 지도. **vitest node 환경 회피 위해 leaflet은 useEffect 안에서 dynamic import** (`window` 참조 방지). type-only `import type * as LeafletNS from "leaflet"`은 top-level OK. 익명 처리: 일반/제외 매장 핀은 tooltip 없이 위치만 표시. 매출 Top 5 핀만 letter(A~E) divIcon + `"매장 X"` tooltip. `String.fromCharCode(65 + idx)` 규칙으로 표(`disclosure-table`)의 가맹점명도 동일하게 `매장 A`~`매장 E`로 동기화 (실명 노출 금지).
 - `client/src/data/stores.ts` — 70개 매장 (`name, region, address, contractDate, operatingDays2025, sales2025, lat, lng, isHall, isOperating`). 좌표는 빌드 타임 산출. `region` 필드(`"서울"|"경기"|"인천"`)와 `lib/nearby.ts`의 `detectRegionFromStore` 매핑은 일대일.
 - `client/src/data/regions.geojson` + `client/src/data/regions.ts` — 서울/경인 권역 폴리곤. **자동 생성 파일** (`node scripts/build_regions_geojson.mjs`). 출처: southkorea-maps kostat 2018, RDP 단순화(epsilon=0.003) 적용. 코드에서는 `regions.ts`의 `REGIONS` import.
 - `scripts/build_regions_geojson.mjs` — 17 시도 원본에서 서울 + 경인(경기∪인천) 추출·단순화 후 regions.geojson/ts 동시 출력.
