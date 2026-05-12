@@ -690,18 +690,6 @@ export default function Home() {
                 <div className="total"><span>예상 영업이익</span><b>{fmtWon(revenue.profit)}</b></div>
               </div>
 
-              <div className="report-save-card no-print">
-                <div>
-                  <span className="tiny-label">결과 리포트 저장</span>
-                  <h4>로그인 없이 지금 화면의 계산 결과를 PDF 파일로 저장하실 수 있습니다</h4>
-                  <p>버튼을 누른 뒤 인쇄 대화상자에서 대상을 "PDF로 저장"으로 선택하시면 파일로 보관하실 수 있습니다.</p>
-                </div>
-                <div className="report-action-row">
-                  <button type="button" className="primary-cta button-reset" onClick={handlePrint}>
-                    <FileText size={17} /> PDF 저장
-                  </button>
-                </div>
-              </div>
             </section>
           </div>
 
@@ -761,6 +749,19 @@ export default function Home() {
                 <input type="checkbox" checked={costInputs.showWaivedFees} onChange={(event) => setCostInputs((prev) => ({ ...prev, showWaivedFees: event.target.checked }))} />
                 본사비용 면제 프로모션 반영
               </label>
+
+              <div className="report-save-card no-print">
+                <div>
+                  <span className="tiny-label">결과 리포트 저장</span>
+                  <h4>로그인 없이 지금 화면의 계산 결과를 PDF 파일로 저장하실 수 있습니다</h4>
+                  <p>버튼을 누른 뒤 인쇄 대화상자에서 대상을 "PDF로 저장"으로 선택하시면 파일로 보관하실 수 있습니다.</p>
+                </div>
+                <div className="report-action-row">
+                  <button type="button" className="primary-cta button-reset" onClick={handlePrint}>
+                    <FileText size={17} /> PDF 저장
+                  </button>
+                </div>
+              </div>
             </aside>
 
             <section className="result-panel investment-panel">

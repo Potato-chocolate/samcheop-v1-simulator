@@ -155,6 +155,23 @@ describe("삼첩분식 상담 계산기", () => {
     expect(result.profit).toBe(result.monthlySales - result.totalCost);
   });
 
+  it("결과 리포트 저장 카드는 3첩 yellow-panel 안(본사비용 면제 체크박스 다음)으로 이동했다", () => {
+    // 3첩에서 본사비용 면제 체크박스 바로 다음에 카드가 등장
+    expect(homeSource).toContain(
+      '본사비용 면제 프로모션 반영\n              </label>\n\n              <div className="report-save-card no-print">',
+    );
+    // 2첩 receipt-panel 안에서는 더 이상 카드가 보이지 않음
+    expect(homeSource).not.toMatch(
+      /receipt-panel[\s\S]*?report-save-card no-print[\s\S]*?2첩 \\u00b7 손익 계산/,
+    );
+  });
+
+  it("2첩 입력 카드와 손익 리포트 카드는 동일한 세로 높이로 stretch 된다", () => {
+    expect(cssSource).toContain(".revenue-section .workspace-grid {\n  align-items: stretch;");
+    expect(cssSource).toContain(".revenue-section .profit-statement {\n  flex: 1 1 auto;");
+    expect(cssSource).toContain(".revenue-section .control-panel {\n  position: static;");
+  });
+
   it("손익표 영수증과 비용 막대 차트 모두 로열티를 별도 라인으로 노출한다", () => {
     // 막대 차트(receipt-lines)의 비용 항목 순서
     expect(homeSource).toContain('{ label: "식자재", value: revenue.ingredients');
