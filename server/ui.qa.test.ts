@@ -35,12 +35,9 @@ describe("삼첩분식 상담 화면 QA", () => {
     expect(homeSource).toContain('Math.round(revenue.monthlyOrders).toLocaleString("ko-KR")');
   });
 
-  it("25년 기준 수도권 매장 순위를 유효 매장 55개 전체로 표시한다", () => {
-    const benchmarkBlock = homeSource.match(/const BENCHMARK_STORES = \[([\s\S]*?)\];/)?.[1] ?? "";
-    const rankMatches = benchmarkBlock.match(/rank:/g) ?? [];
-
-    expect(rankMatches).toHaveLength(55);
-    expect(benchmarkBlock).toContain('rank: 55');
-    expect(benchmarkBlock).toContain('name: "전곡점"');
+  it("25년 기준 수도권 매장 순위 카드는 인사이트 영역에서 숨김 처리되어 있다", () => {
+    expect(homeSource).not.toContain('25년 기준 수도권 매장 순위');
+    expect(homeSource).not.toContain('BENCHMARK_STORES');
+    expect(homeSource).toContain('insight-grid--single');
   });
 });

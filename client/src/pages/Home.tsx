@@ -16,7 +16,6 @@ import {
   MapPin,
   PackageCheck,
   ReceiptText,
-  Store,
 } from "lucide-react";
 import NearbyMap from "@/components/NearbyMap";
 import {
@@ -47,64 +46,6 @@ const STORE_STATS = {
   hallAverage: 24084318,
   deliveryAverage: 17600315,
 };
-
-const BENCHMARK_STORES = [
-  { rank: 1, region: "경기", name: "중동점", sales: 38954521, hall: false },
-  { rank: 2, region: "서울", name: "공덕점_홀", sales: 36491458, hall: true },
-  { rank: 3, region: "서울", name: "발산점", sales: 36182403, hall: false },
-  { rank: 4, region: "서울", name: "은평점", sales: 34064740, hall: false },
-  { rank: 5, region: "경기", name: "백석점_홀", sales: 33725388, hall: true },
-  { rank: 6, region: "서울", name: "구로점", sales: 32005397, hall: false },
-  { rank: 7, region: "경기", name: "하이닉스점_홀", sales: 30985839, hall: true },
-  { rank: 8, region: "경기", name: "군포점_홀", sales: 29841100, hall: true },
-  { rank: 9, region: "경기", name: "호원점", sales: 29114381, hall: false },
-  { rank: 10, region: "서울", name: "숭실대점", sales: 28116552, hall: false },
-  { rank: 11, region: "서울", name: "건대점", sales: 26646306, hall: false },
-  { rank: 12, region: "경기", name: "다산점_홀", sales: 26308007, hall: true },
-  { rank: 13, region: "경기", name: "정자점", sales: 23261959, hall: false },
-  { rank: 14, region: "경기", name: "신갈점", sales: 22060065, hall: false },
-  { rank: 15, region: "경기", name: "죽전점", sales: 21277784, hall: false },
-  { rank: 16, region: "경기", name: "포곡점", sales: 21157068, hall: false },
-  { rank: 17, region: "경기", name: "판교점", sales: 21060057, hall: false },
-  { rank: 18, region: "경기", name: "시흥정왕점", sales: 20931794, hall: false },
-  { rank: 19, region: "경기", name: "성남점", sales: 20857060, hall: false },
-  { rank: 20, region: "경기", name: "화정점_홀", sales: 19974266, hall: true },
-  { rank: 21, region: "경기", name: "금촌점", sales: 19888595, hall: false },
-  { rank: 22, region: "서울", name: "수유점", sales: 19099647, hall: false },
-  { rank: 23, region: "서울", name: "석관점", sales: 18809667, hall: false },
-  { rank: 24, region: "경기", name: "가남점_홀", sales: 18565947, hall: true },
-  { rank: 25, region: "서울", name: "불광점", sales: 18190107, hall: false },
-  { rank: 26, region: "경기", name: "삼송점", sales: 17880585, hall: false },
-  { rank: 27, region: "경기", name: "시흥시청점_홀", sales: 17295146, hall: true },
-  { rank: 28, region: "경기", name: "고잔점", sales: 16745233, hall: false },
-  { rank: 29, region: "경기", name: "장기점", sales: 16604765, hall: false },
-  { rank: 30, region: "인천", name: "계양점", sales: 16175023, hall: false },
-  { rank: 31, region: "경기", name: "영통점", sales: 16166419, hall: false },
-  { rank: 32, region: "경기", name: "안중점_홀", sales: 15772273, hall: true },
-  { rank: 33, region: "서울", name: "청량리점", sales: 15558484, hall: false },
-  { rank: 34, region: "인천", name: "연수점", sales: 15413164, hall: false },
-  { rank: 35, region: "경기", name: "고읍점", sales: 14600746, hall: false },
-  { rank: 36, region: "인천", name: "숭의점", sales: 14564424, hall: false },
-  { rank: 37, region: "경기", name: "처인구점", sales: 14377131, hall: false },
-  { rank: 38, region: "경기", name: "봉담점", sales: 14155930, hall: false },
-  { rank: 39, region: "경기", name: "호매실점", sales: 14044761, hall: false },
-  { rank: 40, region: "경기", name: "송우점", sales: 13112170, hall: false },
-  { rank: 41, region: "서울", name: "대치점", sales: 12796593, hall: false },
-  { rank: 42, region: "서울", name: "면목점", sales: 12756767, hall: false },
-  { rank: 43, region: "인천", name: "가좌점", sales: 12726058, hall: false },
-  { rank: 44, region: "인천", name: "인천논현점_홀", sales: 11883752, hall: true },
-  { rank: 45, region: "경기", name: "포천시청점", sales: 11004190, hall: false },
-  { rank: 46, region: "경기", name: "야탑점", sales: 10624047, hall: false },
-  { rank: 47, region: "경기", name: "화성남양점", sales: 10581827, hall: false },
-  { rank: 48, region: "경기", name: "가능점", sales: 10498885, hall: false },
-  { rank: 49, region: "인천", name: "영종도점", sales: 10383644, hall: false },
-  { rank: 50, region: "경기", name: "내유점", sales: 10156720, hall: false },
-  { rank: 51, region: "경기", name: "민락점", sales: 10079994, hall: false },
-  { rank: 52, region: "경기", name: "안성점", sales: 8835211, hall: false },
-  { rank: 53, region: "인천", name: "청라점", sales: 8066909, hall: false },
-  { rank: 54, region: "경기", name: "진접점", sales: 6286068, hall: false },
-  { rank: 55, region: "경기", name: "전곡점", sales: 6140332, hall: false },
-];
 
 export const CHANNELS = [
   { group: "배달", name: "배민원", ratio: 0.4112, kind: "baeminOne", color: "#b91c1c" },
@@ -756,8 +697,8 @@ export default function Home() {
             </section>
           </div>
 
-          <div className="insight-grid insight-grid--two">
-            <article className="mix-card">
+          <div className="insight-grid insight-grid--single">
+            <article className="mix-card mix-card--wide">
               <div className="panel-title"><BarChart3 size={20} /><h3>채널 매출 믹스</h3></div>
               <div className="stacked-bar" aria-label="채널 매출 믹스">
                 {CHANNELS.map((channel) => (
@@ -769,7 +710,7 @@ export default function Home() {
                   />
                 ))}
               </div>
-              <div className="channel-list">
+              <div className="channel-list channel-list--grid">
                 {CHANNELS.map((channel) => (
                   <div key={channel.name}>
                     <span><i style={{ backgroundColor: channel.color }} />{channel.name}</span>
@@ -777,17 +718,6 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-            </article>
-
-            <article className="benchmark-card">
-              <div className="panel-title"><Store size={20} /><h3>25년 기준 수도권 매장 순위</h3></div>
-              {BENCHMARK_STORES.map((store) => (
-                <div className="benchmark-row" key={store.rank}>
-                  <b>{store.rank}</b>
-                  <span>{store.region} · {store.name}</span>
-                  <em>{fmtCompact(store.sales)}</em>
-                </div>
-              ))}
             </article>
           </div>
         </section>
